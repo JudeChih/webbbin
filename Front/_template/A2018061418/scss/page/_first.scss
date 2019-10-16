@@ -1,0 +1,105 @@
+// slideshow
+.ele-slideshow-wrap {
+    position: relative;
+    margin: 10px 0 0 12px;
+    width: 760px;
+    height: 200px;
+    z-index: 2;
+}
+
+.ele-slideshow-control-wrap {
+    width: 100%;
+    bottom: 16px;
+}
+
+.ele-slideshow-nav {
+    position: absolute;
+    left: -10px;
+    >a {
+        display: inline-block;
+        margin-right: 5px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        background-color: #000;
+        &.active {
+            background-color: #990000;
+        }
+    }
+}
+
+// container
+.first-game-wrap {
+    float: left;
+    margin: 19px 0 0 3px;
+    a {
+        float: left;
+        margin: 0px 9px;
+        width: 138px;
+        height: 249px;
+        &.first-game01 {
+            background: url(../image/lang/zh-cn/game01.png);
+            &:hover {
+                background: url(../image/lang/zh-cn/game01_over.png)
+            }
+        }
+        &.first-game02 {
+            background: url(../image/lang/zh-cn/game02.png);
+            &:hover {
+                background: url(../image/lang/zh-cn/game02_over.png)
+            }
+        }
+        &.first-game03 {
+            background: url(../image/lang/zh-cn/game03.png);
+            &:hover {
+                background: url(../image/lang/zh-cn/game03_over.png)
+            }
+        }
+        &.first-game04 {
+            background: url(../image/lang/zh-cn/game04.png);
+            &:hover {
+                background: url(../image/lang/zh-cn/game04_over.png)
+            }
+        }
+        &.first-game05 {
+            background: url(../image/lang/zh-cn/game05.png);
+            &:hover {
+                background: url(../image/lang/zh-cn/game05_over.png)
+            }
+        }
+    }
+}
+
+.first-btn-wrap {
+    float: right;
+    margin: 18px 20px 0 0;
+    a {
+        display: block;
+        margin-bottom: 4px;
+        width: 190px;
+        height: 57px;
+        &.btn-joinus {
+            background: url(../image/lang/zh-cn/btn_joinus.png)
+        }
+        &.btn-download {
+            background: url(../image/lang/zh-cn/btn_download.png)
+        }
+        &.btn-service {
+            background: url(../image/lang/zh-cn/btn_service.png)
+        }
+        &:hover {
+            background-position: bottom;
+        }
+    }
+}
+
+.first-jp {
+    height: 80px;
+    padding-top: 44px;
+    text-align: center;
+    color: #4C4C4C;
+    font-size: 24px;
+    line-height: 36px;
+    background: url(../image/lang/zh-cn/jp_bg.png)
+}

@@ -1,0 +1,123 @@
+/* --- 文案頁 色彩管理 --- */
+@include madvertis-color(
+	$sidebar-bg         : #444,     //測選單背景色
+    $sidebar-font       : #FFF,     //項目字色
+    $sidebar-font-h     : #EC3E40,  //項目字色:hover
+
+    $tablet-title-font  : #FFF,     //TABLET 以下選單的目前頁面標題字色
+    $tablet-title-bg    : #000,     //TABLET 以下選單的目前頁面標題背景色
+
+    $right-bg           : #FFF,     //文案內容-右側款背景色
+    $left-bg            : #FFF      //文案內容-左側款背景色
+);
+
+/* --- 文案頁側邊選單 --- */
+.page-sidebar {
+    float: left;
+    position: relative;
+    z-index: 2;
+    top: 36px;
+    width: 25%;
+    min-width: 210px;
+    text-align: center;
+    position: absolute;
+    display: block;
+    // width: 100%;
+    padding: 70px 0 170px;
+    box-shadow: 0 0 8px 3px rgba(0,0,0,0.35);
+    background: #444;
+    h2 {
+        @include text-hide();
+        position: absolute;
+        @include bg('welcome_img.png');
+        bottom: 42px;
+        left: -36px;
+    }
+    ul {}
+    li {
+        display: block;
+        a {
+            display: block;
+            margin-bottom: 36px;
+            font-size: 16px;
+            font-style: italic;
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        display: none;
+        h2 {
+            display: block;
+        }
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 文案左側內容 --- */
+.page-left {
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+/* --- 文案右側內容 --- */
+.page-right {
+    float: right;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    width: 83%;
+    background: url(../image/halo.png) left top no-repeat #222;
+    h3 {
+        display: none;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        float: none;
+        margin-bottom: 0;
+        width: auto;
+        background: url(../image/halo.png) -50% top no-repeat #222;
+        h3 {
+            display: block;
+            padding: 30px 8% 0;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: bold;
+            color: #FFF;
+        }
+    }
+    @include MQ(mobile) {
+        background: url(../image/halo.png) -140px top no-repeat #222;
+    }
+}
+.page-article {
+    position: relative;
+    z-index: 2;
+    padding: 62px 32px 120px 110px;
+    min-height: 500px;
+    p {
+        line-height: 2.3;
+        font-size: 14px;
+        color: #AAA;
+    }
+    @include MQ(tablet) {
+        padding: 24px 8% 130px;
+    }
+    @include MQ(mobile) {}
+}
+.page-article-welcome {
+    position: absolute;
+    z-index: 1;
+    bottom: -52px;
+    right: 20px;
+    font-size: 120px;
+    font-family: "Arial";
+    font-weight: bold;
+    font-style: italic;
+    color: #262626;
+    @include MQ(tablet) {
+        right: 72px;
+    }
+    @include MQ(mobile) {}
+
+}

@@ -1,0 +1,95 @@
+/* --- 優惠活動 色彩管理 --- */
+@include memExclusive-color(
+    $item-bg     : #FFF,     //項目背景色
+    $item-font   : #222,     //項目字色
+    $item-font-h : $orange-base   //項目字色:hover
+);
+
+/* --- 優惠活動項目 --- */
+.memberexclusiveii-content {
+    position: relative;
+    z-index: 50;
+    padding: 32px 0 0;
+    ul {
+        display: block;
+        width: 100%;
+    }
+    .memExclusive {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 31.3%;
+        margin: 0 1% 20px;
+        a {
+            display: block;
+            position: relative;
+            img {
+                width: 100%;
+                @include transition (all .3s);
+                &.img-orign {
+                    opacity: 1;
+                }
+                &.img-hover {
+                    position: absolute;
+                    top: 0;
+                    opacity: 0;
+                }   
+            }
+            h2 {
+                height: 40px;
+                line-height: 20px;
+                font-size: 16px;
+                margin: 20px 0;
+                padding: 0 20px;
+                overflow: hidden;
+                @include transition (all .3s);
+            }
+            &:hover {
+                img {
+                    &.img-orign {
+                        
+                    }
+                    &.img-hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    @include MQ(tablet) {
+        margin: 0;
+        padding: 0 2%;
+        .memExclusive {
+            width: 44%;
+            margin: 0 3% 28px;
+            a {
+                padding: 10px 10px 0;
+                img {
+                    &.img-orign {
+                        display: none;
+                    }
+                    &.img-hover {
+                        opacity: 1;
+                        position: relative;
+                    }
+                }
+                h2 {
+                    padding: 0 14px;
+                }
+            }
+        }
+    }
+    @include MQ(mobile) {
+        text-align: center;
+        .memExclusive {
+            width: 87.5%;
+            text-align: left;
+            margin: 0 0 16px;
+            a {
+                h2 {
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.ball-wrap {
+  padding: 20px 0 20px 0;
+    @include MQ(desktop) {
+      padding: 0;
+    }
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+
+/*待體育模組修改衝突login-main即可刪除*/
+#page-header {
+	.login-main {
+		max-width: none;
+		margin: 0;
+	}
+}
+
+.sport-wrap {
+   	@include MQ(desktop) {
+       padding: 0 !important; 
+      } 	   		
+    }	
+

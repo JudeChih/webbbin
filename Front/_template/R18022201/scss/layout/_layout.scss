@@ -1,0 +1,843 @@
+// 基本設定
+html {
+    background-color: #000;
+}
+
+body {
+    position: relative;
+}
+
+
+// 清除浮動
+.clearfix {
+    @include clearfix;
+}
+
+
+// No-scroll
+.no-scroll {
+    @include MQ(tablet) {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+
+
+#mainBody {
+    background-color: #26231C;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    .first & {
+        background-image: image-url("bg_01.png");
+    }
+    .ball & {
+        background-image: image-url("lang/zh-cn/bg_02.png");
+    }
+    .livetop & {
+        background-image: image-url("lang/zh-cn/bg_03.png");
+    }
+    .ltlottery & {
+        background-image: image-url("lang/zh-cn/bg_04.png");
+    }
+    .memberexclusiveii & {
+        background-image: image-url("lang/zh-cn/bg_05.png");
+    }
+    .at1 & {
+        background-image: image-url("lang/zh-cn/bg_06.png");
+    }
+    .game & {
+        background-image: image-url("bg_07.png");
+    }
+    @include MQ(desktop) {
+        background-size: 188% auto;
+        // background-size: 1500px auto;
+        background-position: 50% 32px;
+    }
+    @include MQ(tablet) {
+        background-position: 50% 1%;
+        background-size: 100% auto;
+        .first &,
+        .ball &,
+        .livetop &,
+        .game &,
+        .ltlottery &,
+        .memberexclusiveii &,
+        .at1 & {
+            background-image: none;
+        }
+    }
+}
+
+
+// 遮罩
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    cursor: pointer;
+    @include MQ(tablet) {
+        &.active {
+            display: block;
+        }
+        &.login-active {
+            display: block;
+            z-index: 999;
+        }
+    }
+}
+
+
+// Logo
+.logo {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    z-index: 998;
+    margin-left: -81px;
+    a {
+        display: block;
+        @include bg("logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        z-index: 2;
+        top: 32px;
+        text-align: center;
+        a {
+            display: inline-block;
+        }
+    }
+    @include MQ(mobile) {
+        left: 8.3%;
+        text-align: left;
+        margin-left: 0;
+    }
+}
+
+
+/* --- Header --- */
+
+// Header
+#page-header {
+    position: relative;
+    background-position: center top;
+    background-repeat: no-repeat;
+    .first & {
+        height: auto;
+    }
+    .livetop &,
+    .ball &,
+    .ltlottery &,
+    .at1 & {
+        height: 572px;
+    }
+    .game & {
+        height: auto;
+    }
+    .memberexclusiveii & {
+        height: 600px;
+    }
+    @include MQ(desktop) {
+        .livetop &,
+        .ball &,
+        .ltlottery &,
+        .game &,
+        .at1 &,
+        .memberexclusiveii & {
+            // height: 548px;
+        }
+    }
+    @include MQ(tablet) {
+        .livetop &,
+        .ball &,
+        .ltlottery &,
+        .memberexclusiveii &,
+        .at1 &,
+        .game & {
+            height: auto;
+        }
+    }
+    @include MQ(mobile) {
+        .livetop &,
+        .ball &,
+        .ltlottery &,
+        .memberexclusiveii &,
+        .at1 & {
+            height: auto;
+        }
+    }
+}
+
+.header-main {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    @include MQ(desktop) {
+    }
+    @include MQ(tablet) {
+        padding-top: 0;
+        .first & {
+            padding-top: 180px;
+        }
+        .game & {
+            padding-top: 164px;
+        }
+    }
+    @include MQ(mobile) {
+        .ltlottery & {
+            padding-top: 156px;
+        }
+    }
+}
+
+
+// 導覽列樣式設定（配合版型調整）
+.mainnav-wrap {
+    position: relative;
+    z-index: 201;   // CASINO 的固定選單 z-index 為 200
+    @include layout-max-width;
+    text-align: center;
+    padding-top: 50px;
+    &.active {
+        right: 0;
+    }
+    @include MQ(custom) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 998;
+        width: 100%;
+        height: 100%;
+        background: #403124;
+        text-align: left;
+        padding: 228px 0 0;
+        @include trans(right);
+        // 卷軸樣式變更
+        @include scrollbar();
+        &::before {
+            content: "";
+            position: absolute;
+            top: 32px;
+            left: 50%;
+            z-index: 1;
+            display: block;
+            @include bg("logo.png");
+            margin-left: -81px;
+        }
+    }
+    @include MQ(mobile) {
+        overflow-x: hidden;
+        &::before {
+            left: 8%;
+            margin-left: 0;
+        }
+    }
+}
+
+.mainnav {
+    height: 80px;
+    > ul > li {
+        position: relative;
+        width: 10.8%;
+        height: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        float: left;
+        transition: background .3s ease;
+        > a {
+            position: relative;
+            z-index: 1;
+            display: block;
+            height: 100%;
+            color: $color1;
+            &::after {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: 50%;
+                z-index: 0;
+                display: none;
+                width: 145px;
+                height: 91px;
+                background-image: image-url("nav_over.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-left: -74px;
+                // 因為光暈的緣故，若直接寫於 a 標籤背景，在伸縮時會被裁切
+            }
+        }
+        &.LS-game {
+            margin-right: 13.6%;
+        }
+    }
+    @include MQ(custom) {
+        > ul > li {
+            width: 10%;
+            &.LS-game {
+                margin-right: 20%;
+            }
+        }
+    }
+    @include MQ(desktop) {
+        > ul > li {
+            width: 9.6%;
+            &.LS-game {
+                margin-right: 23.2%;
+            }
+        }
+    }
+    @include MQ(tablet) {
+        height: 100%;
+        background-image: image-url("nav_bg_bottom01.png");
+        background-position: 50% 100%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        padding-bottom: 84px;
+        // 卷軸樣式變更
+        // @include scrollbar();
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            display: block;
+            background-repeat: no-repeat;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            @include bg("nav_bg_top.png");
+        }
+        &::after {
+            bottom: 48px;
+            right: 12px;
+            background-image: image-url("nav_bg_bottom02.png");
+            background-position: 100% 100%;
+            background-size: 100% auto;
+            width: 90%;
+            max-width: 496px;
+            height: 117px;
+        }
+        > ul {
+            display: block;
+            height: 100%;
+            @include scrollbar();
+        }
+        > ul > li {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            line-height: 70px;
+            text-align: center;
+            border-bottom: 1px solid #685238;
+            margin: 0 auto;
+            float: none;
+            > a {
+                position: relative;
+                z-index: 1;
+                padding-left: 32px;
+                &::after {
+                    content: "";
+                    position: static;
+                    display: inline-block;
+                    // vertical-align: middle;
+                    width: 12px;
+                    height: 12px;
+                    margin-left: 20px;
+                    background-image: none;
+                }
+                &.current {
+                    background: image-url("nav_over.png") center no-repeat;
+                    background-position: 50% -60%;
+                    background-size: auto 84px;
+                }
+            }
+            > a.subClick {
+                &::after {
+                    background: image-url("nav_arrow_bg.png");
+                    background-position: 0 0;
+                    opacity: 1;
+                }
+                &.current {
+                    background: none;   // 有次選單則沒有背景圖
+                    &::after {
+                        background-position: -12px 0;
+                    }
+                }
+            }
+            &:hover {
+                background-image: none;
+            }
+            &:last-of-type {
+                border-bottom: 0;
+            }
+            &.LS-game {
+                margin: 0 auto;
+            }
+        }
+    }
+    @include MQ(mobile) {
+        &::before {
+            width: 100%;
+            height: 176px;
+            background-image: image-url("nav_bg_top_m.png");
+            background-position: 50% 0;
+        }
+        &::after {
+            bottom: 36px;
+            right: 0;
+            width: 100%;
+            max-width: none;
+            background-position: 50% 100%;
+        }
+        > ul > li {
+            width: 90%;
+            max-width: 320px;
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        > ul > li {
+            > a {
+                &.current {
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+            &:hover {
+                > a {
+                    &::after {
+                        display: block;
+                    }
+                }
+                .subList {
+                    max-height: 999px;
+                    transition: max-height .3s ease;
+                }
+            }
+        }
+    }
+}
+
+.subList {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    z-index: 10;
+    display: block;
+    width: 150px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease;
+    margin-left: -75px;
+    li {
+        display: block;
+        line-height: 1;
+        a {
+            display: block;
+            color: #F9F3BF;
+            background: #CFB280;
+            padding: 13px 0
+        }
+        &.current,
+        &:hover {
+            a {
+                background: #C29C5C;
+            }
+        }
+    }
+    @include MQ(tablet) {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        margin-left: 0;
+        li {
+            font-size: 14px;
+            a {
+                color: #B49362;
+                background: none;
+            }
+            &.current,
+            &:hover {
+                a {
+                    color: #F9F3BF;
+                    background: #C29C5C;
+                }
+            }
+            &:last-of-type {
+                margin-bottom: 20px;
+            }
+        }
+        &.slidedown {
+            max-height: 999px;
+        }
+    }
+}
+
+
+// 導覽列 RWD 型態時的觸發按鈕
+.btn-nav {
+    display: none;
+    @include MQ(tablet) {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        display: block;
+        @include bg("nav_btn.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    @include MQ(mobile) {}
+}
+
+.btn-member {
+    display: none;
+    @include MQ(tablet) {
+        position: absolute;
+        top: 160px;
+        right: 115px;
+        z-index: 1;
+        display: block;
+        width: 54px;
+        height: 54px;
+        background: image-url("nav_login_btn.png") center no-repeat;
+        border-radius: 100%;
+        border: 2px solid #685238;
+        overflow: hidden;
+        transition: all .3s ease;
+        &:hover {
+            border-color: #5e456b;
+        }
+    }
+}
+
+
+// 關閉按鈕
+.close-btn,
+.ele-popup-account-close {
+    display: none;
+    @include MQ(tablet) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        display: block;
+        @include bg("btn_close.png");
+        cursor: pointer;
+    }
+    @include MQ(mobile) {}
+}
+
+
+// News
+.news-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    .first & {
+        position: static;
+    }
+    .game & {
+        position: static;
+        margin: 20px 0 40px;
+    }
+    @include MQ(desktop) {
+    }
+    @include MQ(tablet) {
+        display: none;
+        .first & {
+            display: block;
+            height: 74px + 64px;
+            // margin-bottom: 64px;
+        }
+    }
+}
+
+.news-main {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 290px 0 130px;
+    .first & {
+        max-width: 960px;
+        padding: 0 20px 0 160px;
+    }
+    .game & {
+        padding: 0 0 0 130px;
+    }
+    @include MQ(custom) {
+        width: 88%;
+        max-width: none;
+    }
+    @include MQ(desktop) {
+        padding: 0 130px;
+    }
+    @include MQ(tablet) {
+        max-width: none;
+        padding: 0 24px;
+        .first & {
+            max-width: none;
+            padding: 0 24px;
+        }
+    }
+    @include MQ(mobile) {}
+}
+
+.news-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    @include bg("lang/zh-cn/news_bg.png");
+    .first & {
+        left: 20px;
+    }
+    @include MQ(tablet) {
+        position: static;
+        margin: 0 auto 16px;
+    }
+}
+
+.news-item {
+    marquee {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    a {
+        font-size: 14px;
+        color: #FEDFD2;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+/* --- Footer --- */
+
+#page-footer {
+    position: relative;
+    z-index: 1;
+    color: #FFF;
+    background: #000;
+    padding-top: 40px;
+}
+
+.footer-main {
+    @include layout-max-width;
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+.footer-txt {}
+
+.footer-txt-title {}
+
+.article-menu,
+.help-menu {
+    line-height: 1;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 36px;
+    a {
+        display: inline-block;
+        color: #FFF;
+        margin: 0 20px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        a {
+            width: 12%;
+            margin: 0;
+        }
+    }
+    @include MQ(mobile) {
+        margin-bottom: 16px;
+        a {
+            width: 22%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.footer-bottom {
+    max-width: 240px;
+    text-align: center;
+    margin: 0 auto;
+    a {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    img {
+        display: block;
+    }
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin: 12px 0 16px;
+}
+
+.footer-info {
+    max-resolution: 960px;
+    text-align: center;
+    margin: 0 auto 16px;
+    padding: 0 16px;
+}
+
+
+/* --- 內頁 --- */
+
+// 內頁主內容
+.page-wrap {
+    position: relative;
+    z-index: 3;
+    @include layout-max-width;
+    .at1 & {
+        width: 93.75%;
+        max-width: 1200px;
+        // border: 2px solid #423324;
+        // box-shadow: 0 0 20px 3px rgba(180, 162, 19, .15), 0 0 20px 3px rgba(180, 162, 19, .15) inset;
+        margin: 0 auto;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            display: block;
+            @include bg("container_bg01.png");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        &::before {
+            top: -83px;
+            left: 80px;
+        }
+        &::after {
+            bottom: -94px;
+            right: 96px;
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        .at1 & {
+            width: 100%;
+            // background: image-url("container_bg02.png") 107% center no-repeat #1E1C15;
+            padding: 0 24px;
+            &::before {
+                left: 32px;
+            }
+            &::after {
+                right: 28px;
+            }
+        }
+    }
+    @include MQ(mobile) {}
+}
+
+.page-main {
+    position: relative;
+    .at1 & {
+        background: #1E1C15;
+        border: 2px solid #423324;
+        box-shadow: 0 0 20px 3px rgba(180, 162, 19, .15), 0 0 20px 3px rgba(180, 162, 19, .15) inset;
+        padding: 60px 6.6% 60px 4%;
+    }
+    @include MQ(tablet) {
+        .at1 & {
+            padding: 36px 24px 24px;
+        }
+    }
+}
+
+// 內頁標題
+.page-title {
+    img {
+        display: none;
+        width: 100%;
+            max-width: none;
+    }
+    @include MQ(tablet) {
+        padding-top: 90px;
+        img.tablet {
+            display: block;
+        }
+        .first & {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            padding-top: 70px;
+        }
+    }
+    @include MQ(mobile) {
+        img.tablet {
+            display: none;
+        }
+        img.mobile {
+            display: block;
+        }
+        .first & {
+            padding-top: 90px;
+        }
+        .ltlottery & {
+            display: none;
+        }
+    }
+}
+
+
+// 內頁共通樣式變更
+#page-container {
+    position: relative;
+    padding-bottom: 36px;
+    @include MQ(tablet) {
+        top: -60px;
+        padding-bottom: 0;
+        .first & {
+            top: 0;
+            padding-bottom: 60px;
+        }
+        .game & {
+            top: 0;
+        }
+    }
+    @include MQ(mobile) {
+        top: 0;
+        padding-bottom: 50px;
+        .memberexclusiveii & {
+            top: -160px;
+            padding-bottom: 0;
+        }
+        .at1 & {
+            top: -140px;
+            padding-bottom: 0;
+        }
+    }
+}

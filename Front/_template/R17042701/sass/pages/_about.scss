@@ -1,0 +1,111 @@
+.about {
+    .header-bg01 {
+        background-image: url(../image/about_bg.png);
+    }
+    @include MQ(tablet) {
+        .header-bg01 {
+            background-image: url(../image/about_bg_m.png);
+        }
+    }
+}
+
+.about-title {
+    display: none;
+    @include MQ(tablet) {
+        position: relative;
+        display: block;
+        text-align: center;
+        font-size: 32px;
+        color: #878787;
+        margin: 0 0 56px;
+        span {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #878787;
+            margin: 0 0 0 -50px;
+        }
+    }
+}
+
+.page-sidebar {
+    position: relative;
+    display: block;
+    width: 228px;
+    height: 100%;
+    float: left;
+    ul {
+        display: block;
+        min-height: 550px;
+        height: 100%;
+        background: #333;
+        padding: 64px 0 40px;
+    }
+    li {
+        display: block;
+        text-align: center;
+        line-height: 4.6;
+        font-size: 13px;
+        a {
+            display: block;
+            color: #FFF;
+            &:hover,
+            &.active {
+                color: #FFD200;
+            }
+        }
+    }
+    @include MQ(tablet) {
+        display: none;
+    }
+}
+
+.page-sidebar-top,
+.page-sidebar-bottom {
+    position: relative;
+    display: block;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page-sidebar-top {
+    background-image: url(../image/about_nav_bg_top.png);
+}
+
+.page-sidebar-bottom {
+    position: absolute;
+    bottom: -68px;
+    display: block;
+    width: 100%;
+    height: 43px;
+    background-image: url(../image/about_nav_bg_bottom.png);
+    background-position: center bottom;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 36px;
+        background: #333;
+    }
+}
+
+.page-right {
+    line-height: 2;
+    font-size: 13px;
+    color: #333;
+    padding: 100px 24px 64px 274px;
+    @include MQ(tablet) {
+        padding: 30px 48px 0 48px;
+    }
+    @include MQ(mobile) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

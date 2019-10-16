@@ -1,0 +1,130 @@
+.first-slider {
+    position: relative;
+    top: 0;
+    z-index: 0;
+    list-style: none;
+    width: 100%;
+    height: 680px;
+    overflow: hidden;
+    li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        width: 100%;
+        height: 540px;
+        background-position: center;
+        background-size: 1024px auto;
+        background-repeat: no-repeat;
+        -webkit-backface-visibility: hidden;
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        float: left;
+    }
+    @include MQ(custom) {
+        li {
+            background-size: 960px auto;
+        }
+    }
+    @include MQ(desktop) {
+        overflow: visible;
+        li {
+            background-size: 90% auto;
+        }
+    }
+    @include MQ(tablet) {
+        height: 616px;
+        li {
+            height: 616px;
+            background-position: center;
+        }
+    }
+    @include MQ(mobile) {
+        height: 480px;
+        li {
+            height: 480px;
+            background-size: 96% auto;
+        }
+    }
+}
+
+.first-slider-ctrl {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+    li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    img {
+        display: block;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.first-slider-ctrl-nav {
+    position: relative;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    width: 1024px;
+    height: 135px;
+    margin: 0 auto;
+    @include MQ(desktop) {
+        bottom: 10px;
+    }
+    @include MQ(tablet) {
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 0;
+    }
+    @include MQ(mobile) {
+        bottom: -4px;
+    }
+}
+
+.first-slider-ctrl-btn {
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    z-index: 3;
+    width: 58px;
+    height: 85px;
+    text-indent: -9999px;
+    background-image: url(../image/slider_arrow.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    overflow: hidden;
+    &.next {
+        top: 0;
+        bottom: auto;
+        left: 70px;
+        background-position: -58px 0;
+    }
+    @include MQ(tablet) {
+        position: relative;
+        left: 0;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 52px 4px 0 0;
+        &.next {
+            left: 0;
+            margin: 0 0 52px;
+        }
+    }
+}

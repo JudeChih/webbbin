@@ -1,0 +1,192 @@
+/* --- 首頁輪播 --- */
+
+@if $first-slider==true {
+    .ele-slideshow-wrap {
+        position: relative;
+        // z-index: 2;
+        top: -98px;
+        width: 100%;
+        height: $first-height;
+        ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            li {
+                position: absolute;
+                left: 0;
+                top: -65px;
+                width: 100%;
+                a {
+                    display: block;
+                    .img {
+                        width: 100%;
+                        height: 690px;
+                        background-size: 740px;
+                        background-position: right 26px;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+        @include MQ(desktop) {
+            ul {
+                li {
+                    a {
+                        .img {
+                            background-size:  690px;
+                            background-position: 128% 26px;
+                        }
+                    }
+                }
+            }
+        }
+        @include MQ(tablet) {
+            height: 511px;
+            ul {
+                li {
+                    top: -32px;
+                    a {
+                        .img {
+                            background-size:  560px;
+                            background-position: 112% 0;
+                        }
+                    }
+                }
+            }
+        }
+        @include MQ(mobile) {
+            ul {
+                li {
+                    top: -29px;
+                    a {
+                        .img {
+                            background-size:  540px;
+                            background-position: 85% 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ele-slideshow-scroll {
+        // overflow: hidden;
+        pointer-events: none;
+        position: absolute;
+        margin: 0 auto;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    // 左右箭頭
+    .ele-slideshow-arrow-wrap {
+        position: absolute;
+        bottom: 36px;
+        left: 82%;
+        .ele-slideshow-arrow {
+            position: absolute;
+            z-index: 9;
+            top: auto !important;
+            width: 72px;
+            height: 72px;
+            padding: 10px;
+            box-shadow: 0 0 5px 3px rgba(0,0,0,0.20);
+            i {
+                display: block;
+                width: 52px;
+                height: 52px;
+                background: url(../image/slider_arrow.png) no-repeat;
+            }
+            // opacity: 0.5;
+            &.ele-slideshow-arrow-left {
+                bottom: -52px;
+                right: 7px;
+                background-color: #C0C0C0;
+            }
+            &.ele-slideshow-arrow-right {
+                background-color: #EE3E42;    
+                i {
+                    background-position: -52px 0;
+                }            
+
+            }
+            &:hover {
+                // opacity: 1;
+            }
+        }
+        @include MQ(tablet) {
+            left: 50%;
+        }
+        @include MQ(mobile) {}
+    }
+    // 圓點控制項的框架
+    // .js-ele-slideshow-control-wrap {
+    //     position: absolute;
+    //     bottom: 10px;
+    //     z-index: 9;
+    // }
+    // 圓點控制項的按鈕風格
+    .ele-slideshow-nav {
+        >a {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            // background: image-url("slider_ctrl.png") 0 0 no-repeat;
+            margin: 0 4px;
+            &.active {
+                background-position: -12px 0;
+            }
+        }
+    }
+
+
+    .ele-slideshow-text-wrap {
+        position: absolute;
+        z-index: 2;
+        width: 66%;
+        bottom: 0;
+        @include MQ(desktop) {
+            bottom: 32px;
+        }
+        @include MQ(tablet) {
+            width: 98%;
+            max-width: 500px;
+            left: 4px !important;
+        }
+        @include MQ(mobile) {
+            display: none;
+        }
+    }
+    
+    .ele-slideshow-text {
+        position: absolute;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        z-index: 1;
+    }
+    
+    .ele-slideshow-text-wrap .ele-text-position0 {
+        left: -200px;
+        top: auto !important;
+        bottom: 10px;
+        @include MQ(tablet) {
+            bottom: -32px;
+        }
+        @include MQ(mobile) {}
+    }
+    
+    
+    /*left*/
+    
+    .ele-slideshow-text-wrap .ele-text-position1 {
+        left: 200px;
+        top: auto !important;
+        bottom: 10px;
+        @include MQ(tablet) {
+            bottom: -28px;
+        }
+        @include MQ(mobile) {}
+        
+    }
+}
+else {}

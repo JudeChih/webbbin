@@ -1,0 +1,5 @@
+.live-wrap {
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}

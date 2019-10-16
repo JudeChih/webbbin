@@ -1,0 +1,7 @@
+.page-lottery-wrap {
+    @extend .page-wrap;
+    @extend .page-ins-wrap;
+    @include MQ(tablet) {
+        float: left;
+    }
+}

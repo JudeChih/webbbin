@@ -1,0 +1,117 @@
+.game {
+	.page-bg {
+		min-height: 1050px;
+		background: url(../image/game_bg.jpg) #1F1E2E;
+		background-repeat: no-repeat;
+    	background-position: center top;
+	}
+	.page-main {
+		padding: 380px 0 0;
+	}
+	.page-title {
+		max-width: 350px;
+		h2 {
+			text-align: right;
+			padding-right: 50px;
+		}
+		&::before {
+			right: auto;
+			left: -100px;
+		}
+		&::after {
+			left: 20px;
+			background-image: url(../image/game_title.png);
+			background-size: 336px auto;
+		}
+	}
+	.footer-bg {
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			top: -210px;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 210px;
+			background: $navy;
+		}
+	}
+	.footer-content {
+		margin-top: -70px;
+	}
+	.footer-link {
+		position: relative;
+		text-align: center;
+	}
+	.footer-bottom {
+		margin-top: 70px;
+	}
+	@include MQ(custom) {
+		.footer-content {
+			margin-top: -30px;
+		}
+		.footer-bottom {
+			margin-top: 30px;
+		}
+	}
+	@include MQ(tablet) {
+		.footer-bg {
+			margin: 0;
+			padding: 40px 0 0;
+			&::before {
+				/*top: -60px;
+				height: 60px;*/
+				display: none;
+			}
+		}
+		.footer-link {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+}
+
+.game-wrap {
+	width: 100%;
+}
+
+/* --- 模組調整 --- */
+.game {
+	.fixed-header .container {
+		padding: 0 !important;
+	}
+	@include MQ(tablet) {
+		.header-bg {
+			top: 0 !important;
+		}
+	}
+	.dialog-content {
+		margin: -285px 0 0 -160px !important;
+	}
+}
+
+.game-layout {
+	z-index: 1;
+	width: 98% !important;
+	@include MQ(custom) {
+		padding-bottom: 140px !important;
+	}
+}
+
+.game-menu-filter {
+	h2, span {
+		color: #fff !important;
+	}
+}
+
+.game-box-view li i {
+	color: #9E9E9E !important;
+}
+
+.game-box-view li a:hover i,
+.game-box-view li a:focus i,
+.game-box-view li a:active i,
+.game-box-view li a.active i {
+	color: $red-base !important;
+}

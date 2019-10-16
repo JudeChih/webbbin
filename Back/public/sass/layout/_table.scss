@@ -1,0 +1,322 @@
+.table {
+    //編輯樣板表單
+    &-template-edit {
+        border-collapse: collapse;
+        width: 100%;
+        .date-input {
+            padding-left: 35px;
+        }
+        .isbannerimg,.isviewimg{
+            .check_unit{
+                font-size:0;
+                input{
+                    font-size:13px;
+                }
+                button{
+                    vertical-align: top;
+                }
+            }
+        }
+        .table-copy-btn{
+            font-size:0;
+            input{
+                font-size:13px;
+            }
+            button{
+                    vertical-align: top;
+                }
+        }
+        label.date-icon {
+            position: relative;
+            &:after {
+                position: absolute;
+                left: 15px;
+                top: -12px;
+                content: '\f073';
+            }
+        }
+        td {
+            vertical-align: middle;
+            border: 1px solid #e1e6f0;
+            padding: 8px 15px;
+        }
+        tr.temp-title td {
+            line-height: 60px;
+            padding: 0 20px;
+            background: #f2f6fc;
+            width: 100%;
+            text-align: left !important;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        tr td:first-child {
+            padding: 0 15px;
+            line-height: 60px;
+            width: 220px;
+            text-align: right;
+        }
+        tr:nth-child(even) {
+            background: #f5f7fa;
+        }
+        tr:last-child {
+            background: none;
+            td {
+                padding-top: 30px;
+                background: none;
+                border: none;
+            }
+        }
+        .color {
+            cursor: pointer;
+            margin-right: 15px;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 400px;
+            height:35px;
+            margin-right: 10px;
+            @include MQ(custom) {
+                width: 220px;
+            }
+        }
+        textarea {
+            @include border-radius(3px);
+            border: 1px solid #e1e6f0;
+            width: 400px;
+            height: 120px;
+            padding: 5px 15px;
+            text-align: left;
+            font-size:13px;
+        }
+        &-add {
+            margin-bottom: 8px;
+            font-size:0;
+            input,
+            a {
+                float: left;
+            }
+            input {
+                font-size:13px;
+            }
+            a {
+                margin-top: 2px;
+            }
+        }
+    }
+    &-copy-btn {
+        height:45px;
+        padding-top: 10px;
+        span:before {
+            content: '\f0c5';
+        }
+    }
+    //table:編輯 使用者資料表單
+    &-order {
+        border-collapse: collapse;
+        width: 100%;
+        td {
+            border: 1px solid #e1e6f0;
+            padding: 8px 15px;
+            //line-height: 20px;
+        }
+        tr:nth-child(even) {
+            background: #f5f7fa;
+        }
+        tr>td:first-child {
+            width: 220px;
+            height: 42px;
+            line-height: 42px;
+            text-align: right;
+        }
+        tr.table-sepa td {
+            border-top: 2px solid #e1e6f0;
+        }
+        tr:last-child {
+            background: none;
+            td {
+                padding-top: 20px;
+                background: none;
+                border: none;
+            }
+        }
+        span {
+            color: #676ea5;
+        }
+        input[type="text"],input[type="password"] {
+            width: 250px;
+        }
+        p,
+        label,
+        input[type="radio"] {
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        p {
+            margin-right: 20px;
+        }
+        input[type="radio"] {
+            margin-top: 0px;
+        }
+    }
+    &-enable,
+    &-disable {
+        @include transition-property(background, border, color);
+        @include transition-duration(.3s);
+        @include transition-timing-function(ease-in);
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        min-width: 80px;
+        height: 35px;
+        line-height: 35px;
+        background: #ffffff;
+        border: 1px solid #e1e6f0;
+        color: #525866;
+        margin-right: -4px;
+        &:hover {
+            color: #676ea5 !important;
+            border: 1px solid #676EA5 !important;
+            background: #fff !important;
+        }
+    }
+    &-enable {
+        @include border-radius(3px 0 0 3px);
+        &.table-active {
+            border: 1px solid #676EA5;
+            background: #676ea5;
+            color: #ffffff;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+    &-disable {
+        @include border-radius(0 3px 3px 0);
+        margin-right: 0;
+        &.table-active {
+            border: 1px solid #c3cada;
+            background: #c3cada;
+            color: #fff;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+    //table 使用者列表 & 紀錄列表
+    &-list {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 15px;
+        .tLeft {
+            text-align: left;
+        }
+        td {
+            color: #525866;
+            border: 1px solid #e1e6f0;
+            padding: 15px 10px;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        thead td {
+            background: #f2f6fc;
+            line-height: 30px;
+            text-align: center;
+        }
+        &-user td {
+            //使用者列表
+            &.tNum {
+                //序號
+                width: 8%;
+            }
+            &.tName {
+                //名稱
+                width: 14%;
+            }
+            &.tId {
+                //帳號
+                width: 11%;
+            }
+            &.tPw {
+                //密碼
+                width: 11%;
+            }
+            &.tPer {
+                //權限
+                width: 11%;
+            }
+            &.tStaut {
+                //狀態
+                width: 11%;
+            }
+            &.tDate {
+                //最後一次登入
+                width: 16%;
+            }
+            &.tEdit {
+                //編輯
+                width: 18%;
+            }
+        }
+        &-modify td {
+            &.tNum {
+                //序號
+                width: 10%;
+            }
+            &.tAct {
+                //動作
+                width: 15%;
+            }
+            &.tCon {
+                //內容
+                width: 45%;
+            }
+            &.tUser {
+                //操作者
+                width: 15%;
+            }
+            &.tDate {
+                //時間
+                width: 15%;
+                min-width: 145px;
+            }
+        }
+        &-login-record td {
+            &.tUser {
+                //操作者
+                width: 35%;
+            }
+            &.tDate {
+                //時間
+                width: 65%;
+            }
+        }
+        tbody tr:nth-child(even) {
+            background: #f5f7fa;
+        }
+        tbody td {
+            &.tLink {
+                padding: 3px; //10
+                a {
+                    margin: 5px;
+                }
+            }
+        }
+    }
+    &-login-width {
+        //登入紀錄表格寬度設定
+        width: 620px;
+    }
+    &-username>a {
+        color: #676ea5;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.hide_or_show{
+    overflow: hidden;
+}

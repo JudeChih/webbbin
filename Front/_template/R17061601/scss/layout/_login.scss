@@ -1,0 +1,472 @@
+/* --- 登入前 色彩管理 --- */
+@include login-color(
+    $btn-font: #868695,          //登入按鈕的字色
+    $btn-bg  : #343244,        //登入按鈕的背景色
+    $link    : #999,          //忘記密碼與加入會員的預設字色
+    $alink   : #999           //忘記密碼與加入會員的連結字色
+);
+
+/* --- 登入後 色彩管理 --- */
+@include meminfo-color(
+    $info-font              : #fff,       //帳號、餘額列的字色
+    $info-icon              : #FFF,       //帳號、餘額列加號的顏色
+
+    $balance-bg             : #333,       //餘額視窗的背景色
+    $balance-font           : #999,       //餘額視窗個餘額的字色
+    $balance-bottom         : #666,       //餘額視窗下方背景色
+    $balance-btn-font       : #FFF,       //餘額轉換按鈕的字色
+    $balance-btn-bg         : #333,       //餘額轉換按鈕的背景色
+
+    $member-border-color    : #FFF,       //連結列的邊線顏色
+    $member-font            : #FFF,       //連結列的字色
+
+    $btn-font               : #FFF,       //TABLET 側選單-按鈕字色
+    $btn-font-h             : #fff,       //TABLET 側選單-按鈕字色:hover
+    $btn-mem-bg             : #363544,        //TABLET 側選單-會員中心按鈕
+    $btn-switch-bg          : #363544,       //TABLET 側選單-額度轉換按鈕
+    $btn-logout-bg          : #363544       //TABLET 側選單-登出按鈕
+);
+
+//====== 登入前與登入後框架
+.login-wrap,
+.meminfo-wrap {
+    //@include layout-max-width;
+    width: 100%;
+    height: auto;
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        background-color: #363544;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 998;
+        width: 100%;
+        height: 100%;
+        
+        // overflow-y: scroll;
+        overflow-y: auto;
+        overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
+        margin: 60px 0 0 0;
+        // padding: 60px 0 0;
+        padding: 60px 0;
+        //卷軸樣式變更
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-track {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgba(37, 111, 191, 1);
+        }
+        @include trans(right);
+        &.active {
+            right: 0;
+        }
+    }
+}
+
+//====== 登入前
+.login-main {
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        text-align: center;
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 登入前輸入框 --- */
+.login-unit {
+        float: left;
+        width: 165px;
+        height: 30px;
+        display: block;
+        background: url(../image/loginbar_01.png) top center no-repeat;
+        margin: 0 0 10px 10px;
+          @include MQ(tablet) {
+          float: none;
+          margin: 0 auto 30px auto;
+          width: 380px;
+          height: 40px; 
+          background: url(../image/loginbar_t.png) top center no-repeat; 
+          }
+          @include MQ(mobile) {
+          float: none;
+          margin: 0 auto 30px auto;
+          width: 250px;
+          height: 40px; 
+          background: url(../image/loginbar_m.png) top center no-repeat; 
+          }
+    input {
+            float: left;
+            @include font-txt(12px,30px,#fff);
+            width: 155px;
+            height: 30px;
+            border: none;
+            background-color:transparent;//輸入框背景透明
+            margin-left: 10px;
+              @include MQ(tablet) {
+              width: 370px;
+              height: 40px; 
+              font-size: 15px; 
+              }
+              @include MQ(mobile) {
+              font-size: 15px;
+              width: 240px;
+              height: 40px;  
+              }
+    }
+}
+
+.login-unit-chk{
+    float: left;
+    width: 120px;
+    height: 30px;
+    display: block;
+    background: url(../image/loginbar_02.png) top center no-repeat; 
+    @include MQ(tablet) {
+          float: none;
+          margin: 0 auto 30px auto;
+          width: 380px;
+          height: 40px; 
+          background: url(../image/loginbar_t.png) top center no-repeat; 
+          }
+          @include MQ(mobile) {
+          float: none;
+          margin: 0 auto 30px auto;
+          width: 250px;
+          height: 40px; 
+          background: url(../image/loginbar_m.png) top center no-repeat; 
+          }
+    input {
+            float: left;
+            @include font-txt(12px,30px,#fff);
+            width: 155px;
+            height: 30px;
+            border: none;
+            background-color:transparent;//輸入框背景透明
+            margin-left: 10px;
+              @include MQ(tablet) {
+              font-size: 15px;
+              width: 370px;
+              height: 40px;  
+              }
+              @include MQ(mobile) {
+              font-size: 15px;
+              width: 240px;
+              height: 40px;  
+              }
+    }  
+    }
+
+/* --- 登入前按鈕 --- */
+.login-submit {
+    display: inline-block;
+    vertical-align: middle;
+    width: 85px;
+    line-height: 30px;
+    border:#666666 1px solid;
+    text-align: center;
+    float: left;
+    margin: 0 0 10px 20px;
+    @include MQ(tablet) {
+        float: none;
+        font-size: 16px;
+        color: #3BDFAD;
+        margin: 0 auto 30px auto;
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        border:#3BDFAD 1px solid;
+    }
+}
+/* --- 登入後按鈕 --- */
+.logout-submit {
+    display: inline-block;
+    vertical-align: middle;
+    width: 85px;
+    line-height: 30px;
+    border:#666666 1px solid;
+    text-align: center;
+    float: left;
+    margin: 0 0 10px 20px;
+    @include MQ(tablet) {
+        display: none;
+    }
+}
+
+/* --- 登入前其他連結（忘記密碼與加入會員） --- */
+.login-link {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 10px;
+    float: left;
+    @include font-txt(12px,30px);
+    @include MQ(tablet) {
+        float: none;
+        font-size: 15px;
+        line-height: 60px; 
+        display: block;
+        width: 54%;
+        border-top:#666666 1px solid;
+        margin: 0 auto 0 auto;
+        display: block;
+        text-align: center;
+
+        @include MQ(mobile) {
+          width: 80%;  
+        }
+    }
+    
+}
+
+
+
+//====== 登入後
+.meminfo-main {
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+/* --- 登入後資訊列（帳號、餘額） --- */
+.mem-info {
+    float: left;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    margin: 6px 10px 0 15px;
+    .ele-acc-name,
+    .ele-acc-unit,
+    .ele-obalance-wrap {
+        display: inline-block;
+    }
+    .ele-acc-unit {
+        position: relative;
+    }
+    .ele-obalance-wrap {
+        cursor: pointer;
+    }
+    @include MQ(tablet) {
+        display: block;
+        float: none;
+        width: 100%;
+        max-width: 410px;
+        height: auto;
+        margin: 40px auto;
+        padding: 0 0 12px;
+        font-size: 16px;
+        line-height: 1;
+        text-align: left;
+        border-bottom: #666 1px solid; 
+        .ele-acc-name,
+        .ele-acc-unit {
+            display: block;
+            width: 100%;
+            max-width: 174px;
+            margin: 0 auto 28px;
+        }
+        .ele-obalance-wrap {
+            font-size: 20px;
+            margin-left: 12px;
+        }
+    }
+    @include MQ(mobile) {
+        max-width: 260px;
+    }
+}
+
+/* --- 登入後餘額視窗 --- */
+.ele-obalance-item-wrap {
+    position: absolute;
+    left: 0;
+    z-index: 990;
+    // display: none;
+    display: block;
+    width: 270px;
+    max-height: 0;
+    transition: max-height .5s ease;
+    overflow: hidden;
+    ul {
+        display: block;
+        padding: 16px;
+    }
+    li {
+        display: block;
+        text-align: left;
+        height: 24px;
+        span{
+            display: block;
+            width: 90px;
+            float: left;
+        }
+        strong{
+            display: block;
+            width: 70px;
+            float: left;
+            color: #fff;
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        .ele-acc-unit:hover & {
+            max-height: 999px;
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        position: static;
+        width: 174px;
+        background: none;
+        margin: 30px auto 0;  
+        ul {
+            width: 100%;
+            padding: 0;
+        }
+        li{
+            line-height: 1;
+            font-size: 15px;
+            color: #858594;
+            margin: 0 0 20px;
+            span{
+                display: inline-block;
+                width: auto;
+                float: none;
+            }
+            strong{
+                display: inline-block;
+                width: auto; 
+                color: #858594;
+                float: none;
+            }
+            &.last {
+                margin: 0;
+            }
+        }
+        &.active {
+            max-height: 999px;
+            transition: max-height 1s ease;
+        }
+    }
+}
+
+/* --- 登入後餘額轉換的按鈕 --- */
+.ele-balance-tool {
+    text-align: right;
+    padding: 4px;
+    a {
+        display: inline-block;
+        width: 80px;
+        text-align: center;
+        padding: 4px 8px;
+
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        display: none;
+    }
+}
+
+/* --- 登入後會員操作列 --- */
+.SU-Menual {
+    float: left;
+    //height: 30px;
+    margin: 4px 0 0 0;
+    li {
+        display: inline-block;
+        line-height: 1;
+        border-right:#7D7D7F 1px solid;
+        padding: 0 14px;
+        height: 12px;
+        &.first {
+            padding-left: 0;
+        }
+        &.last {
+            border-right: 0;
+            padding-right: 0;
+        }
+        a {
+            display: block;
+            @include font-txt(12px,12px,#7D7D7F,left);
+            &:hover{
+             @include font-txt(12px,12px,#fff,left);   
+            }
+        }
+        .out{
+            float: left;
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        display: none;
+    }
+}
+
+/* --- 登入後 RWD 選單底部 --- */
+.meminfo-tool {
+       display: none;
+    @include MQ(tablet) {
+        display: block;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto 40px;
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 登入後 RWD 選單的按鈕 --- */
+[class*="meminfo-btn-"] {
+    display: none;
+    @include MQ(tablet) {
+        display: block;     
+    }
+}
+
+.meminfo-btn-mem{
+    width: 250px;
+    margin: 0 auto;
+  a {
+    display: block;
+    width: 250px;
+    line-height: 40px;
+    text-align: center;
+    background: url(../image/meminfo_btn_mem.png) top center no-repeat;
+    }
+   } 
+
+.meminfo-btn-switch{
+    float: left;
+    width: 46%;
+   a {
+    display: block;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    border:#fff 1px solid;
+    } 
+}
+
+.meminfo-btn-logout{
+    float: right;
+    width: 46%;
+   a {
+    display: block;
+    width: 100%;
+    color: #3BDFAD;
+    line-height: 40px;
+    text-align: center;
+    border:#3BDFAD 1px solid;
+    } 
+}
+
+.login_lang{
+    display: block;
+    float: left;
+    width: 220px;
+    @include MQ(tablet) {
+       width: 100%;
+    } 
+}

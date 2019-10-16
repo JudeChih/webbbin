@@ -1,0 +1,81 @@
+/* --- 文案頁 色彩管理 --- */
+
+// @include madvertis-color( $sidebar-bg: #444, //測選單背景色
+// $sidebar-font: #FFF, //項目字色
+// $sidebar-font-h: #EC3E40, //項目字色:hover
+// $tablet-title-font: #FFF, //TABLET 以下選單的目前頁面標題字色
+// $tablet-title-bg: #000, //TABLET 以下選單的目前頁面標題背景色
+// $right-bg: #FFF, //文案內容-右側款背景色
+// $left-bg: #FFF //文案內容-左側款背景色
+// );
+
+/* --- 文案頁側邊選單 --- */
+
+.page-sidebar {
+    height: 80px;
+    background-color: #CDD1D8;
+    ul {
+        padding-top: 30px;
+        text-align: center;
+    }
+    li {
+        display: inline-block;
+        a {
+            display: block;
+            margin: 0 12px;
+            font-size: 14px;
+            line-height: 50px;
+            @include alink {
+                color: #754DBD;
+            }
+        }
+    }
+    @include MQ(desktop) {
+        h2 {}
+    }
+    @include MQ(tablet) {
+        display: none;
+    }
+    @include MQ(mobile) {}
+}
+
+
+/* --- 文案左側內容 --- */
+
+.page-article {
+    display: block;
+    padding-top: 36px;
+    color: #000;
+    text-align: center;
+    .case-article-title {
+        display: inline-block;
+        margin: 13px 0;
+        height: 10px;
+        width: 200px;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 10px;
+        background-color: #ff8e65;
+    }
+    .article-content {
+        padding-top: 16px;
+        margin: auto;
+        max-width: 750px;
+    }
+    p {
+        margin-bottom: 32px;
+        line-height: 32px;
+    }
+    @include MQ(tablet) {
+        .article-content {
+            max-width: 580px;
+            text-align: left;
+            font-size: 15px;
+        }
+    }
+    @include MQ(mobile) {
+        .article-content {
+            max-width: 390px;
+        }
+    }
+}

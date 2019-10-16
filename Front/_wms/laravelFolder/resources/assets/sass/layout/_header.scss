@@ -1,0 +1,67 @@
+.header-wrap {
+    border-bottom: 1px solid #CCC;
+    padding: 24px 32px;
+}
+
+.header-mode,
+.header-sort {
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    h2 {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        color: $color-1;
+        margin: 0 8px 0 0;
+    }
+}
+
+.header-mode {
+    button {
+        display: inline-block;
+        vertical-align: middle;
+        width: 32px;
+        text-align: center;
+        font-size: 24px;
+        color: $color-1;
+        &:hover {
+            color: $color-1-dark;
+        }
+    }
+}
+
+.header-sort {
+    margin: 0 0 0 32px;
+    select {
+        display: inline-block;
+        vertical-align: middle;
+        width: 160px;
+        height: 32px;
+        border: 1px solid $color-1;
+        @include appearance(menulist);
+    }
+    option {
+        background: #EEE;
+    }
+}
+
+.header-search {
+    border: 1px solid $color-1;
+    float: right;
+    input {
+        display: inline-block;
+        vertical-align: middle;
+        width: 240px;
+        height: 32px;
+        border: 0;
+        padding: 0 0 0 16px;
+    }
+    i {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 24px;
+        color: $color-1;
+        margin: 0 8px 0 4px;
+    }
+}

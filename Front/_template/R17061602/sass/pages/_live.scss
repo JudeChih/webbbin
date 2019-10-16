@@ -1,0 +1,13 @@
+.page-live-wrap {
+    @extend .page-wrap;
+    @extend .page-ins-wrap;
+    @include MQ(desktop) {
+        padding: 60px 0 0;
+    }
+    @include MQ(tablet) {
+        float: left;
+    }
+    @include MQ(mobile) {
+        padding: 0;
+    }
+}

@@ -1,0 +1,510 @@
+* {
+    @include box-sizing(border-box);
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    font-family: $font-family;
+    line-height: $light-height;
+    font-size: 16px;
+}
+
+a {
+    @include trans(color);
+    // @include trans(background);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* --- Clearfix --- */
+
+.clearfix {
+    @include clearfix;
+}
+
+
+/* --- No-scroll --- */
+
+.no-scroll {
+    @include MQ(tablet) {
+        overflow: hidden;
+        height: 100vh;
+    }
+}
+
+
+/* --- Display no & show --- */
+
+.no-display {
+    display: none !important;
+}
+
+.show-display {
+    display: block !important;
+}
+
+#mainBody {
+    .first & {
+        width: $custom;
+        margin: 0 auto;
+    }
+    @include MQ(custom) {
+        .first & {
+            width: 100%;
+        }
+    }
+    @include MQ(tablet) {
+        .first & {
+            margin: 0;
+        }
+        @include trans(margin);
+    }
+}
+
+// RWD整體區域向右移動
+.body-move {
+    @include MQ(tablet) {
+        //平板時，空出位置給導覽列
+        margin-left: 250px !important; /* 因為 #mainBody 已設置 margin 值，不得已使用 !important 強推 */
+    }
+    @include MQ(mobile) {
+        //手機時，空出位置給導覽列
+        margin-left: 200px !important;
+    }
+}
+
+// -- 內頁wrap 1000px -- //
+#page-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    .first & {
+        position: relative;
+        float: left;
+        width: 80%;
+    }
+    @include MQ(tablet) {
+        .first & {
+            width: 100%;
+        }
+    }
+}
+
+//主要給footer header用
+.page-wrap {
+    width: 1000px;
+    position: relative; //為了內頁的logo對位置
+    margin: 0 auto;
+    @include MQ(custom) {
+        width: 100%;
+        max-width: 1000px;
+    }
+    @include MQ(tablet) {
+        @include trans(margin);
+        margin: 0;
+    }
+}
+
+// -- 內頁細節調整 -- //
+.page-ins-wrap {
+    max-width: 960px;
+    padding: 60px 0 100px;
+    @include MQ(custom) {
+        max-width: 960px;
+    }
+    @include MQ(desktop) {
+        padding-top: 0;
+    }
+    @include MQ(tablet) {
+        width: 100%;
+        padding: 60px 0 0;
+    }
+}
+
+// -- 首頁/內頁寬度 -- //
+#mainBody {
+    width: 100%;
+}
+
+//首頁右上背景
+.sideRightBg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 900px;
+    width: 50%;
+    background: #d6d8db;
+    @include MQ(tablet) {
+        height: 700px;
+    }
+}
+
+//內頁導覽列
+.page-side {
+    @include MQ(tablet) {
+        position: relative;
+        margin-left: -250px;
+        float: left;
+        width: 250px;
+    }
+    @include MQ(mobile) {
+        width: 200px;
+        margin-left: -200px;
+    }
+    .page-side-fixed {
+        @include MQ(tablet) {
+            width: 250px;
+        }
+        @include MQ(mobile) {
+            width: 200px;
+        }
+    }
+    .page-side-fixed-actice {
+        @include MQ(tablet) {
+            position: fixed;
+            top: 0;
+            width: 250px;
+        }
+        @include MQ(mobile) {
+            width: 200px;
+        }
+    }
+}
+
+// 右邊內容
+.first-content {
+    position: relative;
+    float: left;
+    width: 80%;
+    //border: 1px solid #000;
+    @include MQ(tablet) {
+        width: 100%;
+    }
+}
+
+// nav 導覽按鈕設定
+.first #page-container .btn-side-m,
+.page-wrap .btn-side-m {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    p {
+        cursor: pointer;
+    }
+    @include MQ(tablet) {
+        cursor: pointer;
+        display: block;
+        width: 150px;
+        height: 150px;
+        background: #FFF;
+        .mobile-nav-btn,
+        .mobile-close-btn {
+            display: block;
+            position: relative;
+            height: 100%;
+            span {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                display: block;
+                background: #777;
+                width: 25px;
+                height: 1px;
+                &.page-nav-btn-line1 {
+                    transform: translateX(-50%) translateY(-500%);
+                }
+                &.page-nav-btn-line2 {
+                    transform: translateX(-50%) translateY(0%);
+                }
+                &.page-nav-btn-line3 {
+                    transform: translateX(-50%) translateY(500%);
+                }
+            }
+        }
+        .mobile-close-btn {
+            display: none;
+            span {
+                background: #FFF;
+                &.page-nav-btn-line1 {
+                    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                }
+                &.page-nav-btn-line2 {
+                    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+                }
+            }
+        }
+    }
+    @include MQ(mobile) {
+        width: 95px;
+        height: 95px;
+    }
+    /* 好像是設定內頁的？ 如無用途再刪
+    @include MQ(tablet) {
+        width: 95px;
+        height: 95px;
+        .mobile-nav-btn span {
+            height: 1px;
+            width: 25px;
+            &.page-nav-btn-line1 {
+                transform: translateX(-50%) translateY(-500%);
+            }
+            &.page-nav-btn-line2 {
+                transform: translateX(-50%) translateY(0%);
+            }
+            &.page-nav-btn-line3 {
+                transform: translateX(-50%) translateY(500%);
+            }
+        }
+        .mobile-close-btn span {
+            height: 1px;
+            width: 25px;
+        }
+    }
+    @include MQ(mobile) {
+        width: 80px;
+        height: 80px;
+    }
+    */
+}
+
+// nav 平板按鈕打開後背景色變更
+.first #page-container .btn-side-m-active,
+.page-wrap .btn-side-m-active {
+    display: block;
+    background: #646566;
+}
+
+// -- logo -- //
+a.first-logo,
+.page-wrap a.page-logo {
+    display: block;
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    left: 60px;
+    top: 70px;
+    z-index: 19;
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+    @include MQ(tablet) {
+        left: 180px;
+        top: 50px;
+    }
+    @include MQ(mobile) {
+        width: 90px;
+        height: auto;
+        left: 110px;
+        top: 30px;
+    }
+}
+
+.page-wrap a.page-logo {
+    left: -20px;
+    top: 45px;
+    @include MQ(custom) {
+        left: 25px;
+    }
+    @include MQ(tablet) {
+        top: 50px;
+        left: 160px;
+    }
+    @include MQ(mobile) {
+        top: 30px;
+        left: 110px;
+    }
+}
+
+#page-header {
+    .first & {
+        background: #fff;
+        width: 250px;
+        min-height: 1000px;
+        float: left;
+        position: relative;
+        z-index: 2;
+        padding-top: 100px;
+        @include MQ(custom) {
+            //要設定兩邊寬度（1）
+            width: 20%; //20% 問題1
+        }
+        @include MQ(tablet) {
+            padding-top: 0;
+            //平板時，導覽列縮回左側
+            margin-left: -250px;
+            float: left;
+            width: 250px;
+        }
+        @include MQ(mobile) {
+            margin-left: -200px;
+            width: 200px;
+        }
+    }
+    //設定導覽列的fix效果
+    .first-side-fixed {
+        width: 250px;
+        @include MQ(custom) {
+            //要設定兩邊寬度（2）
+            width: 100%;
+        }
+    }
+    .first-side-fixed-active {
+        position: fixed;
+        top: 0;
+        width: 20%;
+        @include MQ(tablet) {
+            width: 250px;
+        }
+        @include MQ(mobile) {
+            width: 200px;
+            border: 1px solid #000;
+        }
+    }
+}
+
+// 內頁 page-header bg 圖
+#page-header {
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .madvertis & {
+        background-image: image-url('title_welcome_bg.png');
+    }
+    .livetop & {
+        background-image: image-url('title_live_bg.png');
+    }
+    .ball & {
+        background-image: image-url('title_sports_bg.png');
+    }
+    .game & {
+        background-image: image-url('title_casino_bg.png');
+    }
+    .ltlottery & {
+        background-image: image-url('title_lottery_bg.png');
+    }
+    .memberexclusiveii & {
+        background-image: image-url('title_memberexclusiveii_bg.png');
+    }
+}
+
+// 內頁title bg 圖
+@each $title-bg in welcome,
+live,
+sports,
+lottery,
+casino,
+memberexclusiveii {
+    .#{$title-bg}-title {
+        background: image-url('lang/zh-cn/title_#{$title-bg}.png') right 0 no-repeat;
+        min-height: 330px;
+        width: 100%;
+        @include MQ(desktop) {
+            min-height: 375px;
+        }
+        @include MQ(tablet) {
+            min-height: 150px;
+            background-size: 400px auto;
+            background-position: right -30px;
+        }
+        @include MQ(mobile) {
+            min-height: 95px;
+            background: none;
+        }
+    }
+}
+
+// 內頁news
+.page-news {
+    position: absolute;
+    bottom: 65px;
+    left: 0;
+    width: 500px;
+    height: 30px;
+    font-size: $font-size-s;
+    color: #333;
+    span {
+        display: none;
+    }
+    h2 {
+        display: none;
+    }
+    marquee {
+        width: 400px;
+        line-height: 30px;
+    }
+    @include MQ(desktop) {
+        bottom: 105px;
+        left: 50px;
+        //margin-left: 50px;
+    }
+    @include MQ(tablet) {
+        //margin-left: 0;
+        width: 100%;
+        padding: 0 50px;
+        background: #405ebe;
+        height: 60px;
+        bottom: -60px;
+        left: 0px;
+        span {
+            width: 15%;
+            line-height: 59px;
+            color: #fff;
+            display: block;
+            float: left;
+        }
+        marquee {
+            color: #fff;
+            width: 85%;
+            line-height: 60px;
+        }
+    }
+    @include MQ(mobile) {
+        padding: 0 30px;
+        h2 {
+            color: #fff;
+            font-size: 20px;
+            display: block;
+            font-weight: lighter;
+            font-style: italic;
+            line-height: 60px;
+        }
+        span {
+            display: none;
+        }
+        marquee {
+            display: none;
+        }
+    }
+}
+
+// 遮罩
+.mask-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 299;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #fff image-url('mem_info_bg_m.png') center 0 no-repeat;
+    background-size: auto 550px;
+    cursor: pointer;
+    @include MQ(tablet) {
+        &.active {
+            display: block;
+        }
+    }
+    @include MQ(mobile) {
+        background-size: auto 350px;
+    }
+}

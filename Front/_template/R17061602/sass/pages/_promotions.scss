@@ -1,0 +1,73 @@
+.page-promotion-wrap {
+    @extend .page-wrap;
+    @extend .page-ins-wrap;
+    padding-bottom: 40px;
+    @include MQ(tablet) {
+        padding: 120px 0 0;
+    }
+    ul {
+        padding: 0 20px;
+        * {
+            display: block;
+        }
+        li {
+            float: left;
+            width: 29%;
+            margin: 0 2% 80px;
+            @include MQ(tablet) {
+                width: 45%;
+                margin: 0 2.5% 40px;
+            }
+            @include MQ(mobile) {
+                width: 90%;
+                margin: 0 5% 40px;
+            }
+            a {
+                color: #666;
+                &:hover {
+                    color: #000;
+                }
+                img {
+                    max-width: 100%;
+                    width: 100%;
+                    height: auto;
+                    &.promo-img {
+                        display: block;
+                        @include MQ(tablet) {
+                            display: none;
+                        }
+                    }
+                    &.promo-img-over {
+                        display: none;
+                        @include MQ(tablet) {
+                            display: block;
+                        }
+                    }
+                }
+                &:hover {
+                    img {
+                        &.promo-img {
+                            display: none;
+                        }
+                        &.promo-img-over {
+                            display: block;
+                        }
+                    }
+                }
+                p.promo-txt {
+                    display: block;
+                    //text-align: center;
+                    margin: 20px 0;
+                    font-size: $font-size-m;
+                    line-height: 25px;
+                    height: 50px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}

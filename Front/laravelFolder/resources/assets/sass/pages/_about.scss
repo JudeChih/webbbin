@@ -1,0 +1,450 @@
+.about-open-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 10;
+    width: 196px;
+    // height: 72px;
+    line-height: 72px;
+    height: 52px;
+    text-align: center;
+    color: rgba(255, 255, 255, .8);
+    background: $orange;
+    border: 0;
+    margin: 0 0 0 -98px;
+    padding: 0;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &.move {
+        bottom: -72px;
+    }
+    &.active {
+        bottom: 100%;
+    }
+    &:hover {
+        line-height: 90px;
+        height: 72px;
+        transition: all .3s ease-in-out;
+    }
+    @media only screen and (min-height: 800px) {
+        position: fixed;
+    }
+}
+
+.about-wrap {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    z-index: 11;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background: #FFF;
+    transition: top .3s ease-in-out;
+    &.active {
+        position: fixed;
+        top: 0;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: $pink;
+    }
+    @include MQ(tablet) {
+        width: 100%;
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.about-main {
+    position: relative;
+    z-index: 2;
+    height: 0;
+    overflow-y: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.about-wrap.active {
+    .about-main {
+        height: 100%;
+        overflow-y: auto;
+        overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.about-content {
+    width: 42.5%;
+    max-width: 815px;
+    padding: 64px 48px 0 15.6%;
+    float: left;
+    @include MQ(custom-1366) {
+        padding-left: 6%;
+    }
+    @include MQ(tablet) {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        float: none;
+        padding: 64px 6% 0 12.5%;
+    }
+    @include MQ(mobile) {
+        padding: 32px 6% 0;
+    }
+}
+
+.about-logo {
+    display: block;
+    width: 94px;
+    margin: 0 0 60px;
+    padding: 0;
+    img {
+        display: block;
+        width: 100%;
+    }
+    @include MQ(mobile) {
+        margin: 0 0 28px;
+    }
+}
+
+.about-back-btn {
+    display: block;
+    font-size: .813rem;
+    color: $orange;
+    background: none;
+    border: 0;
+    margin: 0 0 72px;
+    padding: 0;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    i {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.25rem;
+    }
+    b {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 8px;
+        &::after {
+            content: "返回上一页";
+            display: block;
+        }
+    }
+    &:hover {
+        color: $gray;
+        transition: all .3s ease-in-out;
+    }
+    @include MQ(mobile) {
+        font-size: .938rem;
+    }
+}
+
+.about-txt {
+    padding: 0 0 32px;
+    h2,
+    h3,
+    h4 {
+        display: block;
+    }
+    h2,
+    h3 {
+        font-family: 'Playfair Display SC', serif;
+        color: $orange-dark;
+    }
+    h2 {
+        font-size: .75rem;
+        margin: 0 0 12px;
+    }
+    h3 {
+        line-height: 60px;
+        font-size: 3.438rem;
+        margin: 0 0 32px;
+        b {
+            display: block;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+    h4 {
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+    article {
+        position: relative;
+        display: block;
+        max-width: 460px;
+        margin: 40px 0 0;
+        padding: 20px 0 0;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 70px;
+            height: 1px;
+            background: $orange-dark;
+        }
+        p {
+            display: block;
+            text-indent: .813rem;
+            line-height: 22px;
+            font-size: .813rem;
+            color: $gray;
+            margin: 0 0 16px;
+            &:first-child {
+                line-height: 30px;
+                text-indent: 0;
+                font-size: 1.125rem;
+                color: $orange-dark;
+            }
+        }
+    }
+    @include MQ(tablet) {
+        article {
+            max-width: none;
+            padding-right: 36%;
+        }
+        h4 {
+            padding: 0 36% 0 0;
+        }
+    }
+    @include MQ(mobile) {
+        article {
+            padding-right: 20%;
+        }
+        h2 {
+            margin: 0 0 28px;
+        }
+        h3 {
+            img {
+                width: 100%;
+                max-width: 385px;
+            }
+        }
+        h4 {
+            padding: 0;
+            img {
+                width: 80%;
+            }
+        }
+    }
+}
+
+.about-bg {
+    position: relative;
+    width: 57.5%;
+    float: right;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+    }
+    &::before {
+        z-index: 1;
+        height: 830px;
+        background-image: linear-gradient(-45deg, #2e1f5b 0%, #d2471c 100%);
+    }
+    &::after {
+        z-index: 5;
+        background-repeat: no-repeat;
+    }
+    @include MQ(custom-1366) {
+        &::before {
+            height: 720px;
+        }
+    }
+    @include MQ(desktop) {
+        &::before {
+            height: 600px;
+            background-size: 100% auto;
+        }
+    }
+    @include MQ(tablet) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 1000px;
+        overflow: hidden;
+        &::before {
+            left: auto;
+            right: 0;
+            width: 32.5%;
+            height: 830px;
+        }
+        &::after {
+            z-index: 1;
+            height: 576px;
+            background-image: url(../image/about_bg_line_m.png);
+            background-position: right top;
+        }
+    }
+    @include MQ(mobile) {
+        &::before {
+            width: 17.5%;
+        }
+        &::after {
+            left: auto;
+            right: 0;
+            width: 75%;
+            height: 222px;
+            background-image: url(../image/about_bg_line_s.png);
+            background-position: left bottom;
+        }
+    }
+}
+
+.about-bg-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 567px;
+    background-image: url(../image/about_bg_line.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    @include MQ(custom-1366) {
+        height: 480px;
+    }
+    @include MQ(tablet) {
+        display: none;
+    }
+}
+
+.about-bg-screen {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 90%;
+    max-width: 890px;
+    height: auto;
+    margin: 368px auto 120px;
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    figure {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        img {
+            position: relative;
+            margin: 0 auto 12px;
+        }
+    }
+    span {
+        position: absolute;
+        display: block;
+        &.poker01 {
+            top: -140px;
+            right: 24px;
+        }
+        &.poker02 {
+            top: 76px;
+            left: -24px;
+        }
+        &.poker03 {
+            bottom: -48px;
+            right: 0;
+        }
+    }
+    @include MQ(custom-1366) {
+        span {
+            &.poker01 {
+                top: -100px;
+                right: 20px;
+                width: calc(307px * 0.75);
+            }
+            &.poker02 {
+                top: 60px;
+                width: calc(155px * 0.75);
+            }
+            &.poker03 {
+                bottom: -28px;
+                width: calc(236px * 0.75);
+            }
+        }
+    }
+    @include MQ(desktop) {
+        span {
+            &.poker01 {
+                right: 0;
+                width: calc(307px * 0.6);
+            }
+            &.poker02 {
+                width: calc(155px * 0.6);
+            }
+            &.poker03 {
+                width: calc(236px * 0.6);
+            }
+        }
+    }
+    @include MQ(tablet) {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        figure {
+            display: none;
+        }
+        span {
+            img {
+                width: 100%;
+            }
+            &.poker01 {
+                top: 200px;
+                right: 48px;
+                width: auto;
+            }
+            &.poker02 {
+                top: 416px;
+                left: -44px;
+                width: auto;
+            }
+            &.poker03 {
+                top: 700px;
+                bottom: auto;
+                right: -64px;
+                width: auto;
+            }
+        }
+    }
+    @include MQ(mobile) {
+        span {
+            &.poker01 {
+                top: 150px !important;
+                right: -128px !important;
+            }
+            &.poker02 {
+                top: 340px !important;
+                left: -100px !important;
+            }
+            &.poker03 {
+                top: 620px !important;
+                right: -132px !important;
+            }
+        }
+    }
+}

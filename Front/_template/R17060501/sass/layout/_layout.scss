@@ -1,0 +1,711 @@
+* {
+    @include box-sizing;
+}
+
+body {
+    position: relative;
+    font-family: $font-family;
+    line-height: $light-height;
+    overflow-x: hidden;
+    .first & {
+        background-color: #000;
+    }
+}
+
+a {
+	text-decoration: none;
+}
+
+button, input, optgroup, select, textarea {
+	color: inherit;
+    font: inherit;
+    margin: 0;
+    @include border-radius(0);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+img {
+	border: 0;
+	/*max-width: 100%;*/
+	height: auto;
+	vertical-align: middle;
+}
+
+/* --- Clearfix --- */
+.clearfix {
+    @include clearfix;
+}
+
+/* --- No-scroll --- */
+.no-scroll {
+	overflow: hidden;
+	height: 100vh;
+}
+
+/* --- Display no & show --- */
+.no-display {
+	display: none !important;
+}
+.show-display {
+	display: block !important;
+}
+
+/* --- 遮罩 ---*/
+#mainBody {
+    &.nav-mask, &.mem-mask {
+        &::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: -100%;
+            z-index: 998;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            background-repeat: repeat;
+            cursor: pointer;      
+        }
+    }
+    @include MQ(tablet) {
+        &.nav-mask, &.mem-mask {
+            &::after {
+                left: 0;
+            }
+        }
+    }
+}
+.mainnav-mask-bg, .member-mask-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 998;
+	display: none;
+	width: 100%;
+	height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    background-repeat: repeat;
+	cursor: pointer;
+    @include MQ(tablet) {
+    	&.active {
+    		display: block;
+    	}
+    	&.login-active {
+    		display: block;
+    		z-index: 999;
+    	}
+    }
+}
+#navMask{
+    background-image: url(../image/bg_black_o80.png);
+    background-repeat: repeat;
+}
+#loginMask{
+    background-color: $blue-light;
+}
+body.overflow{
+    overflow: hidden;
+}
+
+/*-- HEADER --*/
+.page-header {
+    position: relative;
+}
+.header-main {
+    position: fixed;
+    width: 100%;
+    background: url(../image/header_bg.png) repeat center top;
+    z-index: 999;
+}
+.header-top {
+    max-width: 1920px;
+    margin: 0 auto; 
+    padding: 0 1.05% 0 3.73%;
+    @include MQ(tablet) {
+        padding: 20px 10px;
+        position: relative;
+        z-index: 999;
+        text-align: center;
+    }
+}
+.header-logo {
+    position: relative;
+    float: left;
+    margin: 23px 1.76% 0 0;
+    z-index: 202;
+    a {
+        display: block;
+    }
+    @include MQ(tablet) { 
+        float: none;
+        display: inline-block;
+        width: 96px;
+        margin: 0 auto;
+    }
+}
+
+/* --- 導覽列色彩管理（配合版型調整） --- */
+@include header-color(
+    $nav-bg                  : transparent,     //區塊背景色
+
+    $nav-li-bg               : transparent,   //主項目背景色
+    $nav-li-bg-h             : $orange-base-hover,    //主項目滑過及點擊中狀態的顏色
+    $nav-li-font             : $orange-base,     //主項目的字色
+    $nav-li-font-h           : #FFF,     //主項目的字色:hover
+
+    $sub-li-bg               : #2f2f2f,   //子選單項目的背景色
+    $sub-li-bg-h             : $orange-base,      //子選單項目:hover
+    $sub-li-font             : $orange-base,     //子選單項目的字色
+    $sub-li-font-h           : #FFF,     //子選單項目的字色:hover
+
+    $nav-border-bottom-color : brown,    //平板以下選單的主項目底線
+    $sub-border-bottom-color : gray      //平板以下選單的子項目底線
+);
+
+/* --- 導覽列樣式設定（配合版型調整） --- */
+.mainnav-wrap {
+    li {
+        position: relative;
+        float: left;
+        text-align: center;
+        &.current, &:hover{
+            background-color: $orange-base-hover;
+            a {
+                color: #fff;
+            }
+        }
+    }
+    a {
+        position: relative;
+        display: block;
+        max-width: 90px;
+        width: 100%;
+        line-height: 22px;
+        font-size: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+        padding: 29px 16px;
+    }
+    .subList {
+        width: 160px;
+        left: 50%;
+        margin: 0 0 0 -80px;
+        li {
+            width: 100%;
+            text-align: center;
+            a {
+                max-width: 100%;
+                padding: 14px 0;
+                @include transition(all .3s);
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #F2B243;
+            left: 50%;
+            margin: 0 0 0 -30px; 
+            z-index: 2;
+            @include MQ(tablet) {
+                display: none;
+            }
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        width: 60%;
+        background-color: #000;
+        li {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #262626;
+            a {
+                font-size: 15px;
+                padding: 0 0 0 32px;
+                line-height: 54px;
+                max-width: 100%;
+                text-align: left;
+                color: $orange-base;
+            }
+            a.subClick {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    right: 20px;
+                    top: 50%;
+                    width: 20px;
+                    height: 12px;
+                    background-image: url(../image/nav_arrow_bg.png);
+                    background-position: left center;
+                    margin: -6px 0 0 32px;
+                }
+                &.current {
+                    &::after {
+                        background-position: right center;
+                    }
+                }
+            }
+        }
+        .subList {
+            width: 100%;
+            left: 0;
+            margin: 0;
+            li {
+                border: none;
+                a {
+                    line-height: 46px;
+                    padding: 0 0 0 50px;
+                }
+                &:last-child {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 導覽列固定格式（非必要不修改） --- */
+.mainnav-wrap {
+    position: relative;
+    z-index: 201;   // CASINO 的固定選單 z-index 為 200
+    li {
+        position: relative;
+        a {
+            display: block;
+        }
+        ul.subList {
+            position: absolute;
+            display: none;
+            li {
+                display: block;
+            }
+        }
+        /*&:hover {
+            .subList {
+                display: block;
+            }
+        }*/
+    }
+    &.active {
+        right: 0;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        position: fixed;
+        top: 78px;
+        right: -100%;
+        z-index: 998;
+        height: 100%;
+        overflow-y: auto;
+        @include trans(right);
+        li {
+            display: block;
+            width: 100%;
+            a {
+                position: relative;
+                z-index: 1;
+            }
+            ul.subList {
+                position: relative;
+            }
+            &:hover {
+                ul.subList {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include MQ(mobile) {
+        width: 100%;
+    }
+}
+
+.header-lang {
+    float: right;
+    margin: 20px 0 0 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #595959;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 34px;
+    cursor: pointer;
+    @include MQ(tablet) {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+        margin: 0;
+    }
+}
+
+.mainnav-btn-nav {
+    display: none;
+    @include MQ(tablet) {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        background-image: url(../image/icon_menu.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-radius: 50%;
+        border: 2px solid #595959;
+        &.active {
+            border-color: $orange-base-hover;
+        }
+    }
+}
+
+.mainnav-btn-member {
+    display: none;
+    box-sizing: content-box;
+    @include MQ(tablet) {
+        position: absolute;
+        left: 10px;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        padding: 8px;
+        border-radius: 50%;
+        border: 2px solid #595959;
+        cursor: pointer;
+        display: block;
+        &::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(../image/icon_mem.png);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &:hover {
+        &::after {
+            background-position: center top;
+        }
+    }
+    &.active{
+        border-color: $orange-base-hover;
+        &::after {
+            background-position: center top;
+        }
+    }
+}
+
+/* --- 內頁共用架構 --- */
+.page-bg {
+    position: relative;
+    width: 100%;
+    @include MQ(tablet) {
+        min-height: 0 !important;
+    }
+}
+
+.page-main {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.page-title {
+    position: absolute;
+    top: 190px;
+    left: 16px;
+    display: block;
+    width: 100%;
+    max-width: 540px;
+    padding: 80px 0 0;
+    h2 {
+        position: relative;
+        z-index: 3;
+        display: block;
+        font-size: 40px;
+        text-align: center;
+        color: #fff;
+    }
+    &::before {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        top: -60px;
+        right: -40px;
+        display: block;
+        width: 500px;
+        height: 280px;
+        background-image: url(../image/title_bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url(../image/about_title.png);
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: 460px auto;
+    }
+    @include MQ(tablet) {
+        display: none;
+    }
+}
+
+/* --- 內頁調整 --- */
+#page-header {
+    position: relative;
+    width: 100%;
+    min-height: 445px;
+    background-color: #000;
+    .at1 &,
+    .livetop &,
+    .ball &,
+    .game &,
+    .ltlottery &,
+    .memberexclusiveii & {
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+    $page-banner:livetop, ltlottery, memberexclusiveii;
+    @each $var in $page-banner{
+        .#{$var} & {
+            background-image: url(../image/lang/zh-cn/title_#{$var}.jpg);
+        }
+    }
+    .at1 & {
+        background-image: url(../image/lang/zh-cn/title_welcome.jpg);
+    }
+    .ball & {
+        background-image: url(../image/lang/zh-cn/title_sport.jpg);
+    }
+    .game & {
+        background-image: url(../image/lang/zh-cn/title_casino.jpg);
+        background-position: 153px center;
+    }
+    .game-slider {
+        padding: 153px 0 0 0;
+    }
+    @include MQ(tablet) {
+        min-height: 78px;
+        background-image: none !important;
+        background-color: transparent;
+        .game & {
+            display: block;
+            min-height: auto;
+        }
+        .game-slider {
+            padding: 78px 0 0 0;
+        }
+    }
+}
+
+#page-body {
+    margin: -48px 0 0 0;
+    @include MQ(tablet) {
+        margin: 0;
+    }
+}
+.page-main {
+    position: relative;
+    max-width: 960px;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto 80px auto;
+    background-color: #eee;
+    .ball &, .live &, .lottery & {
+        max-width: 1000px;
+    }
+    .game & {
+        margin: 0 auto;
+        padding: 0 !important;
+    }
+    @include MQ(desktop) {
+        padding: 20px 0;
+    }
+    @include MQ(tablet) {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/*-- FOOTER --*/
+#page-footer {
+    padding: 107px 0 0 0;
+    background: #000;
+}
+.footer {
+    &-top {
+        max-width: 1920px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    &-pay {
+        float: left;
+        width: 50%;
+        padding: 0 0 0 2.52%;
+        &-title {
+            background-image: url(../image/footer_icon01.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding: 0 0 0 30px;
+            margin: 0 0 20px 0;
+            line-height: 40px;
+            font-size: 18px;
+            color: #FFF;
+            letter-spacing: 5px;   
+        }
+        li {
+            display: inline-block;
+            padding: 0 10px 10px 0;
+        }
+    }
+    &-about {
+        float: right;
+        width: 46%;
+        max-width: 400px;
+        font-size: 14px;
+        color: #FFF;
+        line-height: 32px;
+        padding:0 2.52% 0 0;
+        letter-spacing: -0.5px;
+    }
+    &-bottom {
+        width: 100%;
+        margin: 107px 0 0 0;
+        padding: 47px 0 50px 0;
+        background-color: $orange-base-hover;
+        border-top: 1px solid $orange-base;
+        &-wrap {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 0 2.52%;
+        }
+    }
+    &-copyright {
+        float :left;
+        font-size :14px;
+        color: #FFF;
+    }
+    &-link {
+        padding: 0 0 10px 0;
+        li{
+            display: inline-block;
+            a {
+                color: #FFF;
+                @include transition(all .3s);
+                &:hover {
+                    color: #000;
+                }
+            }
+            &::after {
+                content: '|';
+                display: inline-block;
+                padding: 0 10px;
+            }
+            &:last-of-type {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-logo {
+        float: right;
+        a {
+            position: relative;
+            top: 0;
+            padding: 0 10px;
+            @include transition(all .3s);
+            &:hover {
+                top: 3px;
+            }
+        }
+        @include MQ(desktop){
+            float: none;
+            text-align: center;
+        }
+    }
+
+    @include MQ(desktop) {
+        &-about {
+            font-size: 18px;
+        }
+        &-copyright {
+            float: none;
+            width: 100%;
+            font-size: 16px;
+            text-align: center;
+            padding: 0 0 30px 0;
+        }
+        &-link {
+            width: 100%;
+            padding: 0 0 30px 0;
+            li {
+                font-size: 18px;
+                line-height: 36px;
+            }
+        }
+    }
+    @include MQ(tablet) {
+        &-pay{
+            &-title {
+                line-height: 26px;
+            }
+        }
+        &-copyright {
+            width: 100%;
+            text-align: center;
+            padding: 0 0 30px 0;
+        }
+    }
+    @include MQ(mobile) {
+        &-top {
+            padding: 0 10%;
+        }
+        &-pay {
+            text-align: center;
+            &-title {
+                float: none;
+                width: 100%;
+                margin: 0 auto 10px auto;
+                padding: 0 0 0 30px;
+                letter-spacing: 4px;
+            }
+            li {
+                img {
+                    max-width: 60px;
+                }
+            }
+        }
+        &-about {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0 0 0;
+            font-size: 16px;
+        }
+        &-pay {
+            width: 100%;
+            padding: 0 0 20px 0;
+            li:last-of-type {
+                padding: 0;
+            }
+        }
+    }
+} 

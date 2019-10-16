@@ -1,0 +1,93 @@
+/* --- 文案頁 色彩管理 --- */
+@include madvertis-color(
+	$sidebar-bg         : #fff,     //測選單背景色
+    $sidebar-font       : #000,     //項目字色
+    $sidebar-font-h     : #fff,  //項目字色:hover
+
+    $tablet-title-font  : #FFF,     //TABLET 以下選單的目前頁面標題字色
+    $tablet-title-bg    : #000,     //TABLET 以下選單的目前頁面標題背景色
+
+    $right-bg           : #FFF,     //文案內容-右側款背景色
+    $left-bg            : #FFF      //文案內容-左側款背景色
+);
+
+
+/* --- 文案左側內容 --- */
+.page-left {
+    display: block;
+    width: 18%;
+    float: left;
+    @include MQ(tablet) {
+     width: 100%;
+     border-bottom:#3CDFAE 3px solid;
+    }
+}
+
+/* --- 文案右側內容 --- */
+.page-right {
+    display: block;
+    width: 82%;
+    float: left;
+    @include MQ(tablet) {
+     width: 100%;
+    }
+}
+
+/* --- 文案頁側邊選單 --- */
+.page-sidebar {
+    margin: 45px 0 0 0;
+    ul {
+        display: block;
+    }
+    li {
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+        margin: 0 0 14px 0;
+        a {
+            display: block;
+            width: 100%;
+            background-color: #fff;
+            font-size: 13px;
+            line-height: 26px; 
+            &:hover{
+               background-color: #3CDFAE; 
+            }
+          }
+          .current{
+               background-color: #3CDFAE; 
+            }
+    }
+
+    @include MQ(tablet) {
+      margin: 20px 0 0 0; 
+
+      li {
+        display: inline-block;
+        width: 25%;
+        text-align: center;
+        margin: 0 0 25px 0;
+        float: left;
+        a {
+            display: block;
+            width: 100%;
+            background-color: #fff;
+            font-size: 18px;
+            line-height: 30px; 
+            &:hover{
+               background-color: #3CDFAE; 
+            }
+        }
+    } 
+    }
+}
+
+/* --- 文案頁內容 --- */
+.page-article{
+    margin: 45px 11% 60px 4.5%;
+    @include font-txt(12px,26px,#6C7984,left);
+    @include MQ(tablet) {
+      margin: 45px 5% 60px 5%;
+     @include font-txt(16px,35px,#6C7984,left);   
+    }
+}

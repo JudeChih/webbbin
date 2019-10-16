@@ -1,0 +1,8 @@
+.live-wrap {
+	padding: 20px 0 20px 0;
+    @include MQ(desktop) {
+    	padding: 0;
+    }
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}

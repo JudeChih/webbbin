@@ -1,0 +1,293 @@
+.first-login-main {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.first-news-main {
+    position: relative;
+    max-width: 960px;
+    line-height: 24px;
+    margin: 30px auto 40px;
+    padding: 0 0 0 120px;
+    h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: $orange;
+    }
+    marquee {
+        display: block;
+        white-space:nowrap;
+        font-size: 13px;
+        overflow: hidden;
+    }
+    a {
+        color: #333;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include MQ(custom) {
+        width: 80%;
+    }
+    @include MQ(desktop) {
+        padding: 0 20px 0 120px;
+        h2 {
+            left: 20px;
+        }
+    }
+    @include MQ(tablet) {
+        width: 100%;
+        margin-bottom: 60px;
+        marquee {
+            font-size: 16px;
+        }
+    }
+}
+
+.first-gamebox-main {
+    max-width: 1366px;
+    margin: 0 auto 96px;
+    ul {
+        display: block;
+        text-align: center;
+    }
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 10px;
+    }
+    span {
+        position: relative;
+        display: block;
+        margin: 0 0 16px;
+    }
+    img {
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        &.img-orign {
+            display: block;
+        }
+        &.img-hover {
+            display: none;
+        }
+    }
+    a {
+        display: block;
+        color: #333;
+        &:hover {
+            img {
+                &.img-orign {
+                    display: none;
+                }
+                &.img-hover {
+                    display: block;
+                }
+            }
+        }
+    }
+    @include MQ(custom) {
+        padding: 0 3%;
+        li {
+            max-width: 288px;
+            width: 23%;
+            margin: 0 1%;
+        }
+        .img {
+            top: 3%;
+            left: 11%;
+        }
+    }
+    @include MQ(desktop) {
+        margin: 0;
+    }
+    @include MQ(tablet) {
+        li {
+            width: 42%;
+            margin: 0 4% 52px;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
+    @include MQ(mobile) {
+        margin: 0 auto 28px;
+        li {
+            width: 44%;
+            margin: 0 3% 32px;
+        }
+        h2 {
+            font-size: 16px;
+        }
+    }
+}
+
+.first-mobile-wrap {
+    position: relative;
+}
+
+.first-mobile-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/first_mobile_bg.png);
+    background-color: #FFF;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    /*.center {
+        position: relative;
+        z-index: 0;
+        display: block;
+        width: 100%;
+        max-width: 1920px;
+        height: 100%;
+        background-image: url(../image/first_mobile_bg.png);
+        background-color: #FFF;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+    }
+    .left,
+    .right {
+        position: absolute;
+        z-index: -1;
+        display: block;
+        width: 50%;
+        height: 413px;
+    }
+    .left {
+        top: 0;
+        left: 0;
+        background: #EDEDED;
+    }
+    .right {
+        bottom: 0;
+        right: 0;
+        background: #EBEBEB;
+    }*/
+    @include MQ(tablet) {
+        background-image: url(../image/first_mobile_bg_m.png);
+    }
+}
+
+.first-mobile-main {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    min-height: 655px;
+    margin: 0 auto;
+    @include MQ(tablet) {
+        min-height: 494px;
+        margin: 0 auto 68px;
+    }
+    @include MQ(mobile) {
+        min-height: 464px;
+    }
+}
+
+.first-mobile-img {
+    position: absolute;
+    top: 10px;
+    right: 26px;
+    width: 474px;
+    img {
+        display: block;
+        width: 100%;
+    }
+    @include MQ(desktop) {
+        top: 72px;
+        width: 400px;
+    }
+    @include MQ(tablet) {
+        top: 100px;
+        right: 4%;
+        width: 42%;
+    }
+    @include MQ(mobile) {
+        top: auto;
+        bottom: 8%;
+        right: 24px;
+    }
+}
+
+.first-mobile-content {
+    position: relative;
+    z-index: 2;
+    margin: 118px 0 0 22px;
+    float: left;
+    h2,
+    h3 {
+        display: block;
+        line-height: 1.2;
+    }
+    h2 {
+        font-size: 40px;
+        color: #525252;
+        b {
+            color: #D0650C;
+        }
+    }
+    h3 {
+        font-size: 18px;
+        color: #BBB;
+        margin: 0 0 24px;
+    }
+    h4 {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        color: #BBB;
+        margin: 0 0 12px;
+    }
+    p {
+        display: block;
+        max-width: 360px;
+        line-height: 1.8;
+        font-size: 13px;
+        color: #333;
+        margin: 0 0 50px;
+    }
+    span {
+        display: inline-block;
+        vertical-align: top;
+        width: 66px;
+        height: 66px;
+        background-image: url(../image/mobile_icon.png);
+        background-repeat: no-repeat;
+        margin: 0 6px 0 0;
+        &.ios {
+            background-position: 0 0;
+        }
+        &.andriod {
+            background-position: -66px 0;
+        }
+    }
+    @include MQ(desktop) {
+        margin: 118px 0 0 5%;
+    }
+    @include MQ(tablet) {
+        width: 46%;
+        margin: 78px 0 0 8.8%;
+        p {
+            margin: 0 0 32px;
+        }
+    }
+    @include MQ(mobile) {
+        width: 100%;
+        margin: 46px 0 0;
+        padding: 0 12.5% 0 9%;
+    }
+}

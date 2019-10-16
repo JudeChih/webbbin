@@ -1,0 +1,682 @@
+/* --- Clearfix --- */
+.clearfix {
+    @include clearfix;
+}
+
+/* --- No-scroll --- */
+.no-scroll {
+    @include MQ(tablet) {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+
+/* --- 遮罩 ---*/
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    cursor: pointer;
+    @include MQ(tablet) {
+        &.active {
+            display: block;
+        }
+        &.login-active {
+            display: block;
+            z-index: 999;
+        }
+    }
+}
+
+/* --- placeholder --- */
+input {
+    @include placeholder;
+}
+
+/* --- 移動到頂部的按鈕 --- */
+.btn-top  {
+    position: fixed;
+    z-index: 990;
+    right: 16px;
+    bottom: 16px;
+    display: none;
+    width: 64px;
+    line-height: 64px;
+    text-align: center;
+    font-size: 1.5rem;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* --- HEADER --- */
+#page-header {
+    position: relative;
+    .header-top {
+        position: relative;
+        padding: 30px 16px 0;
+        max-width: 1280px;
+        box-sizing: content-box;
+        margin: 0 auto;
+    }
+    .ele-lang-wrap {
+        position: absolute;
+        top: 0;
+        right: -16px;
+        z-index: 2;
+        padding: 5px;
+        @include bg('lang_bg.png')
+    }
+    .header-wrap {
+        position: relative;
+        max-width: 960px;
+        margin: 8px auto 0;
+        .first & {
+            top: -162px;
+            max-width: 1600px;
+            margin: 0 auto 10px;
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        .header-top {
+            padding: 30px 0 0;
+        }
+        .ele-lang-wrap {
+            display: inline-block;
+            position: relative;
+            top: auto;
+            right: auto;
+        }
+    }
+    @include MQ(mobile) {
+        .header-wrap {
+            margin: 36px auto 0;
+        }
+    }
+}
+
+.header-main {
+    position: relative;
+    @include layout-max-width;
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        padding-bottom: 40px;
+        .first & {
+            height: 712px;
+        }
+    }
+    @include MQ(mobile) {
+        padding-bottom: 20px;
+    }
+}
+
+/* --- LOGO --- */
+.logo {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-top: 12px;
+    width: 14.5%;
+    a {
+        display: block;
+        width: 123px;
+        height: 47px;
+        background: url(../image/logo.png);
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        margin-left: 4%;
+        width: 26%;
+        a {
+            width: 100%;
+            min-width: 123px;
+            height: 62px;
+            background: url(../website-picture/siteName_ver1.png) no-repeat top center;
+            background-size: 100% auto;
+        }
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 導覽列色彩管理（配合版型調整） --- */
+@include header-color(
+    $nav-bg                  : transparent,     //區塊背景色
+
+    $nav-li-bg               : transparent,   //主項目背景色
+    $nav-li-bg-h             : transparent,    //主項目滑過及點擊中狀態的顏色
+    $nav-li-font             : #FFF,     //主項目的字色
+    $nav-li-font-h           : #EC3E40,     //主項目的字色:hover
+
+    $sub-li-bg               : purple,   //子選單項目的背景色
+    $sub-li-bg-h             : red,      //子選單項目:hover
+    $sub-li-font             : #FFF,     //子選單項目的字色
+    $sub-li-font-h           : #000,     //子選單項目的字色:hover
+
+    $nav-border-bottom-color : brown,    //平板以下選單的主項目底線
+    $sub-border-bottom-color : gray      //平板以下選單的子項目底線
+);
+
+/* --- 導覽列樣式設定（配合版型調整） --- */
+.mainnav-wrap {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 12px;
+    width: 83%;
+    ul {
+        width: 680px;
+        text-align: center;
+    }
+    li {
+        float: left;
+        width: 16.65%;
+        >a {
+            position: relative;
+            display: block;
+            font-size: 14px;
+            line-height: 42px;
+        }
+        &:hover,
+        &.current {
+            >a {
+                color: #EC3E40;
+                background: url(../image/nav_over.png) no-repeat center bottom;
+            }
+        }
+    }
+    .mainnav-title {
+        display: none;
+        @include text-hide();
+        @include bg('nav_title_m.png');
+        line-height: 35px;
+        &:after {
+            content: '';
+            display: block;
+            margin: 26px auto 0;
+            width: 60px;
+            height: 2px;
+            background-color: #333
+        }
+    }
+    @include MQ(desktop) {
+        width: 82%;
+        ul {
+            width: auto;
+            padding-right: 60px;
+        }
+    }
+    @include MQ(tablet) {
+        .mainnav {
+            padding-top: 132px;
+            padding-bottom: 40px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: #222;
+        }
+        .mainnav-title {
+            display: inline-block;
+            margin-bottom: 26px;
+        }
+        
+        ul {
+            padding-right: 0;
+            margin-bottom: 50px;
+        }
+        li {
+            margin: 0 auto;
+            width: 91%;
+            border-bottom: 1px solid #333;
+            >a {
+                font-size: 18px;
+                line-height: 92px;
+                &.drop-menu {
+                    color: #FFF;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 14px;
+                        height: 14px;
+                        background-image: url(../image/nav_arrow_m.png);
+                        top: 36px;
+                        right: 5%;
+                    }
+                }
+            }
+            
+            &:hover,
+            &.current {
+                >a {
+                    background: none;
+                    &.drop-menu {
+                        color: #EC3E40;
+                    }
+                }
+            }
+            &.dropdown-active {
+                .drop-menu {
+                    color: #EC3E40;
+                    &:after {
+                        background-position: bottom;
+                    }
+                }
+            }
+        }
+        .ele-sidemenu-group {
+            margin-bottom: 16px;
+            a {
+                display: block;
+                margin-bottom: 8px;
+                line-height: 56px;
+                color: #666;
+                &:hover {
+                    color: #FFF;
+                }
+            }
+        }
+    }
+    @include MQ(mobile) {}
+}
+/* --- 導覽列PC下拉 --- */
+.lsub-inner-wrap {
+    text-align: center;
+    padding: 14px 16px;
+    background-color: #222;
+    a {
+        display: block;
+        font-size: 14px;
+        line-height: 3;
+    }
+}
+/* --- 導覽列固定格式（非必要不修改） --- */
+.mainnav-wrap {
+    @media only screen and (min-width: 768px) {
+        li {
+            &:hover {
+                .ele-drop-group {
+                    max-height: 999px;
+                    transition: max-height .3s ease;
+                }
+            }
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        position: fixed;
+        z-index: -1;
+        top: -32px;
+        left: 0;
+        padding-top: 26px;
+        margin: 0 7%;
+        width: 86%;
+        height: 100%;
+        background: none;
+        opacity: 0;
+        transition: opacity ease .3s, top ease .3s, z-index .3s ease 0s;
+        .mainnav {
+            overflow-y: auto;
+            overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch;
+            //卷軸樣式變更
+            &::-webkit-scrollbar {
+                width: 3px;
+            }
+            &::-webkit-scrollbar-track {
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                background: #333;
+            }
+        }
+        li {
+            display: block;
+            float: none;
+            a {
+                position: relative;
+                z-index: 1;
+            }
+            .ele-drop-group {
+                position: relative;
+                &.slidedown {
+                    max-height: 999px;
+                }
+            }
+        }
+        &.active {
+            z-index: 998;
+            top: 0;
+            opacity:1;
+            transition: opacity ease .3s, top ease .3s;
+        }
+    }
+    @include MQ(mobile) {
+        margin: 0 4%;
+        width: 92%;
+    }
+}
+
+/* --- 導覽列 RWD 型態時的語系導覽列 --- */
+.mainnav-lang {
+    display: none;
+    @include MQ(tablet) {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 16px auto;
+        select {
+            display: block;
+            width: 100%;
+            height: 50px;
+            color: #FFF;
+            background: #666;
+            border: 0;
+            padding: 0 0 0 36px;
+            cursor: pointer;
+        }
+        option {
+            background: #666;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            display: block;
+            width: 10px;
+            height: 8px;
+            // background: image-url("arrowdown_icon.png") 0 0 no-repeat;
+            margin: -4px 0 0;
+        }
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 導覽列 RWD 型態時的觸發按鈕 --- */
+.mainnav-btn {
+    display: none;
+    @include MQ(tablet) {
+        display: block;
+        .btn-nav {
+            position: absolute;
+            z-index: 3;
+            top: 46px;
+            right: 3.3%;
+            width: 80px;
+            height: 80px;
+            background: url(../image/nav_icon.png) no-repeat center #555;
+            box-shadow: 0 0 10px 5px rgba(0,0,0,0.20);
+        }
+        .btn-member {
+            position: absolute;
+            z-index: 2;
+            top: 26px;
+            right: 7%;
+            width: 144px;
+            height: 70px;
+            background: url(../image/login_icon.png) no-repeat 26px center #CCC;
+            box-shadow: 0 0 10px 5px rgba(0,0,0,0.20);
+        }
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 關閉按鈕 --- */
+.close-btn {
+    display: none;
+    @include MQ(tablet) {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: 46px;
+        right: -4.3%;
+        width: 80px;
+        height: 80px;
+        background: url(../image/close_icon.png) center no-repeat #555;
+        box-shadow: 0 0 6px 3px rgba(0,0,0,0.20);
+        cursor: pointer;
+    }
+    @include MQ(mobile) {
+        right: -2.3%;
+    }
+}
+
+/* --- FOOTER --- */
+/* --- FOOTER 色彩管理（配合版型調整） --- */
+@include footer-color(
+    $wrap-bg        : #000,     //整塊區域背景色
+    $main-bg        : transparent,     //主內容區域被景色
+    $link-font      : #999,     //各項連結字色
+    $pay-font       : #FFF,     //付款方式字色
+    $copyright-font : #FFF      //COOPYRIGHT 字色
+);
+
+#page-footer {
+    border-top: 1px solid #1F1F1F;
+}
+
+.footer-main {
+    @include layout-max-width;
+    padding: 52px 32px 12px;
+    max-width: 960px;
+    text-align: center;
+    h3 {
+        margin-bottom: 12px;
+        font-weight: bold;
+        color: #FFF;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        padding: 32px 6% 12px;
+    }
+    @include MQ(mobile) {
+        
+    }
+}
+
+.footer-top {
+    text-align: left;
+    margin-bottom: 52px;
+    @include MQ(mobile) {
+        text-align: center;
+    }
+}
+
+.footer-link {
+    float: left;
+    width: 56%;
+    li {
+        display: inline-block;
+        margin-right: 42px;
+        font-size: 13px;
+        line-height: 2.2;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {
+        display: inline-block;
+        float: none;
+        margin-bottom: 64px;
+        width: 90%;
+        li {
+            margin: 0 20px;
+        }
+    }
+}
+
+.footer-contact {
+    float: right;
+    margin-right: 12px;
+    li {
+        line-height: 2.2;
+        font-size: 13px;
+        font-style: italic;
+        color: #999;
+        &:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 4px;
+            width: 20px;
+            height: 20px;
+            background: url(../image/footer_contact_icon.png)
+        }
+        &.footer-contact-email {
+            &:before {
+                background-position: 0 -20px;
+            }
+        }
+        span {
+            margin-left: 6px;
+        }
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        position: absolute;
+        right: 0;
+    }
+    @include MQ(mobile) {
+        position: relative;
+        float: none;
+        margin-right: 0;
+        ul {
+            display: inline-block;
+            padding-right: 20px;
+            text-align: left;
+        }
+    }
+}
+
+.footer-bottom {
+    display: block;
+    text-align: center;
+    a {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 12px;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+.footer-copyright {
+    font-size: 12px;
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+.footer-info {
+    margin: 12px 0;
+    font-size: 12px;
+}
+
+/* --- 內頁 --- */
+/* --- 內頁主內容 --- **/
+.page-main {
+    position: relative;
+    top: -80px;
+    @include layout-max-width;
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        top: auto;
+    }
+    @include MQ(mobile) {}
+}
+
+/* --- 內頁標題 --- */
+.page-title {
+    margin-left: 100px;
+    img {
+        display: block;
+    }
+    @include MQ(desktop) {}
+    @include MQ(tablet) {
+        margin: 0 1%;
+    }
+    @include MQ(mobile) {
+        margin: 0 2% 0 6%;
+    }
+}
+.page-title-img {
+    position: absolute;
+    z-index:2;
+    top: 50px;
+    left: -176px;
+    @include MQ(desktop) {
+       display: none;
+    }
+}
+/* --- 內頁共通樣式變更 --- */
+#page-header {
+    .at1 & {
+        background: url(../image/title_welcome_bg.jpg) center top no-repeat;
+    }
+    .livetop & {
+        background: url(../image/title_live_bg.jpg) center top no-repeat;
+    }
+    .ball & {
+        background: url(../image/title_sports_bg.jpg) center top no-repeat;
+    }
+    .game & {
+        background: url(../image/title_game_bg.jpg) center top no-repeat;
+    }
+    .ltlottery & {
+        background: url(../image/title_lottery_bg.jpg) center top no-repeat;
+    }
+    .memberexclusiveii & {
+        background: url(../image/title_memberexclusiveii_bg.jpg) center top no-repeat;
+    }
+}
+
+#page-footer {
+    position: relative;
+    top: -80px;
+    height: 250px;
+   .first &, .game & {
+        top: auto;
+        height: auto;
+    }
+    .at1 & {}
+    .livetop & {}
+    .ball & {}
+    .game & {}
+    .ltlottery & {}
+    .memberexclusiveii & {}
+    @include MQ(tablet) {
+        top: auto;
+    }
+}
+
+#page-container {
+    .at1 & {
+        max-width: 960px;
+        min-height: 811px;
+        margin: 0 auto;
+    }
+    .livetop & {}
+    .ball & {}
+    .game & {}
+    .ltlottery & {}
+    .memberexclusiveii & {}
+    @include MQ(tablet) {
+        .at1 & {
+            min-height: auto;
+        }
+        .livetop & {}
+        .ball & {}
+        .game & {}
+        .ltlottery & {}
+        .memberexclusiveii & {}
+    }
+}

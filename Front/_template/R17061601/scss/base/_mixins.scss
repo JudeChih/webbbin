@@ -1,0 +1,484 @@
+// 按鈕顏色
+@mixin btn-color($font, $bg) {
+    color: $font;
+    background-color: $bg;
+    &:hover {
+        background-color: darken($bg, 5%);
+    }
+}
+
+// 清除浮動
+@mixin clearfix() {
+    &:after,
+    &:before {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+// 引入圖片及寬高自動為圖片實際尺寸
+@mixin bg($img) {
+    width: image-width(#{$img});
+    height: image-height(#{$img});
+    background-image: image-url(#{$img});
+}
+
+// CSS image replacement
+@mixin text-hide() {
+    font: "0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+// Links
+@mixin alink() {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.current {
+        @content;
+    }
+}
+
+// 讓 iOS裝置滑滾更順暢
+@mixin overflow-scroll {
+    overflow-y: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+}
+
+// 溢出文字變"..."
+@mixin text-truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 轉場效果
+@mixin trans($key) {
+    transition: $key 0.3s ease-in-out;
+}
+
+// font-awesome
+@mixin fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// placeholder
+@mixin placeholder(
+    $color: #999,
+    $color-h: #CCC
+) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &.placeholder {
+        &::-webkit-input-placeholder {
+            color: $color-h;
+        }
+        &::-moz-placeholder {
+            color: $color-h;
+        }
+        &:-ms-input-placeholder {
+            color: $color-h;
+        }
+        &:-moz-placeholder {
+            color: $color-h;
+        }
+    }
+}
+
+// 版型內容區域的最大預設寬度
+@mixin layout-max-width() {
+    max-width: 1400px;//1400
+    margin: 0 auto;
+    @include MQ(tablet) {
+     max-width: 100%;   
+    }
+}
+
+// HEADER 色彩管理 ---layout也有  修改layout即可 */
+@mixin header-color(
+    $nav-bg                  : #333,     //區塊背景色
+
+    $nav-li-bg               : orange,   //主項目背景色
+    $nav-li-bg-h             : green,    //主項目滑過及點擊中狀態的顏色
+    $nav-li-font             : #000,     //主項目的字色
+    $nav-li-font-h           : #FFF,     //主項目的字色:hover
+
+    $sub-li-bg               : purple,   //子選單項目的背景色
+    $sub-li-bg-h             : red,      //子選單項目:hover
+    $sub-li-font             : #FFF,     //子選單項目的字色
+    $sub-li-font-h           : #000,     //子選單項目的字色:hover
+
+    $nav-border-bottom-color : brown,    //平板以下選單的主項目底線
+    $sub-border-bottom-color : gray      //平板以下選單的子項目底線
+){
+    .mainnav-wrap {
+        background-color: $nav-bg;
+        li {
+            background-color: $nav-li-bg;
+            a {
+                color: $nav-li-font;
+                &:hover,
+                &.current {
+                    color: $nav-li-font-h;
+                    background-color: $nav-li-bg-h;
+                }
+            }
+            ul.subList {
+                li {
+                    background-color: $sub-li-bg;
+                    a {
+                        color: $sub-li-font;
+                        @include alink {
+                            color: $sub-li-font-h;
+                            background-color: $sub-li-bg-h;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                background-color: $nav-li-bg-h;
+                a {
+                    color: $nav-li-font-h;
+                }
+
+            }
+        }
+        @include MQ(tablet) {
+            li {
+                border-bottom-color: $nav-border-bottom-color;
+            }
+            .subList {
+                li {
+                    border-bottom-color: $sub-border-bottom-color;
+                }
+            }
+        }
+    }
+}
+
+// 登入前 色彩管理
+@mixin login-color(
+    $btn-font: #FFF,          //登入按鈕的字色
+    $btn-bg  : #333,          //登入按鈕的背景色
+    $link    : #000,          //忘記密碼與加入會員的預設字色
+    $alink   : #FFF           //忘記密碼與加入會員的連結字色
+){
+    .login-submit {
+        color: $btn-font;
+        background: $btn-bg;
+        @include alink {
+            color: darken($btn-font, 5%);
+            background: darken($btn-bg, 5%);
+        }
+    }
+    .login-link {
+        color: $link;
+        a {
+            color: $alink;
+            @include alink {
+                color: darken($alink, 5%);
+            }
+        }
+    }
+}
+
+// 登入後 色彩管理
+@mixin meminfo-color(
+    $info-font              : #fff,       //帳號、餘額列的字色
+    $info-icon              : #FFF,       //帳號、餘額列加號的顏色
+
+    $balance-bg             : #333,       //餘額視窗的背景色
+    $balance-font           : #FFF,       //餘額視窗個餘額的字色
+    $balance-bottom         : #666,       //餘額視窗下方背景色
+    $balance-btn-font       : #FFF,       //餘額轉換按鈕的字色
+    $balance-btn-bg         : #333,       //餘額轉換按鈕的背景色
+
+    $member-border-color    : #FFF,       //連結列的邊線顏色
+    $member-font            : #FFF,       //連結列的字色
+
+    $btn-font               : #FFF,       //TABLET 側選單-按鈕字色
+    $btn-font-h             : #000,       //TABLET 側選單-按鈕字色:hover
+    $btn-mem-bg             : red,        //TABLET 側選單-會員中心按鈕
+    $btn-switch-bg          : blue,       //TABLET 側選單-額度轉換按鈕
+    $btn-logout-bg          : green       //TABLET 側選單-登出按鈕
+){
+    .mem-info {
+        color: $info-font;
+        .ele-obalance-wrap {
+            color: $info-icon;
+        }
+    }
+    .ele-obalance-item-wrap {
+        background: $balance-bg;
+        li {
+            color: $balance-font;
+        }
+    }
+    .ele-balance-tool {
+        background: $balance-bottom;
+        a {
+            color: $balance-btn-font;
+            background: $balance-btn-bg;
+            @include alink {
+                background: darken($balance-btn-bg, 5%);
+            }
+        }
+    }
+    .SU-Menual {
+        li {
+            border-right-color: $member-border-color;
+            a {
+                color: $member-font;
+                @include alink {
+                    color: darken($member-font, 5%);
+                }
+            }
+        }
+    }
+    [class*="meminfo-btn-"] {
+        a {
+            color: $btn-font;
+            @include alink {
+                color: $btn-font-h;
+            }
+        }
+    }
+    .meminfo-btn-mem {
+        a {
+            background: $btn-mem-bg;
+            @include alink {
+                background: darken($btn-mem-bg, 5%);
+            }
+        }
+    }
+    .meminfo-btn-switch {
+        a {
+            background: $btn-switch-bg;
+            @include alink {
+                background: darken($btn-switch-bg, 5%);
+            }
+        }
+    }
+    .meminfo-btn-logout {
+        a {
+            background: $btn-logout-bg;
+            @include alink {
+                background: darken($btn-logout-bg, 5%);
+            }
+        }
+    }
+}
+
+// FOOTER 色彩管理 ---不用調整此處 須改layout */
+@mixin footer-color(
+    $wrap-bg        : #333,     //整塊區域背景色
+    $main-bg        : #666,     //主內容區域被景色
+    $link-font      : #FFF,     //各項連結字色
+    $pay-font       : #FFF,     //付款方式字色
+    $copyright-font : #FFF      //COOPYRIGHT 字色
+){
+    #page-footer {
+        background-color: $wrap-bg;
+    }
+    .footer-main {
+        background-color: $main-bg;
+    }
+    .footer-link {
+        li {
+            a {
+                color: $link-font;
+            }
+        }
+    }
+    .footer-pic {
+        p {
+            color: $pay-font;
+        }
+    }
+    .footer-copyright {
+        color: $copyright-font;
+    }
+}
+
+// 優惠活動 色彩管理
+@mixin memExclusive-color(
+    $item-bg     : #F5F5F5,     //項目背景色
+    $item-font   : #000,     //項目字色
+    $item-font-h : #000   //項目字色:hover
+){
+    .memExclusive {
+        background: $item-bg;
+        a {
+            color: $item-font;
+            @include alink {
+                color: $item-font-h;
+            }
+        }
+    }
+}
+
+// 文案頁 色彩管理
+@mixin madvertis-color(
+    $sidebar-bg         : #333,     //測選單背景色
+    $sidebar-font       : #FFF,     //項目字色
+    $sidebar-font-h     : #FF8000,  //項目字色:hover
+
+    $tablet-title-font  : #FFF,     //TABLET 以下選單的目前頁面標題字色
+    $tablet-title-bg    : #000,     //TABLET 以下選單的目前頁面標題背景色
+
+    $right-bg           : #FFF,     //文案內容-右側款背景色
+    $left-bg            : #FFF      //文案內容-左側款背景色
+){
+    .page-sidebar {
+        ul {
+            background: $sidebar-bg;
+        }
+        li {
+            a {
+                display: block;
+                color: $sidebar-font;
+                @include alink {
+                    color: $sidebar-font-h;
+                }
+            }
+        }
+        @include MQ(tablet) {
+            h2 {
+                color: $tablet-title-font;
+                background: $tablet-title-bg;
+            }
+        }
+    }
+    .page-right {
+        background-color: $right-bg
+    }
+    .page-left {
+        background-color: $left-bg;
+    }
+}
+
+// CASINO 模組色彩管理
+@mixin casino-color(
+    $color01: #696969,  //標題的文字顏色
+    $color02: #444,     //副標題的文字顏色
+    $color03: #D2261E,  //副標題的數字顏色
+    $color04: #FFF,     //搜尋按鈕放大鏡圖片顏色
+    // $color05: #FFF,     //Active 的搜尋按鈕放大鏡圖片顏色
+    $color06: #AAA,     //搜尋按鈕底色
+    // $color07: #AAA,  //Active 的搜尋按鈕底色
+    $color08: #FFF,     //搜尋框底色
+    $color09: #6A6A6A,  //鍵入的搜尋文字顏色
+    $color10: #6A6A6A,  //搜尋框的預設文字顏色"請輸入遊戲名稱"
+    $color11: #9E9E9E,  //列表 icon 顏色
+    $color12: #454545,  //Active 的列表 icon 顏色
+    $color13: #000,     //列表 icon 旁的線條顏色
+    $color14: #666      //線條的 border 顏色
+) {
+    .game {
+        .game-menu-filter {
+            color: $color01; //標題的文字顏色
+            span {
+                color: $color02; //副標題的文字顏色
+                .game-filter-num {
+                    color: $color03; //副標題的數字顏色
+                }
+            }
+        }
+        .game-btn-search i {
+            &:before {
+                color: $color04; //搜尋按鈕放大鏡圖片顏色
+            }
+            &:after {
+                background-color: $color06; //搜尋按鈕底色
+            }
+            // &.search-active {
+            //     color: $color05; //Active 的搜尋按鈕放大鏡圖片顏色
+            //     background-color: $color07; //Active 的搜尋按鈕底色
+            // }
+        }
+        .game-search-input {
+            background-color: $color08; //搜尋框底色
+            color: $color09; // 鍵入的搜尋文字顏色
+            
+            &.placeholder {
+                color: $color10; //搜尋框的預設文字顏色"請輸入遊戲名稱"
+            }
+        }
+        .game-box-view li {
+            i {
+                color: $color11; //列表 icon 顏色
+            }
+            a {
+                @include alink {
+                    i {
+                        color: $color12; //Active 的列表 icon 顏色
+                    }
+                }
+                &::before {
+                    background-color: $color13; //列表 icon 旁的線條顏色
+                    border-right-color: $color14;   //線條的 border 顏色
+                }
+            }
+        }
+    }
+}
+
+//------------------  文字 按鈕文字 (導覽列文字)------------------------//
+@mixin font($font-size: $font-size-base, $line-height: $line-height-base,$weight: false) {
+     //文字尺寸, 文字行高, 文字粗細
+    @if $weight {
+      font-weight: $weight;
+    }
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+//文字顏色, 文字滑入顏色
+@mixin font-color($primary: $text-color,$secondary: false) {
+    @if  $secondary {
+        &:hover{color: $secondary;}
+    }
+  color:$primary;
+}
+
+
+//一般文字/*大小/行高/顏色/靠左*/
+@mixin font-txt(
+    $font-size: null, 
+    $line-height: null,
+    $color: null, 
+    $float: left
+    
+     ) {
+ font-size: $font-size;
+ line-height: $line-height;
+ color: $color;
+ float:  $float;
+
+
+}

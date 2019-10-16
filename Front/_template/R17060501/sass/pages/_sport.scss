@@ -1,0 +1,16 @@
+.ball-wrap {
+	padding: 0 !important;
+}
+
+.login-main {
+	.ball & {
+		max-width: 100% !important;
+		margin: 0 !important;
+	}
+}
+.login-forget {
+	display: inline-block !important;
+	width: auto !important;
+	line-height: 30px !important;
+	margin: 0 !important;
+}

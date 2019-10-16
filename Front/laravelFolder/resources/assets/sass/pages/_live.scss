@@ -1,0 +1,504 @@
+.livedemo-wrap {
+    position: relative;
+}
+
+.livedemo-header {
+    display: block;
+    width: 100%;
+}
+
+.livedemo-top {
+    position: relative;
+    height: 82px;
+    background: #FFF;
+    h1 {
+        display: block;
+        line-height: 82px;
+        font-family: 'Noto Sans TC', sans-serif;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $orange;
+    }
+}
+
+.livedemo-top-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 82px;
+    height: 100%;
+    background: $orange;
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        &::before,
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 24px);
+            content: "";
+            display: block;
+            width: 48px;
+            height: 1px;
+            background: #FFF;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+    &:hover {
+        background: $orange;
+    }
+}
+
+.livedemo-top-qrcode {
+    position: absolute;
+    top: 0;
+    left: 82px;
+    z-index: 99999;
+    width: 180px;
+    height: 100%;
+    button {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: .75rem;
+        color: $orange;
+        background-color: #FFF;
+        background-image: url(../image/not-use/qrcode.png);
+        background-position: 50% 20px;
+        background-repeat: no-repeat;
+        background-size: 16px auto;
+        border: 0;
+        margin: 0;
+        padding: 24px 0 0;
+        cursor: pointer;
+    }
+    figure {
+        position: absolute;
+        top: 82px;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 200px;
+        background: #FFF;
+        margin: 0;
+    }
+    figcaption {
+        display: block;
+        text-align: center;
+        font-size: .813rem;
+        color: $orange-dark;
+        margin: 30px 0 0;
+    }
+    img {
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        display: block;
+        width: 80px;
+        margin: 0 0 0 -40px;
+    }
+    @include MQ(desktop) {
+        display: none;
+    }
+}
+
+.livedemo-top-bar {
+    position: relative;
+    height: 48px;
+    background: $pink;
+    border-top: 1px solid $orange;
+    border-bottom: 1px solid $orange;
+    @include MQ(desktop) {
+        display: none;
+    }
+}
+
+#breakpoint-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 48px;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 0;
+        display: block;
+        height: calc(100% - 2px);
+        background: $orange;
+    }
+    &.fullscreen {
+        &::after {
+            width: 100%;
+            margin: 0 0 0 -50%;
+        }
+    }
+    &.screen-1024 {
+        &::after {
+            width: 1024px;
+            margin: 0 0 0 -512px;
+        }
+    }
+    &.screen-768 {
+        &::after {
+            width: 768px;
+            margin: 0 0 0 -384px;
+        }
+    }
+    &.screen-480 {
+        &::after {
+            width: 480px;
+            margin: 0 0 0 -240px;
+        }
+    }
+    &.screen-320 {
+        &::after {
+            width: 320px;
+            margin: 0 0 0 -160px;
+        }
+    }
+    li {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        height: 46px;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        span {
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 46px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: .75rem;
+            color: $orange;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-color: $orange;
+            padding: 0 10px;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: calc(50% - 4px);
+                display: block;
+                width: 0;
+                height: 0;
+                background: none;
+                border-style: solid;
+                transition: all .3s ease-in-out;
+            }
+            &::before {
+                left: 0;
+                border-width: 4px 0 4px 5px;
+                border-color: transparent transparent transparent $orange;
+            }
+            &::after {
+                right: 0;
+                border-width: 4px 5px 4px 0;
+                border-color: transparent $orange transparent 
+            }
+            i {
+                &:first-child {
+                    float: left;
+                }
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+        &.incolor,
+        &.incolor-hover {
+            span {
+                color: #FFF;
+                border-color: #FFF;
+                opacity: .3;
+                &::before {
+                    border-color: transparent transparent transparent #FFF;
+                }
+                &::after {
+                    border-color: transparent #FFF transparent 
+                }
+            }
+        }
+        &:hover {
+            background: $orange;
+            transition: all .3s ease-in-out;
+            &.incolor,
+            &.incolor-hover {
+                span {
+                    opacity: 1;
+                    color: #FFF;
+                    &::before,
+                    &::after {
+                        transition: all .3s ease-in-out;
+                    }
+                }
+            }
+            &.incolor-hover {
+                span {
+                    &::before {
+                        border-color: transparent transparent transparent #FFF;
+                    }
+                    &::after {
+                        border-color: transparent #FFF transparent;
+                    }
+                }
+            }
+        }
+        &.active,
+        &:hover {
+            span {
+                color: #FFF;
+                &::before {
+                    border-color: transparent transparent transparent #FFF;
+                }
+                &::after {
+                    border-color: transparent #FFF transparent;
+                }
+            }
+        }
+    }
+}
+
+/* 裝置圖示:滑入範圍時 */
+[class*="breakpoint-"] {
+    &.incolor-hover {
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(50% - 12px);
+            left: calc(50% - 12px);
+            z-index: 10;
+            display: block;
+            width: 24px;
+            height: 24px;
+            background-color: $orange;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.breakpoint-full {
+    left: 0 !important;
+    width: 100%;
+    span {
+        border-left: 0 !important;
+        border-right: 0 !important;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+    &.incolor-hover {
+        &::after {
+            z-index: 6;
+            background-image: url(../image/desktop_icon_white.svg);
+        }
+    }
+    @include MQ(custom-1180) {
+        i {
+            // width: 36px;
+            // white-space: nowrap;
+            // text-overflow: ellipsis;
+            // overflow: hidden;
+            display: none;
+        }
+    }
+}
+
+.breakpoint-1024 {
+    width: 1024px;
+    margin: 0 0 0 -512px;
+    &.incolor-hover {
+        &::after {
+            z-index: 5;
+            background-image: url(../image/pad_icon_white.svg);
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.breakpoint-768 {
+    width: 768px;
+    margin: 0 0 0 -384px;
+    &.incolor-hover {
+        &::after {
+            z-index: 4;
+            background-image: url(../image/pad_icon_white.svg);
+        }
+    }
+}
+
+.breakpoint-480 {
+    width: 480px;
+    margin: 0 0 0 -240px;
+    &.incolor-hover {
+        &::after {
+            z-index: 3;
+            background-image: url(../image/phone_icon_white.svg);
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.breakpoint-320 {
+    width: 320px;
+    margin: 0 0 0 -160px;
+    &.incolor-hover{
+        &::after {
+            z-index: 2;
+            background-image: url(../image/phone_icon_white.svg);
+        }
+    }
+}
+
+/* 裝置圖示:選擇時 */
+#breakpoint-icon {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    z-index: 1;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+[class*="breakpoint-icon-"] {}
+
+.breakpoint-icon-full {
+    background-image: url(../image/desktop_icon_white.svg);
+}
+
+.breakpoint-icon-1024 {
+    background-image: url(../image/pad_icon_white.svg);
+    transform: rotate(90deg);
+}
+
+.breakpoint-icon-768 {
+    background-image: url(../image/pad_icon_white.svg);
+}
+
+.breakpoint-icon-480 {
+    background-image: url(../image/phone_icon_white.svg);
+    transform: rotate(90deg);
+}
+
+.breakpoint-icon-320 {
+    background-image: url(../image/phone_icon_white.svg);
+}
+
+/* 提示 */
+.breakpoint-tips {
+    position: absolute;
+    z-index: 11;
+    top: 42px;
+    left: calc(50% - 100px);
+    display: none;
+    width: 200px;
+    text-align: center;
+    font-size: .813rem;
+    color: $orange;
+    background: #FFF;
+    padding: 32px 0;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: calc(50% - 5px);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5px 5px 5px;
+        border-color: transparent transparent #ffffff 
+    }
+}
+
+/* 外嵌內容 */
+.livedemo-main {
+    background: $pink;
+}
+
+#livedemo-iframe {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: hidden;
+    // overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: width .3s ease;
+    iframe {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+    @include MQ(desktop) {
+        width: 100%;
+    }
+}
+
+.iframe-full {
+    width: 100%;
+}
+
+.iframe-1024 {
+    width: 1024px;
+}
+
+.iframe-768 {
+    width: 768px;
+}
+
+.iframe-480 {
+    width: 480px;
+}
+
+.iframe-320 {
+    width: 320px;
+}
+
+
+/* 兩版型個別樣式 */
+.livedemo-rwd {
+    .livedemo-header {
+        height: 130px;
+    }
+    .livedemo-main {
+        height: calc(100vh - 130px);
+    }
+    @include MQ(desktop) {
+        .livedemo-header {
+            height: 82px;
+        }
+        .livedemo-main {
+            height: calc(100vh - 82px);
+        }
+    }
+}
+
+.livedemo-adaptive {
+    .livedemo-header {
+        height: 82px;
+    }
+    .livedemo-main {
+        height: calc(100vh - 82px);
+    }
+}

@@ -1,0 +1,316 @@
+$list: tw cn vi ug th ko ja id es en;
+
+/* --- LANG --- */
+@if $lang-kind==Flag {
+    .ele-lang-wrap {
+        display: block;
+        float: left;
+        margin: 5px 0 0 10px;
+        a {
+            float: left;
+            text-align: left;
+            background-repeat: no-repeat;
+            margin: 4px 3px 4px 0;
+            @if $lang-img==1 {
+                background-image: image-url("not-use/flag_rect.png")
+            } @else if $lang-img==2 {
+                background-image: image-url("not-use/flag_circle.png")
+            }
+        }
+        a {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            text-align: left;
+            @for $i from 1 through 3 {
+                &.flag0#{$i} {
+                    background-position: 0 40px - 40px * $i;
+                }
+            }
+        }
+    }
+    @include MQ(tablet) {
+        .ele-lang-wrap {
+            display: none;
+        }
+    }
+}
+
+@if $lang-kind==Dropmenu {
+    .ele-lang-title {
+        display: block;
+    }
+    .ele-lang-wrap {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+        a {
+            line-height: 22px;
+            background-repeat: no-repeat;
+            margin: 10px 0;
+            padding: 0 0 0 24px;
+            @for $i from 1 through 3 {
+                &.flag0#{$i} {
+                    background-position: 0 40px - 40px * $i;
+                }
+            }
+            @if $lang-img==1 {
+                background-image: image-url("not-use/flag_rect.png")
+            } @else if $lang-img==2 {
+                background-image: image-url("not-use/flag_circle.png")
+            }
+        }
+        i {
+            display: inline-block;
+            vertical-align: middle;
+            width: 10px;
+            height: 7px;
+            background-image: image-url("arrowdown_icon.png");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            margin: 0 0 0 8px;
+            @if $lang-arrow==1 {
+                background-position: 0 0;
+            } @else if $lang-arrow==2 {
+                background-position: -10px 0;
+            }
+        }
+    }
+    .ele-lang-group {
+        position: absolute;
+        left: 0;
+        display: none;
+        width: 100%;
+        background: #000;
+    }
+    .ele-lang-option {
+        display: block;
+    }
+    @include MQ(tablet) {
+        .ele-lang-wrap {
+            display: none;
+        }
+    }
+}
+
+// @else if $lang-kind==popupFlag {
+//     @each $author in $list {
+//         .icon-#{$author} {
+//             background: image-url("not-use/#{$author}.png") no-repeat;
+//         }
+//     }
+//     .ele-lang-wrap {
+//         .btn-icon {
+//             display: inline-block;
+//             float: left;
+//             width: 32px;
+//             height: 32px;
+//         }
+//     }
+//     .ele-lang-wrap {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         display: inline-block;
+//         vertical-align: middle;
+//     }
+//     .icon-lang {
+//         display: inline-block;
+//         width: 100%;
+//         height: 100%;
+//         background-size: 100%;
+//         cursor: pointer;
+//     }
+//     .ele-popup-group {
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         z-index: 999;
+//         width: 100%;
+//         height: 100%;
+//         opacity: 0;
+//         background: rgba(0, 0, 0, .8);
+//         visibility: hidden;
+//         backface-visibility: hidden;
+//         transition: all .3s ease-in;
+//         &.active {
+//             opacity: 1;
+//             visibility: visible;
+//         }
+//         &:before {
+//             content: '';
+//             position: fixed;
+//             top: 16px;
+//             right: 16px;
+//             width: 32px;
+//             height: 32px;
+//             background: image-url("btn_close.png") center no-repeat;
+//             cursor: pointer;
+//         }
+//     }
+//     .popup-lang-wrap {
+//         text-align: center;
+//         .icon-lang {
+//             width: 48px;
+//             height: 48px;
+//         }
+//         a {
+//             display: inline-block;
+//             line-height: 1;
+//             width: 68px;
+//             height: 68px;
+//             margin: 0 16px 16px 16px;
+//             padding: 10px;
+//             span {
+//                 display: none;
+//             }
+//             &.popup-lang-current,
+//             &:hover {
+//                 background: image-url('not-use/lang_circle.png') no-repeat 0 50%;
+//             }
+//         }
+//     }
+//     .popup-group-inner {
+//         max-width: 656px;
+//         text-align: center;
+//         margin: 160px auto 0;
+//         // margin: ($header-height + 50px) auto 0;
+//         p {
+//             color: #FFF;
+//             font-size: 1.2rem;
+//             padding: 16px 0 3rem;
+//             &:after {
+//                 display: block;
+//                 width: 2.5rem;
+//                 height: 1px;
+//                 content: '';
+//                 background-color: #FFF;
+//                 margin: 1em auto 0;
+//             }
+//         }
+//     }
+//     @include MQ(desktop) {
+//         .popup-lang-title {
+//             display: none;
+//         }
+//         .popup-lang-wrap {
+//             a {
+//                 position: relative;
+//                 width: 35%;
+//                 text-align: left;
+//                 span {
+//                     position: absolute;
+//                     top: 13px;
+//                     left: 80px;
+//                     display: inline-block;
+//                     color: #fff;
+//                     font-size: 18px;
+//                     line-height: 45px;
+//                 }
+//             }
+//         }
+//     }
+//     @include MQ(tablet) {
+//         .ele-lang-wrap {
+//             display: none;
+//         }
+//     }
+//     @include MQ(mobile) {
+//         .popup-lang-wrap {
+//             a {
+//                 width: 50%;
+//             }
+//         }
+//     }
+// }
+
+@each $author in $list {
+    .icon-#{$author} {
+        background: image-url("not-use/#{$author}.png") no-repeat;
+        background-size: 100% auto;
+    }
+}
+.ele-popup-group {
+    display: none;
+    @include MQ(tablet) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 998;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(54, 53, 68, 1);
+        transition: all .3s ease-in;
+        margin: 60px 0 0;
+        padding: 0 0 60px;
+        overflow-y: auto;
+        overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
+        //卷軸樣式變更
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-track {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgba(37, 111, 191, 1);
+        }
+        &.active {
+            right: 0;
+        }
+    }
+}
+.popup-lang-wrap {
+    text-align: center;
+    .icon-lang {
+        display: block;
+        width: 48px;
+        height: 48px;
+    }
+    a {
+        position: relative;
+        display: inline-block;
+        line-height: 1;
+        width: 50%;
+        height: 68px;
+        text-align: left;
+        margin: 0 16px 16px 16px;
+        padding: 10px;
+        span {
+            position: absolute;
+            top: 13px;
+            left: 80px;
+            display: inline-block;
+            color: #fff;
+            line-height: 45px;
+        }
+        &.popup-lang-current,
+        &:hover {
+            background: image-url('not-use/lang_circle.png') no-repeat 0 50%;
+        }
+    }
+}
+.popup-group-inner {
+    max-width: 656px;
+    text-align: center;
+    margin: 60px auto 0;
+    p {
+        color: #FFF;
+        font-size: 1.2rem;
+        padding: 16px 0 3rem;
+        &:after {
+            display: block;
+            width: 2.5rem;
+            height: 1px;
+            content: '';
+            background-color: #FFF;
+            margin: 1em auto 0;
+        }
+    }
+}

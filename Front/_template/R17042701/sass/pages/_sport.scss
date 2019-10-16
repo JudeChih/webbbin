@@ -1,0 +1,22 @@
+.ball {
+    .header-bg01 {
+        background-image: url(../image/sports_bg.png);
+    }
+    @include MQ(tablet) {
+        .header-bg01 {
+            background-image: url(../image/sports_bg_m.png);
+        }
+        .login-wrap {
+            &.active {
+                z-index: 998;
+            }
+        }
+    }
+}
+
+.sports-wrap {
+    margin: 32px 0 0;
+    @include MQ(tablet) {
+        margin: 0;
+    }
+}

@@ -1,0 +1,506 @@
+.login-wrap {
+    position: absolute;
+    top: 73%;
+    right: 10px;
+    z-index: 99;
+    width: 100%;
+    max-width: 288px;
+    display: none;
+    @media only screen and (max-width: 1366px) {
+        top: 110%;
+        right: 1%;
+    }
+    @include MQ(tablet) {
+        display: none !important;
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        height: 100%;
+        margin-right: -184px;
+        overflow-y: scroll;
+        &.active {
+            display: block !important;
+        }
+    }
+    @include MQ(mobile) {
+        right: 0;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+.login-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 388px;
+    background: url(../image/login_bg.jpg) no-repeat center top $blue-light;
+    padding: 32px 0 0;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+    }
+    &::before {
+        top: 5px;
+        left: 5px;
+        width: 46px;
+        height: 136px;
+        border-top: 1px solid #6b7f9f;
+        border-left: 1px solid #6b7f9f;
+    }
+    &::after {
+        bottom: -6px;
+        right: 4px;
+        width: 90px;
+        height: 162px;
+        border-bottom: 1px solid #294876;
+        border-right: 1px solid #294876;
+    }
+    @include MQ(tablet) {
+        background: url(../image/login_bg_m.png) no-repeat left top $blue-light;
+        min-height: 537px;
+        padding: 87px 0 0;
+    }
+    @include MQ(mobile) {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .oblance {
+        position: relative;
+        z-index: 3;
+        i {
+
+        }
+        &:hover {
+            #Member-Sub {
+                display: block;
+            }
+        }
+        @include MQ(tablet) {
+            max-width: 280px;
+            margin-bottom: 32px;
+            i {
+                //display: none;
+            }
+            #Member-Sub{
+                position: static;
+            }
+        }
+    }
+}
+
+i#bbinAmount {
+    display: inline-block;
+    color: $red-base;
+    margin: 0 0 0 4px;
+    cursor: pointer;
+    @include MQ(tablet) {
+        font-size: 26px;
+        margin: 0 0 0 10px;
+    }
+}
+
+.login-title {
+    background-image: url(../image/login_title01.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 125px auto;
+    margin: 0 0 24px;
+    padding: 36px 0 0;
+    h2 {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+    }
+    @include MQ(tablet) {
+        background-size: 161px auto;
+        //margin: 0 0 48px;
+        padding-top: 52px;
+    }
+}
+
+.login-input {
+    position: relative;
+    width: 100%;
+    max-width: 216px;
+    height: 36px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    margin: 0 auto 24px;
+    padding: 0 0 0 42px;
+    &::before {
+        position: absolute;
+        left: 10px;
+        bottom: 6px;
+        content: "";
+        width: 24px;
+        height: 32px;
+        background-image: url(../image/icon_mem.png);
+        background-repeat: no-repeat;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        width: 4px;
+        height: 4px;
+        background: url(../image/loginInput_bg.png) center no-repeat;
+    }
+    &.user {
+        &::before {
+            background-position: 0 0;
+        }
+    }
+    &.pwd {
+        &::before {
+            background-position: -24px 0;
+        }
+    }
+    &.chk {
+        &::before {
+            background-position: -48px 0;
+        }
+    }
+    input {
+        display: block;
+        width: 100%;
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+        color: #7F91AD;
+        background: none;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        @include placeholder {
+            color: #7F91AD;
+        }
+    }
+    @include MQ(tablet) {
+        max-width: 296px;
+        margin-bottom: 52px;
+    }
+}
+
+.login-member-btn {
+    display: none;
+    width: 300px;
+    margin: 0 auto;
+    a{
+        display: block;
+        width: 140px;
+        margin: 0 auto;
+        @include border-radius(4px);
+        @include transition(all .3s);
+        line-height: 48px;
+        text-align: center;
+        background: #0A3360;
+        color: #fff;
+        &:hover{
+            background: $navy;
+        }
+    }
+    @include MQ(tablet) {
+        display: block;
+        &::after{
+            content: '';
+            display: block;
+            height: 1px;
+            background: url(../image/bg_white_o10.png) top center repeat-x;
+            border-top: 1px solid #20385B;
+            margin: 20px 0 30px 0;
+        }
+    }
+}
+
+.login-btn {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 183px;
+    margin: 0 auto 20px auto;
+    padding-right: 0;
+    a {
+        display: block;
+        width: 100%;
+        line-height: 32px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background: $red-base;
+        @include border-radius(4px);
+        @include transition(all .3s);
+        &:hover {
+            background: $red-base-hover;
+            text-decoration: none;
+        }
+        @include MQ(tablet) {
+            line-height: 48px;
+        }
+    }
+}
+
+.login-link {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    span {
+        display: inline-block;
+    }
+    a {
+        display: inline-block;
+        color: #fff;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.login-info {
+    max-width: 208px;
+    margin: 0 auto 14px auto;
+    span {
+        display: block;
+        font-weight: bold;
+        color: #fff;
+        margin: 0 0 10px;
+    }
+    .bbinAmount{
+        display: inline-block;
+    }
+}
+
+.login-details {
+    display: none;
+    //max-width: 208px;
+    //height: 72px;
+    line-height: 24px;
+    //overflow-y: auto;
+    margin: 0 auto 24px;
+    li {
+        display: block;
+        font-size: 13px;
+        color: #8598B2;
+    }
+    @include MQ(tablet) {
+        //display: block;
+        width: 208px;
+        //height: 96px;
+        line-height: 32px;
+        margin:0 auto 28 auto;
+        li{
+            font-size: 15px;
+        }
+    }
+}
+
+.login-member {
+    position: relative;
+    max-width: 220px;
+    margin: 0 auto 20px;
+    padding: 20px 0 0;
+    &::before,
+    /*&::after*/ {
+        content: "";
+        position: absolute;
+        left: 10px;
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        height: 2px;
+        background: url(../image/bg_white_o10.png) repeat;
+        border-top: 1px solid #20385B;
+    }
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+    li {
+        position: relative;
+        display: inline-block;
+        width: 31.3%;
+        line-height: 1;
+        font-size: 14px;
+        margin-bottom: 20px;
+        margin-right: 2%;
+        padding-right: 2%;
+        a {
+            color: #fff;
+            b {
+                font-weight: normal;
+                color: #8C9DB6;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 2%;
+            display: block;
+            width: 2px;
+            height: 14px;
+            background: url(../image/bg_white_o10.png) repeat;
+            border-left: 1px solid #20385B;
+        }
+        &.withdraw {
+            &::after {
+                display: none;
+            }
+        }
+        &.msg {
+            width: 60%;
+            &::after {
+                display: none;
+            }
+        }
+        &.login-btn {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            margin-bottom: 0;
+            padding-top: 40px;
+            padding-right: 0;
+            a {
+                display: block;
+                width: 100%;
+                line-height: 32px;
+                text-align: center;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+                background: $red-base;
+                @include border-radius(4px);
+                @include transition(all .3s);
+                &:hover {
+                    background: $red-base-hover;
+                    text-decoration: none;
+                }
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 0;
+                display: block;
+                width: 100%;
+                max-width: 200px;
+                height: 2px;
+                background: url(../image/bg_white_o10.png) repeat;
+                border-top: 1px solid #20385B;
+            }
+            &::after {
+                display: none;
+            }
+            @include MQ(tablet) {
+                float: right;
+                width: 140px;
+                padding: 0;
+                a {
+                    line-height: 48px;
+                }
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include MQ(tablet) {
+        max-width: 300px;
+        margin-bottom: 0;
+        padding: 24px 0 40px 0;
+        &::before,
+        &::after {
+            left: 0;
+            max-width: 300px;
+        }
+        li {
+            display: none;
+            margin-right: 0;
+            margin-bottom: 0;
+            padding-right: 0;
+            @include transition(all .3s);
+            &::after {
+                display: none;
+            }
+            a {
+                display: block;
+                &:hover{
+                text-decoration: none;
+            }
+            }
+            &.member,
+            &.switch {
+                display: block;
+                width: 140px;
+                line-height: 48px;
+                text-align: center;
+                font-size: 16px;
+                @include border-radius(4px);
+                a {
+                    color: #fff;
+                }
+            }
+            &.member {
+                display: none;
+            }
+            &.switch {
+                float: left;
+                background: $orange;
+                &:hover{
+                    background: #d25900;
+                }
+            }
+        }
+    }
+}
+
+.login-close {
+    display: none;
+    @include MQ(tablet) {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 10;
+        display: block;
+        width: 46px;
+        height: 46px;
+        background: url(../image/login_btn_close.png);
+        cursor: pointer;
+    }
+}
+
+.first-login {
+    display: block;
+}
+
+.logon {
+    .login-bg {
+        padding-bottom: 20px;
+    }
+    .login-title {
+        background-image: url(../image/login_title02.png);
+        background-size: 169px auto;
+    }
+    @include MQ(tablet) {
+        .login-title {
+            background-size: 220px auto;
+        }
+    }
+}
+

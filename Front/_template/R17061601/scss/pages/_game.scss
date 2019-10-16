@@ -1,0 +1,126 @@
+.game-slider {
+    position: relative;
+    z-index: 2;
+    @include layout-max-width;
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+.game-wrap {
+    background-color: transparent;
+    @include MQ(desktop) {}
+    @include MQ(tablet) {}
+    @include MQ(mobile) {}
+}
+
+/* --- 模組色彩管理，不修改可直接刪除 --- */
+@include casino-color(
+    $color01: #696969,  //標題的文字顏色
+    $color02: #444,     //副標題的文字顏色
+    $color03: #D2261E,  //副標題的數字顏色
+    $color04: #FFF,     //搜尋按鈕放大鏡圖片顏色
+    // $color05: #FFF,     //Active 的搜尋按鈕放大鏡圖片顏色
+    $color06: #AAA,     //搜尋按鈕底色
+    // $color07: #AAA,  //Active 的搜尋按鈕底色
+    $color08: #FFF,     //搜尋框底色
+    $color09: #6A6A6A,  //鍵入的搜尋文字顏色
+    $color10: #6A6A6A,  //搜尋框的預設文字顏色"請輸入遊戲名稱"
+    $color11: #9E9E9E,  //列表 icon 顏色
+    $color12: #454545,  //Active 的列表 icon 顏色
+    $color13: #000,     //列表 icon 旁的線條顏色
+    $color14: #666      //線條的 border 顏色
+);
+
+/* --- 模組其他調整 --- */
+.game {
+    .fixed-header .container {
+        padding: 0 !important;
+    }
+    .game-slider {
+        z-index: 1;
+    }
+    .game-slider-wrap {
+        max-width: 960px !important;
+    }
+    .game-search-input {
+        background: #EEE;
+    }
+    .dialog-content {
+        margin: -285px 0 0 -160px !important;
+    }
+    .gamejp-wrap {
+        max-width: 960px !important;
+    }
+    @include MQ(desktop) {
+        .game-layout {
+            padding-bottom: 130px;
+        }
+        // 以後要更新模組
+        .game-nav {
+            z-index: 200;
+        }
+        .game-menu {
+            z-index: 199;
+        }
+        .game-jp {
+            z-index: 1;
+        }
+    }
+    @include MQ(tablet) {
+        // 以後要更新模組
+        .game-nav {
+            z-index: 105;
+        }
+        .game-menu-mask {
+            z-index: 101;
+        }
+    }
+}
+
+.game-nav.fixed {
+    max-width: 1000px !important;
+}
+
+.game-layout {
+    z-index: 1;
+    width: 98% !important;
+}
+
+
+.float-btn-arrow {
+    @include MQ(desktop) {
+        display: none !important; 
+    }  
+    
+} 
+
+.game .game-slider-wrap{
+    max-width:100% !important;
+}  
+
+.game .game-menu-filter span{
+    color: #fff !important;
+} 
+
+.game .game-menu-filter span .game-filter-num {
+    color: #3CDFAE;
+}
+
+.game .game-menu-filter {
+    color: #fff;
+}
+
+.game .game-btn-search i:after {
+    background-color: #000;
+}
+
+.game .game-box-view li {
+    a {
+        @include alink() {
+            i {
+                color: #3cdfae;
+            }
+        }
+    }
+}

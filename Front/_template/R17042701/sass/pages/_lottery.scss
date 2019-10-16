@@ -1,0 +1,18 @@
+.lottery {
+    .header-bg01 {
+        background-image: url(../image/lottery_bg.png);
+    }
+    @include MQ(tablet) {
+        .header-bg01 {
+            background-image: url(../image/lottery_bg_m.png);
+        }
+    }
+}
+
+.lottery-wrap {
+    max-width: 900px;
+    margin: 32px auto 0;
+    @include MQ(tablet) {
+    	margin: 0;
+    }
+}

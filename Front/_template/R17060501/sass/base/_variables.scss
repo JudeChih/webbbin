@@ -1,0 +1,31 @@
+$developer: 0;
+
+//語系
+$lang-kind: popupFlag;
+$lang-img: 2;
+$lang-arrow: 1;
+
+//首頁輪播圖
+$first-slider: false;
+
+//首頁遊戲圖
+$first-game-lang: true;
+$first-game-format: jpg;
+
+// colors-主風格或常用的配色
+$orange-base 	   :  #D86C00 !default;
+$orange-base-hover :  #D84C2C !default;
+$blue-light		   :  #2E5083 !default;
+$navy			   :  #04162F !default;
+
+// fonts-字體、字級、行高設定
+$font-size-lg       : 1.25rem !default;
+$font-size-sm       : .875rem !default;
+$font-size-xs       : .75rem !default;
+
+$font-family: Helvetica Neue, Helvetica, Arial, 微軟雅黑體, Microsoft JhengHei, sans-serif;
+
+$light-height: 1.5 !default;
+
+//GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');

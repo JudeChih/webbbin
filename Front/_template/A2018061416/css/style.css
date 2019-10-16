@@ -1,0 +1,1337 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*------------------------------------ 變數目錄 --------------------------------------*/
+/*---------------------------- 基本變數 ----------------------------------------------*/
+/*---------------------------- 背景設定 ----------------------------------------------*/
+/*---------------------------- 文字屬性 ----------------------------------------------*/
+/*---------------------------- BOX 區塊屬性 ------------------------------------------*/
+/*---------------------------- 各類選單屬性 -------------------------------------------*/
+/*---------------------------- 基本變數 ----------------------------------------------*/
+/*---------------------------- 基本變數 end ------------------------------------------*/
+/*---------------------------- 背景設定 ----------------------------------------------*/
+/*---------------------------- 背景設定 end ------------------------------------------*/
+/*---------------------------- 文字屬性 ----------------------------------------------*/
+/*---------------------------- 文字屬性 end ------------------------------------------*/
+/*---------------------------- BOX 區塊屬性 ------------------------------------------*/
+/*---------------------------- BOX 區塊屬性 end --------------------------------------*/
+/*---------------------------- 各類選單屬性 -------------------------------------------*/
+/*---------------------------- 各類選單屬性 end ---------------------------------------*/
+/*---------------------------- 各類選單屬性 end ---------------------------------------*/
+.block {
+  position: relative;
+  float: left;
+  min-height: 1px;
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Microsoft JhengHei", 微軟正黑體, arial, helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #FFF;
+  background-color: #2D2B19;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+}
+a:hover, a:focus {
+  text-decoration: none;
+  color: #d9d9d9;
+}
+
+#L-Sub {
+  position: relative;
+  z-index: 9999;
+  clear: both;
+}
+#L-Sub div {
+  position: absolute;
+  z-index: 9999;
+  display: none;
+  width: 110px;
+}
+#L-Sub div a {
+  display: block;
+  padding: 0 4px;
+  text-align: center;
+}
+#L-Sub span {
+  display: block;
+  float: left;
+}
+
+#U-Sub {
+  position: relative;
+  z-index: 9999;
+  float: left;
+}
+
+.lang-wrap a {
+  float: left;
+  width: 22px;
+  height: 20px;
+  margin: 0 2px;
+  background: url('../image/not-use/flag.png') top no-repeat;
+}
+.lang-wrap a.flag01 {
+  background-position: 0px 0px;
+}
+.lang-wrap a.flag02 {
+  background-position: 0px -40px;
+}
+.lang-wrap a.flag03 {
+  background-position: 0px -80px;
+}
+
+.ele-slideshow-wrap {
+  position: relative;
+}
+.ele-slideshow-wrap ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 535px;
+}
+.ele-slideshow-wrap ul li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 535px;
+  -webkit-backface-visibility: hidden;
+}
+.ele-slideshow-wrap ul li a {
+  display: block;
+}
+.ele-slideshow-wrap ul li a img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  float: left;
+}
+.ele-slideshow-wrap ul li a .img {
+  width: 100%;
+  height: 535px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.ele-slideshow-scroll {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 535px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ele-slideshow-control-wrap {
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+}
+
+.game-slider-wrap {
+  position: absolute !important;
+  width: 714px !important;
+  height: 176px !important;
+  right: 3px;
+  top: 85px;
+}
+
+.game #page-body {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.elenew-live-trace {
+  color: #FFFFFF;
+  margin: 0 0 0 16px;
+}
+.elenew-live-trace a {
+  color: #FFFFFF;
+}
+.elenew-live-trace .elenew-trace-title {
+  color: #FFFFFF;
+}
+.elenew-live-trace .elenew-trace-sub {
+  margin: 12px 0 0 5px;
+  color: #FFFFFF;
+}
+.elenew-live-trace .gamenew-trace-num {
+  color: red;
+}
+
+#elenew-search-wrap .elenew-search-btn {
+  color: #FFF;
+  background-color: #8F8E7D;
+}
+#elenew-search-wrap .elenew-search-btn.search-active {
+  color: #FFF;
+  background-color: #B5B075;
+}
+#elenew-search-wrap .elenew-search-btn .fa-2x {
+  font-size: 1.8em;
+}
+#elenew-search-wrap .elenew-search-input {
+  background-color: #FFF;
+  color: #8F8E7D;
+}
+#elenew-search-wrap .elenew-search-input input {
+  color: #8F8E7D;
+}
+
+.elenew-live-view a {
+  color: #B5B3A8;
+}
+.elenew-live-view a:hover, .elenew-live-view a.view-active {
+  color: #FFF;
+}
+
+.elenew-serch-noresult {
+  color: #838383 !important;
+}
+
+#js-ele-gamebanner .rslides_tabs li {
+  color: #FFFFFF;
+}
+#js-ele-gamebanner .rslides_tabs li.rslides_here {
+  color: red;
+}
+
+/*主要置中區塊*/
+.wrapper, .footer, #page-body, #page-header, .header-top {
+  width: 1004px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.wrapper:before, .footer:before, #page-body:before, #page-header:before, .header-top:before, .wrapper:after, .footer:after, #page-body:after, #page-header:after, .header-top:after {
+  content: "";
+  display: table;
+}
+.wrapper:after, .footer:after, #page-body:after, #page-header:after, .header-top:after {
+  clear: both;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.row:before, .row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+
+.clearfix:before, .gamenew-menu-trace:before, #mainNav ul:before, .clearfix:after, .gamenew-menu-trace:after, #mainNav ul:after {
+  content: "";
+  display: table;
+}
+.clearfix:after, .gamenew-menu-trace:after, #mainNav ul:after {
+  clear: both;
+}
+
+/* 主要區塊 */
+#mainBody-bg {
+  width: auto;
+  min-height: 100%;
+  background: url(../image/bg01_x.jpg) repeat-x left top;
+}
+
+#mainBody {
+  background: url('../image/bg01.jpg') center top no-repeat;
+}
+.ball #mainBody {
+  background: none;
+}
+
+.game #mainBody {
+  width: auto;
+  min-height: 100%;
+  background: url(../image/bg02_x.jpg) repeat-x left top #454226;
+}
+
+#page-header02 {
+  background: url('../image/header_bg01.jpg') center top no-repeat;
+}
+
+#lottery-bg {
+  background: url('../image/lottery_bg.jpg') center top no-repeat;
+}
+
+#sports-bg {
+  background: url('../image/sport_bg.jpg') center top no-repeat;
+}
+
+#page-header03 {
+  background: url('../image/header_bg02.jpg') center top no-repeat;
+}
+
+#page-container02 {
+  background: url('../image/container_bg_x.jpg') repeat-x left bottom;
+  padding-bottom: 60px;
+}
+
+#page-footer {
+  background: url('../image/footer_bg_x.jpg') repeat-x left top;
+}
+#page-footer .footer-wraper {
+  background: url('../image/footer_bg.jpg') no-repeat center top;
+}
+#page-footer .footer-wraper .footer {
+  height: 100px;
+}
+
+/* HEADER */
+#header {
+  clear: both;
+}
+
+#header01 {
+  position: relative;
+  margin: 0 auto;
+  clear: both;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 1004px;
+}
+
+#page-header {
+  position: relative;
+}
+
+.header-top {
+  height: 34px;
+}
+.header-top .lang-wrap {
+  float: left;
+  margin: 8px 2px 0 24px;
+}
+
+.header-bottom {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+
+/* FIRST */
+/* PAGE */
+a.logo {
+  width: 149px;
+  height: 103px;
+  background: url('../image/logo.png') no-repeat;
+  float: left;
+  margin: 22px 0 0 69px;
+  display: block;
+}
+
+a.logo02 {
+  width: 149px;
+  height: 103px;
+  background: url('../image/logo.png') no-repeat;
+  float: left;
+  margin: 22px 0 0 58px;
+  display: block;
+}
+
+#first-login-wrap,
+#first-logon-wrap {
+  float: left;
+  float: left;
+  margin: 0px 0 0 11px;
+}
+
+#page-left {
+  position: absolute;
+  float: left;
+  width: 289px;
+  height: 537px;
+}
+#page-left #first-login-wrap {
+  width: 289px;
+  height: 634px;
+  background: url('../image/lang/zh-cn/mem_info_bg.png') no-repeat;
+  width: 289px;
+  height: 317px;
+}
+#page-left #first-login-wrap #first-login {
+  float: left;
+  margin: 58px 0 0 46px;
+  width: 264px;
+}
+#page-left #first-login-wrap #first-login input {
+  width: 188px;
+  height: 25px;
+  display: block;
+  font: 12px/25px "微軟正黑體";
+  background: transparent;
+  border: 0px;
+  color: #B5AF7C;
+  text-indent: 5px;
+}
+#page-left #first-login-wrap .login-btn-wrap {
+  float: left;
+  margin: 6px 0 0 30px;
+  height: 39px;
+}
+#page-left #first-login-wrap .login-btn-wrap .GetPW {
+  float: left;
+  font-size: 12px;
+  line-height: 29px;
+  color: #B5AF7C;
+  margin-right: 5px;
+}
+#page-left #first-login-wrap .login-btn-wrap .GetPW:hover {
+  color: #D5D2B6;
+}
+#page-left #first-login-wrap .login-btn-wrap .btn-joinus {
+  float: left;
+  width: 103px;
+  height: 39px;
+  background: url('../image/lang/zh-cn/btn_joinus.png') no-repeat;
+}
+#page-left #first-login-wrap .login-btn-wrap .btn-joinus:hover {
+  background-position: bottom;
+}
+#page-left #first-login-wrap .login-btn-wrap .btn-login {
+  float: left;
+  width: 81px;
+  height: 39px;
+  background: url('../image/lang/zh-cn/btn_login.png') no-repeat;
+}
+#page-left #first-login-wrap .login-btn-wrap .btn-login:hover {
+  background-position: bottom;
+}
+
+.first-button {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#login-wraper {
+  background: url(../image/lang/zh-cn/mem_info02_bg.png) no-repeat left top;
+  float: left;
+  width: 289px;
+  height: 317px;
+  margin-left: 11px;
+}
+#login-wraper #login {
+  float: left;
+  margin: 58px 0 0 46px;
+  width: 225px;
+}
+#login-wraper #login input {
+  width: 188px;
+  height: 25px;
+  display: block;
+  font: 12px/25px "微軟正黑體";
+  background: transparent;
+  border: 0px;
+  color: #B5AF7C;
+  text-indent: 5px;
+}
+#login-wraper .login-btn-wrap {
+  float: left;
+  margin: 6px 0 0 30px;
+  height: 39px;
+}
+#login-wraper .login-btn-wrap .GetPW {
+  float: left;
+  font-size: 12px;
+  line-height: 29px;
+  color: #B5AF7C;
+  margin-right: 5px;
+}
+#login-wraper .login-btn-wrap .GetPW:hover {
+  color: #D5D2B6;
+}
+#login-wraper .login-btn-wrap .btn-joinus {
+  float: left;
+  width: 103px;
+  height: 39px;
+  background: url('../image/lang/zh-cn/btn_joinus.png') no-repeat;
+}
+#login-wraper .login-btn-wrap .btn-joinus:hover {
+  background-position: bottom;
+}
+#login-wraper .login-btn-wrap .btn-login {
+  float: left;
+  width: 81px;
+  height: 39px;
+  background: url('../image/lang/zh-cn/btn_login.png') no-repeat;
+}
+#login-wraper .login-btn-wrap .btn-login:hover {
+  background-position: bottom;
+}
+
+#logo-wrapper {
+  float: left;
+  width: 289px;
+  margin-left: 12px;
+}
+
+#login-wraper02 {
+  width: 703px;
+  height: 54px;
+  background: url('../image/login_bg.png') no-repeat;
+  float: right;
+  padding: 17px 0 0 18px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 703px;
+  height: 54px;
+  margin-top: 12px;
+}
+#login-wraper02 #login02 {
+  float: left;
+  width: 455px;
+  height: 40px;
+  margin-top: 2px;
+}
+#login-wraper02 #login02 span {
+  float: left;
+  font-size: 12px;
+  line-height: 25px;
+  color: #B4AE7B;
+  padding-right: 2px;
+  margin-left: 5px;
+  width: 1px;
+}
+#login-wraper02 #login02 input {
+  float: left;
+  margin: 0 0px 10px 0;
+  font-size: 12px;
+  line-height: 25px;
+  color: #B4AE7B;
+  border: none;
+  text-indent: 2px;
+}
+#login-wraper02 #login02 input.name, #login-wraper02 #login02 input.password, #login-wraper02 #login02 input.code {
+  width: 145px;
+  width: 140px;
+  height: 25px;
+  background: url('../image/loginInput_bg.png') no-repeat;
+}
+#login-wraper02 .GetPW {
+  font-size: 12px;
+  line-height: 33px;
+  color: #B5AF7C;
+  float: right;
+  width: 60px;
+}
+#login-wraper02 .GetPW:hover {
+  color: #D5D2B6;
+}
+#login-wraper02 .btn-joinus01 {
+  float: right;
+  width: 85px;
+  height: 36px;
+  background: url('../image/lang/zh-cn/btn_joinus01.png') no-repeat;
+  margin-right: 15px;
+}
+#login-wraper02 .btn-joinus01:hover {
+  background-position: bottom;
+}
+#login-wraper02 .btn-login01 {
+  float: right;
+  width: 65px;
+  height: 36px;
+  background: url('../image/lang/zh-cn/btn_login01.png') no-repeat;
+}
+#login-wraper02 .btn-login01:hover {
+  background-position: bottom;
+}
+
+#first-login-wrap {
+  width: 289px;
+  height: 634px;
+  background: url('../image/lang/zh-cn/mem_info_bg.png') no-repeat;
+  width: 289px;
+  height: 317px;
+}
+#first-login-wrap #first-login {
+  float: left;
+  margin: 58px 0 0 46px;
+  width: 264px;
+}
+#first-login-wrap #first-login input {
+  width: 188px;
+  height: 25px;
+  display: block;
+  font: 12px/25px "微軟正黑體";
+  background: transparent;
+  border: 0px;
+  color: #B5AF7C;
+  text-indent: 5px;
+}
+#first-login-wrap .login-btn-wrap {
+  float: left;
+  margin: 6px 0 0 30px;
+  height: 39px;
+}
+#first-login-wrap .login-btn-wrap .GetPW {
+  float: left;
+  font-size: 12px;
+  line-height: 29px;
+  color: #B5AF7C;
+  margin-right: 5px;
+}
+#first-login-wrap .login-btn-wrap .GetPW:hover {
+  color: #D5D2B6;
+}
+#first-login-wrap .login-btn-wrap .btn-joinus {
+  float: left;
+  width: 103px;
+  height: 39px;
+  background: url('../image/lang/zh-cn/btn_joinus.png') no-repeat;
+}
+#first-login-wrap .login-btn-wrap .btn-joinus:hover {
+  background-position: bottom;
+}
+#first-login-wrap .login-btn-wrap .btn-login {
+  float: left;
+  width: 81px;
+  height: 39px;
+  background: url('../image/lang/zh-cn/btn_login.png') no-repeat;
+}
+#first-login-wrap .login-btn-wrap .btn-login:hover {
+  background-position: bottom;
+}
+
+.btn-download {
+  float: left;
+  margin: 5px 0 0 22px;
+  width: 265px;
+  height: 100px;
+  background: url('../image/lang/zh-cn/btn_download.jpg') no-repeat;
+}
+.btn-download:hover {
+  background-position: bottom;
+}
+
+.btn-promotion {
+  float: left;
+  margin: 5px 0 9px 22px;
+  width: 265px;
+  height: 101px;
+  background: url('../image/lang/zh-cn/btn_promotion.jpg') no-repeat;
+}
+.btn-promotion:hover {
+  background-position: bottom;
+}
+
+#first-logon-wrap {
+  float: left;
+  width: 289px;
+  height: 317px;
+  background: url('../image/lang/zh-cn/mem_info_bg.png') no-repeat left bottom;
+}
+#first-logon-wrap #first-logon {
+  float: left;
+  margin: 70px 0 0 30px;
+}
+
+.meminfo-wrap {
+  color: #B4AE7B;
+  margin: 12px 0 0 3px;
+}
+.meminfo-wrap .ele-acc-name {
+  width: 100%;
+}
+.meminfo-wrap .ele-obalance-wrap {
+  color: #EAD3A9;
+}
+
+.meminfo-wrap, .ele-acc-name, .ele-acc-unit, .ele-accinfo, .ele-obalance-wrap, .ele-other-balance {
+  display: inline-block;
+}
+
+.ele-other-balance {
+  padding-left: 5px;
+}
+
+.ele-obalance-item-wrap {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 270px;
+  color: #fff;
+  background: #596218;
+}
+.ele-obalance-item-wrap .ele-obalance-item {
+  padding: 10px;
+}
+.ele-obalance-item-wrap .ele-obalance-item .ele-obalance {
+  line-height: 16px;
+  padding-bottom: 4px;
+}
+.ele-obalance-item-wrap .ele-balance-tool {
+  text-align: right;
+  padding: 4px;
+  background-color: #2b3105;
+}
+.ele-obalance-item-wrap .ele-balance-tool > a {
+  display: inline-block;
+  -webkit-transition: background-color .20s linear;
+  transition: background-color .20s linear;
+  padding: 4px 8px;
+  color: #fff;
+  background-color: #3C430F;
+}
+.ele-obalance-item-wrap .ele-balance-tool > a:hover {
+  background-color: #292e0a;
+}
+
+#logon-wrap03 {
+  float: left;
+  width: 289px;
+  height: 259px;
+  margin-left: 11px;
+  background: url('../image/lang/zh-cn/mem_info03_bg.png') no-repeat left bottom;
+}
+#logon-wrap03 #first-logon {
+  float: left;
+  margin: 70px 0 0 30px;
+}
+#logon-wrap03 #first-logon .logon-acc {
+  margin-top: 10px;
+  float: left;
+  width: 200px;
+  color: #B4AE7B;
+}
+#logon-wrap03 #first-logon .logon-acc .acc-name {
+  display: block;
+  width: 100%;
+}
+#logon-wrap03 #first-logon .logon-acc .acc-name,
+#logon-wrap03 #first-logon .logon-acc .obalance {
+  margin-left: 5px;
+}
+#logon-wrap03 #first-logon .logon-acc .first-balance,
+#logon-wrap03 #first-logon .logon-acc .acc-name {
+  margin-left: 6px;
+}
+#logon-wrap03 #first-logon .logon-acc div .fa {
+  font-size: 12px;
+  line-height: 20px;
+  color: #EAD3A9;
+}
+#logon-wrap03 #first-logon .logon-acc div,
+#logon-wrap03 #first-logon .logon-acc span,
+#logon-wrap03 #first-logon .logon-acc strong {
+  float: left;
+}
+#logon-wrap03 #first-logon .logon-acc div span,
+#logon-wrap03 #first-logon .logon-acc div .fa {
+  margin: 0 2px;
+}
+#logon-wrap03 #first-logon .logon-acc div strong {
+  margin: 0 2px;
+}
+#logon-wrap03 #first-logon .logon-acc .obalance {
+  cursor: pointer;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .MemberDate ul li {
+  color: #fff;
+  line-height: 18px;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .MemberDate .MemberChange {
+  border-top: 1px solid #3A3820;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .btn_change {
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .btn_change:hover {
+  color: #EAD3A9;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub {
+  position: relative;
+  z-index: 9999;
+  clear: both;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .MemberDate {
+  display: none;
+  position: absolute;
+  width: 270px;
+  height: 70px;
+  padding-top: 10px;
+  z-index: 100;
+  background-color: #596218;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .MemberDate ul li {
+  width: 250px;
+  margin: 0 0 0 20px;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .MemberDate .MemberChange {
+  width: 270px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #2b3105;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .btn_change {
+  float: right;
+  display: block;
+  width: 64px;
+  margin: 3px 6px 0 0;
+  background-color: #3C430F;
+}
+#logon-wrap03 #first-logon .logon-acc #Member-Sub .btn_change:hover {
+  background-color: 666;
+}
+
+.logon-list {
+  float: right;
+  margin: 10px 30px 0 0;
+}
+.logon-list ul li {
+  display: inline;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B4AE7B;
+}
+.logon-list ul li a {
+  color: #B4AE7B;
+}
+.logon-list ul li a:hover {
+  color: #c6c29c;
+}
+.logon-list a {
+  margin: 0 3px;
+}
+
+#page-right {
+  float: left;
+  position: relative;
+  width: 711px;
+  margin-left: 289px;
+}
+#page-right .slider-ctrl {
+  float: left;
+  position: absolute;
+  top: 365px;
+  left: 70px;
+}
+#page-right .ele-slideshow-control-wrap {
+  top: 365px;
+}
+#page-right .ele-slideshow-control-wrap .ele-slideshow-nav {
+  position: relative;
+  left: 70px;
+}
+#page-right .ele-slideshow-nav a {
+  display: block;
+  font-size: 9px;
+  line-height: 15px;
+  color: #fff;
+  float: left;
+  margin-right: 3px;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  background: url(../image/slider_ctrl.png) no-repeat left top;
+}
+#page-right .ele-slideshow-nav a:hover {
+  color: #fff;
+}
+#page-right .ele-slideshow-nav a.active {
+  background-position: bottom center;
+}
+#page-right .first-news {
+  float: left;
+  position: absolute;
+  z-index: 2;
+  top: 390px;
+  left: 40px;
+  width: 669px;
+  height: 120px;
+  background: url('../image/lang/zh-cn/news_bg.png') no-repeat;
+}
+#page-right .first-news marquee {
+  float: left;
+  margin: 70px 0 0 170px;
+  font: 12px/22px "微軟正黑體";
+  color: #B5AF7C;
+  width: 490px;
+  height: 40px;
+}
+
+#page-bottom {
+  clear: both;
+  width: 1000px;
+  padding-bottom: 13px;
+}
+
+.nav-promotions-box {
+  width: 260px;
+  height: 154px;
+  float: left;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#mainNav {
+  margin: 0 auto;
+  width: 1000px;
+  height: 135px;
+}
+
+#mainNav ul {
+  margin: 0px auto;
+  list-style: none;
+  padding-left: 4px;
+}
+
+#mainNav ul li {
+  float: left;
+  margin-right: 8px;
+  display: block;
+  height: 135px;
+  text-align: center;
+}
+
+#mainNav ul li a {
+  display: block;
+}
+
+a.nav-sports {
+  width: 118px;
+  height: 135px;
+  background: url(../image/lang/zh-cn/nav_sports.png) no-repeat left bottom;
+}
+a.nav-sports:hover {
+  width: 118px;
+  height: 135px;
+  background: url('../image/lang/zh-cn/nav_sports_over.png') no-repeat;
+}
+
+a.nav-live {
+  width: 118px;
+  height: 135px;
+  background: url(../image/lang/zh-cn/nav_live.png) no-repeat left bottom;
+}
+a.nav-live:hover {
+  width: 118px;
+  height: 135px;
+  background: url('../image/lang/zh-cn/nav_live_over.png') no-repeat;
+}
+
+a.nav-casino {
+  width: 118px;
+  height: 135px;
+  background: url(../image/lang/zh-cn/nav_casino.png) no-repeat left bottom;
+}
+a.nav-casino:hover {
+  width: 118px;
+  height: 135px;
+  background: url('../image/lang/zh-cn/nav_casino_over.png') no-repeat;
+}
+
+.nav-service-box {
+  float: left;
+  margin: 0 10px 0 0;
+  width: 230px;
+  height: 51px;
+  position: relative;
+}
+.nav-service-box .nav-service {
+  width: 233px;
+  height: 165px;
+  background: url('../image/lang/zh-cn/nav_service.png') no-repeat;
+  position: absolute;
+  top: -26px;
+}
+.nav-service-box .nav-service:hover {
+  background-position: bottom;
+}
+
+a.nav-lottery {
+  width: 118px;
+  height: 135px;
+  background: url(../image/lang/zh-cn/nav_lottery.png) no-repeat left bottom;
+}
+a.nav-lottery:hover {
+  width: 118px;
+  height: 135px;
+  background: url('../image/lang/zh-cn/nav_lottery_over.png') no-repeat;
+}
+
+a.nav-mobil {
+  width: 118px;
+  height: 135px;
+  background: url(../image/lang/zh-cn/nav_mobile.png) no-repeat left bottom;
+}
+a.nav-mobil:hover {
+  width: 118px;
+  height: 135px;
+  background: url('../image/lang/zh-cn/nav_mobile_over.png') no-repeat;
+}
+
+a.nav-promotions {
+  width: 118px;
+  height: 135px;
+  background: url(../image/lang/zh-cn/nav_promotion.png) no-repeat left bottom;
+}
+a.nav-promotions:hover {
+  width: 118px;
+  height: 135px;
+  background: url('../image/lang/zh-cn/nav_promotion_over.png') no-repeat;
+}
+
+/*次選單的css樣式設定*/
+.ele-drop-group .lsub-inner-wrap a {
+  height: 30px;
+  line-height: 30px;
+  background: url('../image/sub.png');
+  background-position: center;
+}
+.ele-drop-group a {
+  display: block;
+  text-align: center;
+  width: 110px;
+  color: #E3CAA1;
+}
+.ele-drop-group a:hover {
+  color: #CDCAA7;
+}
+
+.first .LS-ball {
+  left: -45px !important;
+}
+
+.title-wrap {
+  float: right;
+  height: 186px;
+}
+
+.title-welcome {
+  float: right;
+  margin: 107px 5px 0 5px;
+  width: 246px;
+  height: 79px;
+  background: url('../image/lang/zh-cn/title_welcome.png') no-repeat;
+}
+
+.title-live {
+  float: right;
+  margin: 107px 5px 0 5px;
+  width: 246px;
+  height: 79px;
+  background: url('../image/lang/zh-cn/title_live.png') no-repeat;
+}
+
+.title-lottery {
+  float: right;
+  margin: 107px 5px 0 5px;
+  width: 246px;
+  height: 80px;
+  background: url('../image/lang/zh-cn/title_lottery.png') no-repeat;
+}
+
+.title-sport {
+  float: right;
+  margin: 107px 5px 0 5px;
+  width: 246px;
+  height: 79px;
+  background: url('../image/lang/zh-cn/title_sports.png') no-repeat;
+}
+
+/* FOOTER */
+.footer-list {
+  float: left;
+  margin: 40px 40px 0 5px;
+}
+.footer-list ul li {
+  display: inline;
+  font-size: 12px;
+  line-height: 30px;
+  color: #787343;
+}
+.footer-list ul li a {
+  color: #787343;
+}
+.footer-list ul li a:hover {
+  color: #B6AE7C;
+}
+.footer-list a {
+  margin: 0 2px;
+}
+
+.copyright {
+  float: left;
+  margin: 45px 0px 0 10px;
+  overflow: hidden;
+  color: #787343;
+}
+
+.footer-logo {
+  float: right;
+  margin: 40px 12px 0 80px;
+}
+.footer-logo ul li {
+  float: right;
+}
+
+.bbinlogo {
+  width: 130px;
+  height: 50px;
+  background: url('../image/bbinlogo.png') no-repeat;
+}
+
+.ublogo {
+  width: 109px;
+  height: 36px;
+  background: url('../image/not-use/ublogo.png') no-repeat;
+  margin-left: 8px;
+}
+
+.mainnav02 {
+  float: left;
+  padding: 0px 0 0 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 703px;
+  height: 52px;
+  background: url('../image/nav_bg.png') no-repeat;
+  margin-left: -2px;
+}
+.mainnav02 li {
+  float: left;
+  width: 80px;
+  height: 52px;
+  margin: 0 2px;
+  text-align: center;
+}
+.mainnav02 li a {
+  display: block;
+  letter-spacing: 1px;
+  font-family: '微软雅黑';
+  font-size: 12px;
+  line-height: 52px;
+  color: #CDCAA7;
+}
+.mainnav02 li a:hover {
+  color: #fff;
+}
+.mainnav02 li a:hover, .mainnav02 li a.current {
+  background: url('../image/nav_over.png') no-repeat left 4px;
+  color: #fff;
+}
+
+.livetop-wrap {
+  text-align: center;
+  padding-top: 20px;
+  display: block;
+}
+
+/*---------------------------------------程式的BB體育css*/
+.clearfix, .gamenew-menu-trace, #mainNav ul {
+  *zoom: 1;
+}
+.clearfix:before, .gamenew-menu-trace:before, #mainNav ul:before {
+  content: "";
+  display: table;
+}
+.clearfix:after, .gamenew-menu-trace:after, #mainNav ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ball-wrap {
+  margin-top: 20px !important;
+}
+
+/*lottery  彩票遊戲*/
+.ltlottery-wrap {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/*live-img
+.live01 {
+    display: inline-block;
+    @include bg-btn('not-use/live_01.png');
+    margin: 0 0 40px 7px;
+}
+
+.live02 {
+    display: inline-block;
+    @include bg-btn('not-use/live_02.png');
+    margin: 0 0 40px 4px;
+}
+
+.live03 {
+    display: inline-block;
+    @include bg-btn('not-use/live_03.png');
+    margin: 0 0 40px 4px;
+}
+*/
+#sidebar {
+  float: left;
+  margin: 0px 0 0 23px;
+}
+#sidebar .sidebar-top,
+#sidebar .sidebar-bottom.sidebar-y,
+#sidebar .sidebar-y {
+  display: block;
+}
+#sidebar .sidebar-top {
+  width: 258px;
+  height: 47px;
+  background: url('../image/sidebar_top.png') no-repeat;
+}
+#sidebar .sidebar-bottom {
+  width: 258px;
+  height: 64px;
+  background: url('../image/sidebar_bottom.png') no-repeat;
+}
+#sidebar .sidebar-y {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: url('../image/sidebar_bg_y.png') repeat-y;
+}
+#sidebar .sidemenu {
+  background: url('../image/sidebar_bg.png') center top no-repeat;
+  width: 258px;
+}
+#sidebar .sidemenu li a {
+  display: block;
+  width: 220px;
+  height: 33px;
+  margin-left: 18px;
+  text-align: center;
+  width: 220px;
+  height: 33px;
+  background: url('../image/sidebar.png') no-repeat;
+  font-size: 12px;
+  line-height: 33px;
+  color: #CDCAA7;
+  font-family: "新細明體";
+}
+#sidebar .sidemenu li a:hover {
+  background-position: bottom;
+}
+#sidebar .sidemenu li a:hover {
+  color: #D8D800;
+}
+#sidebar .sidemenu li a.current {
+  color: #D8D800;
+  background-position: bottom;
+}
+
+.article {
+  float: right;
+  margin: -10px 60px 10px 0;
+  width: 600px;
+  text-align: justify;
+  text-justify: auto;
+  white-space: pre-wrap;
+  font-family: "新細明體";
+}
+.article .case-article-title {
+  font-size: 12px;
+  line-height: 36px;
+  color: #B2AC79;
+}
+.article p {
+  font-size: 12px;
+  line-height: 22px;
+  color: #B2AC79;
+}
+
+/*# sourceMappingURL=style.css.map */

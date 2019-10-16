@@ -1,0 +1,23 @@
+.footer-wrap {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 998;
+	display: block;
+	width: 100%;
+	background: #FFF;
+	border-top: 1px solid #CCC;
+	padding: 8px 32px;
+}
+
+.footer-logout {
+	display: block;
+	font-size: 16px;
+	color: #FFF;
+	background: $color-1;
+	padding: 8px 16px;
+	float: right;
+	&:hover {
+		background: $color-1-dark;
+	}
+}

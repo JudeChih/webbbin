@@ -1,0 +1,74 @@
+.page-casino-wrap {
+    @extend .page-wrap;
+    @extend .page-ins-wrap;
+    @include MQ(custom) {
+        max-width: 1000px !important;
+    }
+    @include MQ(desktop) {
+        //padding: 60px 0 0;
+    }
+    @include MQ(tablet) {
+        float: left;
+    }
+    @include MQ(mobile) {
+        padding: 60px 0 0;
+    }
+}
+
+@include MQ(tablet) {
+    .casino-wrap {
+        margin-bottom: 80px;
+    }
+}
+
+
+/* -- casino色碼調整 -- */
+
+html.game {
+    //寫在html上的標籤，填背景色
+    background: #fff !important;
+}
+
+.game-menu-filter {
+    color: #636466 !important;
+}
+
+.game-search-input {
+    background: #e6e6e6 !important;
+}
+
+.game-box-view {
+    li {
+        i {
+            color: #d9d9d9 !important;
+        }
+        a {
+            &:before {
+                background-color: #d9d9d9 !important;
+                border-right: solid 1px #f6f6f6 !important;
+            }
+            @include hover() {
+                i {
+                    color: #9e9e9e !important;
+                }
+            }
+        }
+    }
+}
+
+html.game .dialog-content {
+    margin: -285px 0 0 -160px !important; //-284
+}
+
+.game-jp {
+    @include trans(left);
+    &.mainnav-move {
+        @include trans(left);
+        @include MQ(tablet) {
+            left: 250px;
+        }
+        @include MQ(mobile) {
+            left: 200px;
+        }
+    }
+}

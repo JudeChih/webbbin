@@ -1,0 +1,872 @@
+@charset "UTF-8";
+/*
+------------------------------------------------------------------------------------------------------------------------
+Color
+------------------------------------------------------------------------------------------------------------------------
+*/
+.ele-slideshow-wrap {
+  position: relative;
+}
+.ele-slideshow-wrap ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 250px;
+}
+.ele-slideshow-wrap ul li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 250px;
+  -webkit-backface-visibility: hidden;
+}
+.ele-slideshow-wrap ul li a {
+  display: block;
+}
+.ele-slideshow-wrap ul li a img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  float: left;
+}
+.ele-slideshow-wrap ul li a .img {
+  width: 100%;
+  height: 250px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.ele-slideshow-scroll {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ele-slideshow-control-wrap {
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+}
+
+/*標準化*/
+/*margin padding 標準化*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/*標題 font-size 的標化*/
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+/*移除清單list-style樣式*/
+ol, ul {
+  list-style: none;
+}
+
+/*font-style,font-weight*/
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*del table border*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*del fieldset and img border*/
+fieldset, img {
+  border: 0;
+}
+
+/*caption and th text-align:left*/
+caption, th {
+  text-align: left;
+}
+
+/*del q的引號*/
+q:before, q:after {
+  content: '';
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Common
+------------------------------------------------------------------------------------------------------------------------
+*/
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+body {
+  width: 100%;
+  font-size: 12px;
+  position: relative;
+  overflow-x: hidden;
+  font-family: "Microsoft JhengHei", 微軟正黑體, arial, helvetica, sans-serif;
+  background-color: #ffffff;
+  background-image: url(../image/bg.jpg);
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+
+#mainBody {
+  width: 1016px;
+  height: auto;
+  margin: 0 auto;
+}
+#mainBody .page-header {
+  width: 100%;
+  height: auto;
+  background: url(../image/head_bg.png) center top no-repeat;
+}
+#mainBody .page-container {
+  width: 100%;
+  height: auto;
+}
+.first #mainBody .page-container {
+  padding-bottom: 0;
+}
+#mainBody .page-container_mold {
+  width: 100%;
+  height: auto;
+  padding: 250px 0 0 0;
+}
+.first #mainBody .page-container_mold {
+  padding-bottom: 0;
+}
+
+.container {
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  background: url(../image/container_bg.jpg) #000 center top no-repeat;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Games
+------------------------------------------------------------------------------------------------------------------------
+*/
+.first-game {
+  height: 196px;
+  width: 1000px;
+}
+.first-game a {
+  float: left;
+}
+.first-game a.btn_event {
+  margin: 0 27px 0 34px;
+  width: 260px;
+  height: 196px;
+  background: url('../image/lang/zh-cn/btn_event.jpg') no-repeat;
+}
+.first-game a.btn_event:hover {
+  background-position: bottom;
+}
+.first-game a.btn_joinus02 {
+  width: 260px;
+  height: 196px;
+  background: url('../image/lang/zh-cn/btn_joinus02.jpg') no-repeat;
+}
+.first-game a.btn_joinus02:hover {
+  background-position: bottom;
+}
+.first-game a.btn_welcome {
+  width: 288px;
+  height: 196px;
+  background: url('../image/lang/zh-cn/btn_welcome.jpg') no-repeat;
+}
+.first-game .jackpot {
+  width: 357px;
+  height: 196px;
+  background: url('../image/lang/zh-cn/jp_bg.jpg') no-repeat;
+  margin-right: 15px;
+  float: left;
+  font-size: 18px;
+  line-height: 243px;
+  font-weight: bold;
+  color: #FFDE00;
+}
+
+.btn_service {
+  float: left;
+  width: 230px;
+  height: 50px;
+  background: url('../image/lang/zh-cn/btn_service.gif') no-repeat;
+  margin-left: 77px;
+}
+
+.first-btn-wrap {
+  width: 1000px;
+  height: 50px;
+  background: url('../image/news_bg.jpg') no-repeat;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+News
+------------------------------------------------------------------------------------------------------------------------
+*/
+.first-news {
+  float: left;
+  margin: 0 0 0 14px;
+  width: 139px;
+  height: 50px;
+  background: url('../image/lang/zh-cn/news_bg.png') no-repeat;
+}
+
+marquee {
+  float: left;
+  height: 50px;
+  width: 494px;
+  margin-left: 5px;
+  font-size: 12px;
+  line-height: 50px;
+  color: #FFF;
+  letter-spacing: 1px;
+}
+marquee:hover {
+  cursor: pointer;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Footer
+------------------------------------------------------------------------------------------------------------------------
+*/
+.page-footer {
+  width: 100%;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  background: url(../image/footer_bg.png) center top no-repeat;
+}
+.page-footer .bbinlogo {
+  float: right;
+  width: 83px;
+  height: 40px;
+  margin: 5px 10px 0 10px;
+}
+.page-footer .ublogo {
+  display: block;
+  float: right;
+  width: 132px;
+  height: 44px;
+  background: url(../image/not-use/ublogo.png);
+}
+.page-footer .copyright {
+  float: right;
+  color: #000000;
+  text-align: right;
+  line-height: 70px;
+}
+
+.footer {
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.footer-list {
+  float: left;
+  width: 100%;
+  height: 16px;
+  margin: 0 0 32px 0;
+  font-family: '宋体';
+}
+.footer-list ul {
+  padding: 0 275px;
+}
+.footer-list ul li {
+  float: left;
+  margin: 0 3px;
+  line-height: 16px;
+  color: #fff;
+}
+.footer-list ul li a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+.footer-list ul li a:hover {
+  color: #59743F;
+}
+
+.elenew-live-trace {
+  color: #fff;
+  margin: 0 0 0 16px;
+}
+.elenew-live-trace a {
+  color: #fff;
+}
+.elenew-live-trace .elenew-trace-title {
+  color: #fff;
+}
+.elenew-live-trace .elenew-trace-sub {
+  margin: 12px 0 0 5px;
+  color: #fff;
+}
+.elenew-live-trace .gamenew-trace-num {
+  color: #7fa303;
+}
+
+#elenew-search-wrap .elenew-search-btn {
+  color: #FFF;
+  background-color: #7fa303;
+}
+#elenew-search-wrap .elenew-search-btn.search-active {
+  color: #FFF;
+  background-color: #002E68;
+}
+#elenew-search-wrap .elenew-search-btn .fa-2x {
+  font-size: 1.8em;
+}
+#elenew-search-wrap .elenew-search-input {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+#elenew-search-wrap .elenew-search-input input {
+  color: #fff;
+}
+
+.elenew-live-view a {
+  color: #fff;
+}
+.elenew-live-view a:hover, .elenew-live-view a.view-active {
+  color: #7fa303;
+}
+
+.elenew-serch-noresult {
+  color: #ccc !important;
+}
+
+/*  color-setC
+    1   標題的文字顏色
+    2   副標題的文字顏色
+    3   副標題的數字顏色
+    4   搜尋按鈕放大鏡圖片顏色
+    5   Active的搜尋按鈕放大鏡圖片顏色
+    6   搜尋按鈕底色
+    7   Active的搜尋按鈕底色
+    8   搜尋框底色
+    9   鍵入的搜尋文字顏色
+    10  搜尋框的預設文字顏色"請輸入遊戲名稱"
+    11  列表icon顏色
+    12  Active的列表icon顏色  */
+/*
+------------------------------------------------------------------------------------------------------------------------
+Login
+------------------------------------------------------------------------------------------------------------------------
+*/
+.login {
+  float: right;
+  width: 750px;
+  height: 70px;
+}
+.login a {
+  float: left;
+}
+.login .login_box {
+  float: right;
+  width: 500px;
+  margin: 3px 0 0 0;
+}
+.login .login_box .btn-joinus01 {
+  font-family: '宋体';
+  line-height: 26px;
+  float: right;
+  width: 72px;
+  height: 28px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: url(../image/btn_login.jpg) no-repeat center top;
+}
+.login .login_box .btn-joinus01:hover {
+  background: url(../image/btn_login.jpg) no-repeat center bottom;
+}
+.login .login_box .no {
+  float: right;
+  margin: 3px -161px 0 0;
+  width: 42px;
+  height: 20px;
+  background: url('../image/not-use/no.jpg') no-repeat;
+}
+.login .login_box .INPUTlogin {
+  font-size: 12px;
+  float: right;
+  width: 153px;
+  height: 26px;
+  margin: 0 0 0 6px;
+  padding: 0 0 7px 5px;
+  text-indent: 2px;
+  letter-spacing: 1px;
+  color: #e2e8d9;
+  border: 0;
+  background: url(../image/loginInput_bg.png) no-repeat;
+}
+.login .login_box .INPUTlogin2 {
+  float: left;
+  width: 132px;
+  height: 23px;
+  margin: 0 4px 2px 0;
+  text-indent: 2px;
+  color: #fff;
+  border: 0;
+  border: 1px #ecc345 solid;
+  background-color: #a06f02;
+}
+.login .login_box .btn-line {
+  line-height: 26px;
+  float: right;
+  height: 12px;
+  color: #000;
+}
+.login .login_box .btn-submit {
+  font-family: '宋体';
+  line-height: 26px;
+  float: right;
+  width: 60px;
+  height: 12px;
+  margin: 0 0 0 10px;
+  color: #000;
+}
+.login .login_box .btn-submit:hover {
+  text-decoration: underline;
+  color: #708b46;
+}
+.login .login_box .getPW {
+  font-family: '宋体';
+  line-height: 26px;
+  float: right;
+  width: 60px;
+  height: 12px;
+  margin: 0 0 0 10px;
+  color: #000;
+}
+.login .login_box .getPW:hover {
+  text-decoration: underline;
+  color: #708b46;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Login Out
+------------------------------------------------------------------------------------------------------------------------
+*/
+.meminfo-wrap {
+  float: right;
+  width: 254px;
+  height: 61px;
+  margin: 3px 0 0 500px;
+  background: url(../image/lang/zh-cn/mem_info_bg.png) no-repeat center top;
+}
+.meminfo-wrap .mem-info {
+  line-height: 18px;
+  float: left;
+  padding: 20px 0 0 2px;
+  color: #263300;
+}
+.meminfo-wrap .ele-first-balance {
+  display: inline-block;
+}
+.meminfo-wrap .ele-obalance-wrap {
+  display: inline-block;
+  margin: 0 5px;
+  color: #608100;
+}
+.meminfo-wrap .ele-obalance-wrap:hover {
+  color: #dc360f;
+}
+
+.meminfo-wrap, .ele-acc-name, .ele-acc-unit, .ele-accinfo, .ele-obalance-wrap, .ele-other-balance {
+  display: inline-block;
+}
+
+.ele-obalance-item-wrap {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 270px;
+  color: #fff;
+  background: #608100;
+}
+.ele-obalance-item-wrap .ele-obalance-item {
+  padding: 10px;
+}
+.ele-obalance-item-wrap .ele-obalance-item .ele-obalance {
+  line-height: 16px;
+  padding-bottom: 4px;
+}
+.ele-obalance-item-wrap .ele-balance-tool {
+  text-align: right;
+  padding: 4px;
+  background-color: #1f2800;
+  border-top: 1px solid false;
+}
+.ele-obalance-item-wrap .ele-balance-tool > a {
+  display: inline-block;
+  -webkit-transition: background-color .20s linear;
+  transition: background-color .20s linear;
+  padding: 4px 8px;
+  color: #0d0c0c;
+  background-color: #ffdf38;
+}
+.ele-obalance-item-wrap .ele-balance-tool > a:hover {
+  background-color: #ffdb1f;
+}
+
+.mem_info-list {
+  position: absolute;
+  top: 150px;
+  right: 16px;
+  width: auto;
+  height: 22px;
+}
+.mem_info-list li {
+  line-height: 20px;
+  float: left;
+  margin: 0 0 0 8px;
+  color: #fff;
+}
+.mem_info-list li a {
+  text-decoration: none;
+  color: #fff;
+}
+.mem_info-list li a:hover {
+  color: #c9ff26;
+}
+
+.time {
+  position: absolute;
+  z-index: 1000;
+  top: 80px;
+  right: 28px;
+  color: #971509;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Nav+Logo
+------------------------------------------------------------------------------------------------------------------------
+*/
+.header {
+  position: relative;
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+.header .logo {
+  float: left;
+  width: 187px;
+  height: 86px;
+  margin: 23px 0 0 17px;
+  background-image: url(../image/logo.png);
+}
+.header .link {
+  line-height: 24px;
+  float: right;
+  width: 220px;
+  height: 24px;
+  margin: 25px 0 0 0;
+  text-align: left;
+}
+.header .link a {
+  padding: 0 5px 0 10px;
+  color: #0f0110;
+  border-left: 1px solid #0f0110;
+}
+.header .link a:first-child {
+  border: none;
+}
+.header .link a:hover {
+  color: #dc360f;
+}
+
+.flag {
+  float: right;
+  width: auto;
+  height: 20px;
+  padding: 10px 0 0 0;
+}
+.flag .flag01 {
+  float: left;
+  width: 22px;
+  height: 20px;
+  margin: 0 0 0 6px;
+  background-image: url(../image/not-use/flag02.png);
+  background-position: 0 -40px;
+}
+.flag .flag02 {
+  float: left;
+  width: 22px;
+  height: 20px;
+  margin: 0 0 0 6px;
+  background-image: url(../image/not-use/flag02.png);
+  background-position: 0 0;
+}
+.flag .flag03 {
+  float: left;
+  width: 22px;
+  height: 20px;
+  margin: 0 0 0 6px;
+  background-image: url(../image/not-use/flag02.png);
+  background-position: 0 -80px;
+}
+
+.mainnav {
+  z-index: 1000;
+  float: left;
+  width: 1000px;
+  height: 57px;
+  margin: 5px 0 0 0;
+}
+.mainnav li {
+  float: left;
+}
+.mainnav li a {
+  font-family: '微軟正黑體';
+  font-size: 13px;
+  line-height: 33px;
+  display: block;
+  width: 120px;
+  height: 33px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+.mainnav li a:hover span,
+.mainnav li a.current span,
+.mainnav li a:hover,
+.mainnav li a.current {
+  color: #196600;
+  background: url(../image/nav_over.png) no-repeat center top;
+}
+
+#L-Sub {
+  position: relative;
+  clear: both;
+  z-index: 1000;
+}
+#L-Sub div {
+  width: 110px;
+  display: none;
+  position: absolute;
+  line-height: 28px;
+  z-index: 100;
+  top: -20px;
+  margin: 20px 0 0 54px;
+}
+#L-Sub div a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: url(../image/sub.png) center repeat-x;
+}
+#L-Sub div a:hover {
+  color: #c9ff26;
+}
+
+.ele-drop-group .lsub-inner-wrap {
+  line-height: 28px;
+  z-index: 100;
+  top: 0;
+  width: 110px;
+}
+.ele-drop-group .lsub-inner-wrap a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: url(../image/sub.png) center repeat-x;
+}
+.ele-drop-group .lsub-inner-wrap a:hover {
+  color: #c9ff26;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Banner
+------------------------------------------------------------------------------------------------------------------------
+*/
+.header .banner-inside {
+  height: 100px;
+  float: left;
+}
+.header .banner-live .title {
+  position: relative;
+  width: 1000px;
+  height: 100px;
+  background: url('../image/lang/zh-cn/title_live.jpg') no-repeat;
+}
+.header .banner-event .title {
+  position: relative;
+  width: 1000px;
+  height: 100px;
+  background: url('../image/lang/zh-cn/title_memberexclusiveii.jpg') no-repeat;
+}
+.header .banner-lottery .title {
+  position: relative;
+  width: 1000px;
+  height: 100px;
+  background: url('../image/lang/zh-cn/title_lottery.jpg') no-repeat;
+}
+.header .banner-about .title {
+  position: relative;
+  width: 1000px;
+  height: 100px;
+  background: url('../image/lang/zh-cn/title_welcome.jpg') no-repeat;
+}
+.header .banner-sports .title {
+  position: relative;
+  width: 1000px;
+  height: 100px;
+  background: url('../image/lang/zh-cn/title_sport.jpg') no-repeat;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+Live+Lottery
+------------------------------------------------------------------------------------------------------------------------
+*/
+.main-wrap {
+  display: block;
+  padding-top: 40px;
+  background: url(../image/c_line.gif) no-repeat center bottom;
+}
+.main-wrap .events {
+  float: left;
+  margin: -20px auto 40px 30px;
+  width: 940px;
+  height: 80px;
+  background: url('../image/not-use/events.jpg') no-repeat;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+About
+------------------------------------------------------------------------------------------------------------------------
+*/
+.gameMenual {
+  width: 240px;
+  float: left;
+  margin: 5px 0 30px 50px;
+  font-size: 12px;
+}
+.gameMenual .gameMenualTop {
+  width: 240px;
+  height: 50px;
+  background: url('../image/sidebar_top.png') no-repeat;
+}
+.gameMenual .gameMenualDown {
+  width: 240px;
+  height: 91px;
+  background: url('../image/sidebar_bottom.png') no-repeat;
+}
+.gameMenual .gameMenualII {
+  background: url(../image/sidebar_bg_y.png) repeat-y center top;
+}
+.gameMenual .gameMenualII ul {
+  background: url(../image/sidebar_bg.png) no-repeat left top;
+  min-height: 237px;
+}
+.gameMenual .gameMenualII ul a {
+  display: inline-block;
+  width: 100%;
+  height: 38px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 38px;
+  text-decoration: none;
+  background: url(../image/sidebar_line.gif) no-repeat center bottom;
+}
+.gameMenual .gameMenualII ul a:hover {
+  color: #C9FF26;
+}
+
+.articles {
+  width: 633px;
+  float: left;
+  padding: 5px 35px 30px 40px;
+  font-size: 12px;
+  color: #CBD8CA;
+  line-height: 2em;
+  text-align: left;
+}
+.articles h4,
+.articles p {
+  margin-bottom: 20px;
+}
+.articles h4 {
+  display: block;
+  font-size: 14px;
+}
+.articles div {
+  text-indent: 24px;
+}
+
+/*---------------------------------------程式的BB體育css*/
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*lottery  彩票遊戲*/
+.ltlottery-wrap,
+.livetop-wrap {
+  padding: 20px 0;
+}
+
+.ele-slideshow-wrap {
+  position: relative;
+  width: 1000px;
+  height: 250px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.ele-slideshow-control-wrap a {
+  display: inline-block;
+  color: #fff;
+  background: #aaa;
+  background: rgba(0, 0, 0, 0.3);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 1px;
+  text-align: center;
+  line-height: 20px;
+}
+.ele-slideshow-control-wrap a.active {
+  background: #ccc;
+  background: rgba(162, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=style.css.map */

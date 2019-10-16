@@ -1,0 +1,41 @@
+// media queries
+$custom-1600: 1600px;
+$custom-1366: 1366px;
+$custom-1180: 1180px;
+$desktop: 1024px;
+$tablet: 768px;
+$mobile: 480px;
+$small: 320px;
+
+@mixin MQ($canvas) {
+    @if $canvas == custom-1366 {
+        @media only screen and (max-width: $custom-1366) { @content; }
+    }
+    @else if $canvas == custom-1600 {
+        @media only screen and (max-width: $custom-1600) { @content; }
+    }
+    @else if $canvas == custom-1180 {
+        @media only screen and (max-width: $custom-1180) { @content; }
+    }
+    @else if $canvas == desktop {
+        @media only screen and (max-width: $desktop) { @content; }
+    }
+    @else if $canvas == tablet {
+        @media only screen and (max-width: $tablet) { @content; }
+    }
+    @else if $canvas == mobile {
+        @media only screen and (max-width: $mobile) { @content; }
+    }
+    @else if $canvas == small {
+        @media only screen and (max-width: $small) { @content; }
+    }
+}
+
+//模板
+@include MQ(custom-1600) {}
+@include MQ(custom-1366) {}
+@include MQ(custom-1180) {}
+@include MQ(desktop) {}
+@include MQ(tablet) {}
+@include MQ(mobile) {}
+@include MQ(small) {}

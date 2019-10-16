@@ -1,0 +1,36 @@
+// 開發者模式 = 1; 非開發者模式 = 0
+$developer: 0;
+
+
+// 語系種類
+$lang-kind: popupFlag;      // false = 不使用; Flag = 使用 inline 國旗; Dropmenu = 下拉式; popupFlag = 使用 popup 國旗
+$lang-img: 1;               // 1 = 長方形; 2 = 圓形（目前使用 Flag、Dropmenu 才需設定）
+$lang-arrow: 1;             // 1 = 白; 2 = 黑（目前使用 Dropmenu 才需設定）
+
+
+// 首頁輪播圖
+$first-slider: 1;                            			// 使用 = 1; 不使用 = 0;
+$first-height: image-height('not-use/slider01.png');    // 圖片高度 = 區塊高度;
+
+
+// 首頁遊戲圖
+$first-game-lang: 1;     // 使用 = 1; 不使用 = 0;
+
+
+
+
+// 主風格或常用的配色，自行修改
+$color1			   : #D4C18C !default;
+$red               : #9F0909 !default;
+$red-dark		   : darken($red, 5%) !default;
+
+
+// 基本文字設定
+//## Font, line-height, and color for body text, and more.
+$font-family-base: STHeiti,"Microsoft YaHei", "微软雅黑", "SimSun", "宋体", arial !default;
+$font-size-base: 16px !default;
+$line-height-base: 1.8 !default;
+
+
+// GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');  // 範例，沒有使用可刪除
