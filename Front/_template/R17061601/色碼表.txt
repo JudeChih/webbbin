@@ -1,4 +1,0 @@
-{{*導覽列文字色系設定*}}
-(標題/副標題/副標題數字/搜尋按鈕圖片/搜尋按鈕圖片ACTIVE/搜尋按鈕/搜尋按鈕ACTIVE/搜尋框/搜尋預設文字/搜尋文字/列表icon/列表icon ACTIVE/分隔線顏色/分隔線 border)
-{{assign var="ELENEW_NEWGAME_MENU02"
-  value=','|explode:"#FFF,#FFF,#3BDFAD,#FFF,#3BDFAD,#a100d7,#BF00FF,#EEE,#444,#000,#9326FF,#BE7DFF,#9326FF,#CC99FF"}}
