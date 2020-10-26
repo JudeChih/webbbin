@@ -1,0 +1,15 @@
+// Media Queries
+$custom: 1440px;
+$desktop: 960px;
+@mixin MQ($canvas) {
+    @if $canvas==custom {
+        @media only screen and (max-width: $custom) {
+            @content;
+        }
+    }
+    @else if $canvas==desktop {
+        @media only screen and (max-width: $desktop) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+// Media Queries
+$desktop-1920: 1920px;
+$desktop-1680: 1680px;
+$desktop-1440: 1440px;
+$desktop-1280: 1280px;
+$desktop-1024: 1024px;
+$tablet-991: 991px;
+$tablet-768: 768px;
+$mobile-480: 480px;
+$mobile-320: 320px;
+
+@mixin MQ($canvas) {
+    @if $canvas == d1920 {
+        @media only screen and (max-width: $desktop-1920) { @content; }
+    }
+    @else if $canvas == d1680 {
+        @media only screen and (max-width: $desktop-1680) { @content; }
+    }
+    @else if $canvas == d1440 {
+        @media only screen and (max-width: $desktop-1440) { @content; }
+    }
+    @else if $canvas == d1280 {
+        @media only screen and (max-width: $desktop-1280) { @content; }
+    }
+    @else if $canvas == d1024 {
+        @media only screen and (max-width: $desktop-1024) { @content; }
+    }
+    @else if $canvas == t991 {
+        @media only screen and (max-width: $tablet-991) { @content; }
+    }
+    @else if $canvas == t768 {
+        @media only screen and (max-width: $tablet-768) { @content; }
+    }
+    @else if $canvas == m480 {
+        @media only screen and (max-width: $mobile-480) { @content; }
+    }
+    @else if $canvas == m320 {
+        @media only screen and (max-width: $mobile-320) { @content; }
+    }
+}
+
+// 模板
+@include MQ(d1920) {}
+@include MQ(d1680) {}
+@include MQ(d1440) {}
+@include MQ(d1280) {}
+@include MQ(d1024) {}
+@include MQ(t991) {}
+@include MQ(t768) {}
+@include MQ(m480) {}
+@include MQ(m320) {}

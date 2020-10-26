@@ -1,0 +1,118 @@
+// 按鈕顏色
+@mixin btn-color($font, $bg) {
+    color: $font;
+    background-color: $bg;
+    &:hover {
+        background-color: darken($bg, 5%);
+    }
+}
+
+// 圓角
+@mixin border-radius($px) {
+    border-radius: $px;
+}
+
+// 引入圖片及寬高自動為圖片實際尺寸
+// @mixin bg($img) {
+//     width: image-width(#{$img});
+//     height: image-height(#{$img});
+//     background-image: image-url(#{$img});
+// }
+
+// 轉場效果
+@mixin trans($key) {
+    transition: $key 0.3s ease-in-out;
+}
+
+// CSS image replacement
+@mixin text-hide() {
+    font: "0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+// 清除浮動
+@mixin clearfix() {
+    &:after,
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// 讓 iOS裝置滑滾更順暢
+@mixin overflow-scroll {
+    overflow-y: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+}
+
+// 溢出文字變"..."
+@mixin text-truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 版型內容區域的最大預設寬度
+@mixin layout-max-width() {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+// scrollbar
+@mixin scrollbar( $bgcolor: #DE3A84) {
+    overflow-x: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 3px;
+        height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: $bgcolor;
+    }
+}
+
+// placeholder
+@mixin placeholder( $color: #ddd, $color-h: #CCC) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &.placeholder {
+        &::-webkit-input-placeholder {
+            color: $color-h;
+        }
+        &::-moz-placeholder {
+            color: $color-h;
+        }
+        &:-ms-input-placeholder {
+            color: $color-h;
+        }
+        &:-moz-placeholder {
+            color: $color-h;
+        }
+    }
+}

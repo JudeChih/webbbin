@@ -1,0 +1,1323 @@
+// slick
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    .slick-track,
+    .slick-list {
+        transform: translate3d(0, 0, 0);
+    }
+    * {
+        outline: none;
+    }
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    &:focus {
+        outline: none;
+    }
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    &::before,
+    &::after {
+        display: table;
+        content: '';
+    }
+    &::after {
+        clear: both;
+    }
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    overflow: hidden;
+}
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-loading .slick-list {
+    background: #fff url('../image/ajax-loader.gif') center center no-repeat;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    z-index: 20;
+    display: block;
+    font-size: 0;
+    color: transparent;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    &:hover,
+    &:focus {
+    }
+    &.slick-disabled {
+        opacity: .25;
+    }
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-dots {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    li {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: auto;
+        height: auto;
+        margin: 0 3px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            font-size: 0;
+            color: transparent;
+            background-color: #FFF;
+            border-radius: 100%;
+            border: 0;
+            outline: none;
+            padding: 0;
+            opacity: .5;
+            cursor: pointer;
+            &:hover,
+            &:focus {
+                outline: none;
+            }
+        }
+        &.slick-active {
+            button {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+// detail
+.detail-slider {
+    .slick-slide {
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    .slick-dots {
+        top: 30px;
+        left: 0;
+    }
+    .slick-prev,
+    .slick-next {
+        top: 0;
+        width: 70px;
+        height: 70px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+    .slick-prev {
+        background-image: url('../image/prev_style01.png');
+    }
+    .slick-next {
+        background-image: url('../image/next_style01.png');
+    }
+}
+
+// intro
+.intro-slider-wrap {
+    .slick-slide {
+        height: 600px;
+        .content {
+            position: relative;
+            display: block;
+            max-width: 1344px;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .text_a1 {
+            position: absolute;
+            z-index: 5;
+            width: 385px;
+            top: 100px;
+            left: -100px;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 25px;
+            }
+            @include MQ(m480) {
+                width: 55.41vw;//266
+                top: 25px;
+                left: -100px;
+            }
+        }
+        .text_a2 {
+            position: absolute;
+            z-index: 5;
+            top: 280px;
+            left: 0;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 200px;
+            }
+            @include MQ(m480) {
+                width: 67.91vw;//266
+                top: 140px;
+            }
+            @include MQ(m360) {
+                top: 110px;
+            }
+        }
+        .text_b1 {
+            position: absolute;
+            z-index: 5;
+            top: 100px;
+            left: -100px;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 25px;
+            }
+            @include MQ(m480) {
+                width: 81.25vw;//390
+                top: 25px;
+                left: -100px;
+            }
+        }
+        .text_b2 {
+            position: absolute;
+            z-index: 5;
+            top: 215px;
+            left: 0;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 150px;
+            }
+            @include MQ(m480) {
+                top: 100px;
+            }
+            @include MQ(m360) {
+                top: 80px;
+            }
+        }
+        .text_c1 {
+            position: absolute;
+            z-index: 5;
+            top: 100px;
+            left: -100px;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 25px;
+            }
+            @include MQ(m480) {
+                width: 69.79vw;//335
+                top: 25px;
+                left: -100px;
+            }
+        }
+        .text_c2 {
+            position: absolute;
+            z-index: 5;
+            top: 215px;
+            left: 0;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 150px;
+            }
+            @include MQ(m480) {
+                width: 69.79vw;//335
+                top: 110px;
+            }
+            @include MQ(m360) {
+                top: 90px;
+            }
+        }
+        .text_e1 {
+            position: absolute;
+            z-index: 5;
+            top: 100px;
+            left: -100px;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 25px;
+            }
+            @include MQ(m480) {
+                width: 69.79vw;//335
+                top: 25px;
+                left: -100px;
+            }
+        }
+         .text_e2 {
+            position: absolute;
+            z-index: 5;
+            top: 220px;
+            left: 0;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 150px;
+            }
+            @include MQ(m480) {
+                top: 100px;
+            }
+            @include MQ(m360) {
+                top: 80px;
+            }
+        }
+        .text_d1 {
+            position: absolute;
+            z-index: 5;
+            top: 100px;
+            left: -100px;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 25px;
+            }
+            @include MQ(m480) {
+                width: 69.79vw;//335
+                top: 25px;
+                left: -100px;
+            }
+        }
+        .text_d2 {
+            position: absolute;
+            z-index: 5;
+            top: 230px;
+            left: 0;
+            opacity: 0;
+            float: left;
+            img {
+                max-width: 100%
+            }
+            @include MQ(t991) {
+                top: 150px;
+            }
+            @include MQ(m480) {
+                width: 62.5vw;//300
+                top: 120px;
+            }
+            @include MQ(m360) {
+                top: 90px;
+            }
+        }
+        &.slick-current {
+            .text_a1,.text_a2,.text_b1,.text_b2,.text_c1,.text_c2,.text_d1,.text_d2,.text_e1,.text_e2, {
+                animation-name: slideLeft;
+                animation-duration: 1s;
+                animation-delay: .3s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease;
+            }
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        top: 50%;
+        width: 80px;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        transform: translateY(-50%);
+    }
+    .slick-prev {
+        left: 2vw;
+        background-image: url('../image/prev_style03.png');
+    }
+    .slick-next {
+        right: 2vw;
+        background-image: url('../image/next_style03.png');
+    }
+    .slick-dots {
+        top: auto;
+        bottom: 174px;
+        left: calc(50% - 1344px / 2);
+        max-width: 1344px;
+        text-align: left;
+        padding-left: 35px;
+        li {
+            button {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+    @include MQ(d1440) {
+        .slick-dots {
+            width: auto;
+            max-width: none;
+            left: 5vw;
+        }
+    }
+    @include MQ(t991) {
+        .slick-slide {
+            height: 120vw;
+            max-height: 800px;
+            .text,.texta1 {
+                top: 25px;
+                transform: none;
+            }
+            .texta2 {
+                top: 205px;
+                transform: none;
+            }
+        }
+        .slick-prev,
+        .slick-next {
+            top: 650px;
+            width: 60px;
+            height: 60px;
+            transform: none;
+        }
+        .slick-prev {
+            left: auto;
+            right: calc(9vw + 60px);
+        }
+        .slick-next {
+            right: 7vw;
+        }
+        .slick-dots {
+            bottom: 100px;
+            padding-left: 0;
+        }
+    }
+
+    @include MQ(t768){
+        .slick-prev,
+        .slick-next {
+            top: 80%;
+            width: 60px;
+            height: 60px;
+            transform: none;
+        }
+    }
+
+        @include MQ(m540){
+        .slick-prev,
+        .slick-next {
+            top: 76%;
+            width: 60px;
+            height: 60px;
+            transform: none;
+        }
+    }
+
+
+    @include MQ(m480) {
+        .slick-slide {
+            &.slick-current {
+                .text_a1,.text_a2,.text_b1,.text_b2,.text_c1,.text_c2,.text_d1,.text_d2, {
+                    animation-name: slideLeft2;
+                }
+            }
+        }
+        .slick-prev,
+        .slick-next {
+            top: 76%;
+        }
+        .slick-prev {
+            right: 94px;
+        }
+        .slick-next {
+            right: 20px;
+        }
+        .slick-dots {
+            bottom: 100px;
+        }
+    }
+}
+
+        @include MQ(m360){
+        .slick-prev,
+        .slick-next {
+            top: 10%;
+        }
+    }
+
+.intro-partner-filter {
+    .slick-slide {}
+    .slick-list {
+        // max-width: calc(800px + 32px);
+        max-width: calc(700px + 32px);
+        height: 64px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+    .slick-prev,
+    .slick-next {
+        top: calc(50% - 4px);
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 100% auto;
+        transform: translateY(-50%);
+        &.slick-disabled {
+            display: none !important;
+        }
+    }
+    .slick-prev {
+        left: 2vw;
+        background-image: url('../image/prev_style03.png');
+    }
+    .slick-next {
+        right: 2vw;
+        background-image: url('../image/next_style03.png');
+    }
+}
+
+.intro-brand-list {
+    .slick-list {
+        padding-top: 20px;
+    }
+    .slick-prev,
+    .slick-next {
+        display: none;
+    }
+    @include MQ(t991) {
+        .slick-prev,
+        .slick-next {
+            top: 50%;
+            z-index: 5;
+            width: 60px;
+            height: 90px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: contain;
+            transform: translateY(-50%);
+        }
+        .slick-prev {
+            left: -32px;
+            background-image: url('../image/prev_style04.png');
+        }
+        .slick-next {
+            right: -32px;
+            background-image: url('../image/next_style04.png');
+        }
+    }
+    @include MQ(m480) {
+        .slick-prev,
+        .slick-next {
+            width: 12.5vw;
+            height: 18.75vw;
+        }
+        .slick-prev {
+            left: -12.5vw;
+        }
+        .slick-next {
+            right: -12.5vw;
+        }
+    }
+}
+
+
+// slider animation
+[class*="slider-animation-"]{
+    position: absolute;
+    height: 100%;
+    img {
+        max-width: 100%;
+    }
+}
+
+// 第一張輪播圖
+.slider-animation-1 {
+    top: 0;
+    right: 0;
+    width: 100%;
+    .a01-l {
+        position: absolute;
+        z-index: 1;
+        width: 420px;
+        left: 22.72vw;//450;
+        bottom: 105px;
+        height: 368px;
+        overflow: hidden;
+        img {
+            animation-name: a-spin;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @include MQ(d1280) {
+            left: 31.25vw;//400;
+        }
+        @include MQ(t991) {
+            width: 44.27vw;//340
+            left: 5.20vw;//40
+            bottom: 60px;
+            height: 39.06vw;//300
+        }
+
+        @include MQ(m480) {
+            width: 62.5vw;//300
+            left: -3vw;//-50
+            bottom: 60px;
+            height: 52.08vw;//250
+        }
+    }
+    .a01-r {
+        position: absolute;
+        z-index: 1;
+        width: 320px;
+        left: 49.24vw;//975;
+        bottom: 275px;
+        img {
+            animation-name: a-spin;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @include MQ(d1680) {
+            left: 58.03vw;//975;
+        }
+        @include MQ(d1280) {
+            left: 70.31vw;//900;
+        }
+        @include MQ(t991) {
+            width: 32.55vw;//250
+            left: 61.19vw;//470
+            bottom: 26.04vw;//200
+        }
+        @include MQ(m480) {
+            width: 45.83vw;//220
+            left: 68.75vw;//330
+            bottom: 16.66vw;//80
+        }
+    }
+    .a02 {
+        position: absolute;
+        z-index: 2;
+        width: 708px;
+        left: 26.76vw;//530;
+        bottom: 28px;
+        @include MQ(d1680) {
+            left: 31.54vw;//530;
+        }
+        @include MQ(d1280) {
+            left: 37.5vw;//480;
+        }
+        @include MQ(t991) {
+            width: 74.21vw;//570
+            left: 14.32vw;//100
+            bottom: 0;
+        }
+        @include MQ(m480) {
+            width: 107.5vw;//516
+            left: -4.16vw;//-20
+            bottom: 0;
+        }
+    }
+    .a03 {
+        position: absolute;
+        z-index: 3;
+        width: 708px;
+        left: 26.76vw;//530;
+        bottom: 304px;
+        animation-name: a-move;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @include MQ(d1680) {
+            left: 31.54vw;//530;
+        }
+        @include MQ(d1280) {
+            left: 37.5vw;//480;
+        }
+        @include MQ(t991) {
+            width: 74.21vw;//570
+            left: 14.32vw;//100
+            bottom: 28.64vw;//220
+            animation-name: a-move991;
+        }
+        @include MQ(m480) {
+            width: 68.75vw;//330
+            left: 16.66vw;//80
+            bottom: 33.33vw;//160
+            animation-name: a-move480;
+        }
+    }
+}
+
+@keyframes a-spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes a-move {
+    0% {
+        bottom: 304px;
+    }
+    50% {
+        bottom: 330px;
+    }
+    100% {
+        bottom: 304px;
+    }
+}
+@keyframes a-move991 {
+    0% {
+        bottom: 28.64vw;
+    }
+    50% {
+        bottom: 33.33vw;
+    }
+    100% {
+        bottom: 28.64vw;
+    }
+}
+@keyframes a-move480 {
+    0% {
+        bottom: 33.33vw;
+    }
+    50% {
+        bottom: 41.25vw;
+    }
+    100% {
+        bottom: 33.33vw;
+    }
+}
+
+
+// 第二張輪播圖
+.slider-animation-2 {
+    top: 0;
+    right: 0;
+    width: 100%;
+    .b01 {
+        position: absolute;
+        z-index: 1;
+        left: 60px;
+        bottom: 105px;
+        height: 590px;
+        overflow: hidden;
+        opacity: 1;
+        img {
+            animation-name: a-spin;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @include MQ(d1440) {
+            left: -160px
+        }
+        @include MQ(t991) {
+            width: 111.97vw;//860
+            height: 96.35vw;//740;
+            //left: 4.42vw;//34;
+            bottom: 60px;
+        }
+        @include MQ(m480) {
+            width: 168.75vw;//810
+            height: 118.75vw;//570;
+            left: -58.33vw;//-280;
+            bottom: 60px;
+        }
+    }
+    .b02 {
+        position: absolute;
+        z-index: 2;
+        width: 830px;
+        left: 27.08vw;//520;
+        bottom: 105px;
+        height: 465px;
+        overflow: hidden;
+        @include MQ(d1280) {
+            width: 64.84vw;//830
+            height: 36.32vw;//465;
+            left: 29.68vw;//380;
+        }
+        @include MQ(t991) {
+            width: 91.14vw;//700
+            height: 57.03vw;//438;
+            left: 4.42vw;//34;
+            bottom: 60px;
+        }
+        @include MQ(m480) {
+            width: 83.33vw;//400
+            height: 46.87vw;//225;
+            left: 5.20vw;//25;
+            bottom: 60px;
+        }
+    }
+    .b03 {
+        position: absolute;
+        z-index: 3;
+        width: 405px;
+        left: 42.18vw;//810;
+        bottom: 0;
+        animation-name: b-move;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @include MQ(d1280) {
+            left: 51.95vw;//665;
+            animation-name: b-move-1280;
+        }
+        @include MQ(t991) {
+            width: 44.27vw;//340
+            left: 36.45vw;//280;
+            animation-name: b-move-991;
+        }
+    }
+}
+
+@keyframes b-opacity {
+    0% {
+        opacity: 1;
+        left: 60px;
+    }
+    50% {
+        opacity: 0.3;
+        left: 90px;
+    }
+    100% {
+        opacity: 1;
+        left: 60px;
+    }
+}
+@keyframes b-move {
+    0% {
+        left: 42.18vw;
+    }
+    50% {
+        left: 43.74vw;
+    }
+    100% {
+        left: 42.18vw;
+    }
+}
+@keyframes b-move-1280 {
+    0% {
+        left: 51.95vw;
+    }
+    50% {
+        left: 54.3vw;
+    }
+    100% {
+        left: 51.95vw;
+    }
+}
+@keyframes b-move-991 {
+    0% {
+        left: 36.45vw;
+    }
+    50% {
+        left: 39.45vw
+    }
+    100% {
+        left: 36.45vw;
+    }
+}
+
+
+// 第三張輪播圖
+.slider-animation-3 {
+    top: 0;
+    right: 0;
+    width: 100%;
+    .c01 {
+        position: absolute;
+        z-index: 1;
+        left: 24.16vw;//464;
+        bottom: 102px;
+        animation-name: c-move;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @include MQ(d1280) {
+            left: 21.09;//270;
+            animation-name: c-move-1280;
+        }
+        @include MQ(d1120) {
+            left: 12.5vw;//140;
+            animation-name: c-move-1120;
+        }
+        @include MQ(t991) {
+            width: 92.44vw;//710
+            left: -3.9vw;//-30;
+            bottom: 57px;
+            animation-name: c-move-991;
+        }
+    }
+
+    .c02 {
+        position: absolute;
+        z-index: 1;
+        left: 40.31vw;//774;
+        bottom: 0;
+        @include MQ(d1280) {
+            left: 46.87vw;//600;
+        }
+        @include MQ(d1120) {
+            left: 39.28vw;//440;
+        }
+        @include MQ(t991) {
+            width: 39.06vw;//300
+            left: 33.85vw;//260;
+        }
+        @include MQ(m480) {
+            width: 47.91vw;//230
+            left: 29.16vw;//140;
+        }
+    }
+    .c03 {
+        position: absolute;
+        z-index: 1;
+        left: 40.31vw;//774;
+        bottom: 98px;
+        animation-name: c-up;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @include MQ(d1280) {
+            left: 46.87vw;//600;
+        }
+        @include MQ(d1120) {
+            left: 39.28vw;//440;
+        }
+        @include MQ(t991) {
+            width: 39.06vw;//300
+            left: 33.85vw;//260;
+        }
+        @include MQ(m480) {
+            width: 47.91vw;//230
+            left: 29.16vw;//140;
+            animation-name: c-up-480;
+        }
+    }
+    .c04 {
+        position: absolute;
+        z-index: 1;
+        left: 40.31vw;//774;
+        bottom: 17px;
+        opacity: 1;
+        animation-name: c-opacity;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @include MQ(d1280) {
+            left: 46.87vw;//600;
+        }
+        @include MQ(d1120) {
+            left: 39.28vw;//440;
+        }
+        @include MQ(t991) {
+            width: 39.06vw;//300
+            left: 33.85vw;//260;
+        }
+        @include MQ(m480) {
+            width: 47.91vw;//230
+            left: 29.16vw;//140;
+        }
+    }
+}
+@keyframes c-move {
+    0% {
+        left: 24.16vw;//464
+    }
+    50% {
+        left: 21.35vw;//410
+    }
+    100% {
+        left: 24.16vw;
+    }
+}
+
+@keyframes c-move-1280 {
+    0% {
+        left: 21.09vw;//270;
+    }
+    50% {
+        left: 14.84vw;//190;
+    }
+    100% {
+        left: 21.09vw;//270;
+    }
+}
+
+@keyframes c-move-1120 {
+    0% {
+        left: 12.5vw;//140;
+    }
+    50% {
+        left: 8.92vw;//100;
+    }
+    100% {
+        left: 12.5vw;//140;
+    }
+}
+
+    @keyframes c-move-991 {
+    0% {
+        left: -3.9vw;//-30;
+    }
+    50% {
+        left: 0vw;//0;
+    }
+    100% {
+        left: -3.9vw;//-30;
+    }
+}
+
+@keyframes c-up {
+    0% {
+        bottom: 98px;
+    }
+    50% {
+        bottom: 150px
+    }
+    100% {
+        bottom: 98px;
+    }
+}
+
+@keyframes c-up-480 {
+    0% {
+        bottom: 40px;
+    }
+    50% {
+        bottom: 100px
+    }
+    100% {
+        bottom: 40px;
+    }
+}
+
+@keyframes c-opacity {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+// 第四張輪播圖
+.slider-animation-4 {
+    top: 0;
+    right: 0;
+    width: 100%;
+    .d01 {
+        position: absolute;
+        z-index: 1;
+        left: 20.62vw;//396;
+        height: 511px;
+        overflow: hidden;
+        bottom: 102px;
+        animation-name: d-upopacity;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @include MQ(t991) {
+            width: 103.51;//795
+            left: -10.41vw;//-80;
+            height: 435px;
+            overflow: hidden;
+            bottom: 60px;
+        }
+        @include MQ(m480) {
+            width: 145.8;//700
+            left: -31.25vw;//-150;
+            height: 285px;
+            overflow: hidden;
+            bottom: 60px;
+        }
+    }
+    .d02,.d03,.d04,.d05,.d06 {
+        position: absolute;
+        z-index: 1;
+        left: 30.10vw;//578;
+        bottom: 0;
+        @include MQ(t991) {
+            width: 87.23vw;//670
+            left: 7.81vw;//60;
+        }
+        @include MQ(m480) {
+            width: 83.33vw;//400
+            left: 7.08vw;//34;
+        }
+    }
+    .d03,.d04,.d05{
+        animation-name: d-up;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    .d04{
+        animation-delay: 1s; 
+    }
+    .d05{
+        animation-delay: 2s; 
+    }
+
+}
+
+@keyframes d-up {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 30px;
+    }
+    100% {
+        bottom: 0;
+    }
+
+}
+
+@keyframes d-upopacity {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+// 第五張輪播圖
+.slider-animation-5 {
+    top: 0;
+    right: 0;
+    width: 100%;
+    .e01 {
+        position: absolute;
+        z-index: 1;
+        left: 11.14vw;//214;
+        bottom: 105px;
+        animation-name: d-upopacity;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @include MQ(t991) {
+            width: 100.90vw;//1000
+            left: -0.4vw;//4
+            bottom: 60px;
+        }
+    }
+    .e02,.e03,.e05,.e06,.e07,.e08,.e09 {
+        position: absolute;
+        z-index: 1;
+        left: 20.46vw;//393;
+        bottom: 23px;
+        @include MQ(d1120) { 
+            width: 67.85vw;//760
+            left: 26.78vw;//300;
+            //bottom: 0vw;
+        }
+        @include MQ(t991) {
+            width: 73.25vw;//726
+            left: 18.16vw;//180;
+            bottom: 0vw;
+        }
+        @include MQ(t768) {
+            width: 81.51vw;//626
+            left: 7.81vw;//60;
+            bottom: 0vw;
+        }
+        @include MQ(m480) {
+            width: 83.33vw;//400
+            left: 7.08vw;//34;
+            bottom: 0vw;
+        }
+    }
+    .e03,.e07,.e08{
+        animation-name: d-up;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    .e07{
+        animation-delay: 1s; 
+    }
+    .e08{
+        animation-delay: 2s; 
+    }
+
+    .e04 {
+        position: absolute;
+        z-index: 1;
+        width: 450px;
+        left: 28.02vw;//538;
+        bottom: 102px;
+        @include MQ(d1440) {
+            left: 31.25vw;//450;
+        }
+        @include MQ(d1120) {
+            left: 40.17vw;//450;
+        }
+        @include MQ(t991) {
+            width: 53.48vw;//530
+            left: 28.25vw;//280;
+            bottom: 58px;
+        }
+        @include MQ(m480) {
+            width: 72.29vw;//347
+            left: 10.83vw;//52;
+            bottom: 57px;
+        }
+    }
+
+    .e05 {
+        bottom: 102px;
+        @include MQ(t991) {
+            bottom: 58px;
+        }
+        @include MQ(t768) {
+            bottom: 58px;
+        }
+        @include MQ(m480) {
+            bottom: 58px;
+        }
+    }
+
+}
+
+@keyframes d-up {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 30px;
+    }
+    100% {
+        bottom: 0;
+    }
+
+}
+
+@keyframes d-upopacity {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

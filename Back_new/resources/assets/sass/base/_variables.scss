@@ -1,0 +1,20 @@
+//====== 開發者模式 = 1; 非開發者模式 = 0
+//$developer: 1;
+// 主風格或常用的配色，自行修改
+$black: #000 !default;
+// 基本顏色設定
+$body-bg: #ffffff;
+$text-color: #555;
+$link-color: #000;
+$link-hover-color: #FFF !default;
+// 基本文字設定
+//## Font, line-height, and color for body text, and more.
+$font-family-base: arial,
+STHeiti,
+"Microsoft YaHei",
+"微软雅黑",
+"SimSun",
+"宋体" !default;
+$font-size-base: 13px !default;
+$line-height-base: 1.8 !default;
+$fa-font-path: "../webfonts";

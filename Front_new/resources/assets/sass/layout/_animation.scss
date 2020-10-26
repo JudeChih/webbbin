@@ -1,0 +1,169 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopArrowDown {
+    0% {
+        opacity: 0;
+        bottom: -32px;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes indexTopSlideRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopSlideDown1 {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes indexTopSlideDown2 {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopSlideDown3 {
+    0% {
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopSlideDown4 {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopLine1 {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 54vh;
+        height: calc(var(--vh, 1vh) * 54);
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopLine2 {
+    0% {
+        left: 100%;
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        left: 50%;
+        width: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopButton {
+    0% {
+        bottom: 17.5vh;
+        bottom: calc(var(--vh, 1vh) * 17.5);
+        opacity: 0;
+    }
+    100% {
+        bottom: 16.5vh;
+        bottom: calc(var(--vh, 1vh) * 16.5);
+        opacity: 1;
+    }
+}
+
+@keyframes indexTopButton2 {
+    0% {
+        bottom: 2vh;
+        bottom: calc(var(--vh, 1vh) * 2);
+        opacity: 0;
+    }
+    100% {
+        bottom: 5vh;
+        bottom: calc(var(--vh, 1vh) * 5);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        left: -35px;
+        opacity: 0;
+    }
+    100% {
+        left: 35px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft2 {
+    0% {
+        left: -20px;
+        opacity: 0;
+    }
+    100% {
+        left: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+    100% {
+        left: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        bottom: -10%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+}
