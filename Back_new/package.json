@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cross-env": "^3.2.4",
     "foundation-sites": "^6.6.3",
     "image-webpack-loader": "^6.0.0",
